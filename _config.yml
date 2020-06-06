@@ -1,6 +1,12 @@
-title: Minimal theme
-logo: /assets/img/logo.png
-description: Minimal is a theme for GitHub Pages.
-show_downloads: true
-google_analytics:
+# Site settings
+title: BY Blog
+SEOTitle: dzd的博客 | BY Blog
+header-img: img/post-bg-desk.jpg
+#email: qiubaiying@gmail.com
+description: "Every failure is leading towards success."
+keyword: "dzd"
+url: "http://dengzhuding.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+#github_repo: "https://github.com/dengzhuding/dengzd.github.io.git" # you code repository
+
 theme: jekyll-theme-minimal
