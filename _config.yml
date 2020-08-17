@@ -4,18 +4,19 @@
 
 # Site
 title: dzdHello
-subtitle: ''
-description: ''
-keywords:
+subtitle: 'welcome to dzd`s blog.'
+description: 'just for play'
+keywords: 'nodejs javascript vue '
 author: dzd
 language: en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
 root: /
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: :category/:id/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -33,7 +34,7 @@ skip_render:
 
 # Writing
 # new_post_name: :title.md # File name of new posts
-new_post_name: :year-:month-:day-:title.md
+new_post_name: :year:month:day:title.md
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
@@ -100,8 +101,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-## theme: landscape
-theme: next
+theme: landscape
+# theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

@@ -1,7 +1,11 @@
 ---
 title: post title
 date: 2020-08-16 11:55:15
-tags: test hello-world
+tags: 
+- md
+categories:
+- test
+- demo
 ---
 # 语法效果
 
