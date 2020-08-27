@@ -8,7 +8,8 @@ subtitle: 'welcome to dzd`s blog.'
 description: 'just for play'
 keywords: 'nodejs javascript vue '
 author: dzd
-language: en
+# language: en
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -66,7 +67,8 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  # per_page: 10
+  per_page: 3
   order_by: -date
 
 # Category & Tag
@@ -101,7 +103,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: dzdhellospace
+# theme: landscape
 # theme: next
 
 # Deployment
