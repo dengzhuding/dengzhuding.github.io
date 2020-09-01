@@ -1,15 +1,17 @@
-<header>
-  <div>
-    <a href="<%- url_for() %>"><%= config.title%></a>
+<header class="fixed height-120 top-0 width-percent-100">
+  <div class="display-flex height-100- item-space-between max-w-105 margin-center">
+    <div>
+      <a href="<%- url_for() %>"><%= config.title%></a>
+    </div>
+    <nav>
+      <ul>
+        <% for (name in theme.menu) { %>
+        <li>
+          <a href="<%- url_for(theme.menu[name])%>"><%= name %></a>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+    <span>here is header.</span>
   </div>
-  <nav>
-    <ul>
-      <% for (name in theme.menu) { %>
-      <li>
-        <a href="<%- url_for(theme.menu[name])%>"><%= name %></a>
-      </li>
-      <% } %>
-    </ul>
-  </nav>
-  here is header.
 </header>

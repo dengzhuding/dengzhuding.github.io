@@ -2,9 +2,15 @@
 <html lang="en">
 <%- partial('_partial/head') %>
 <body>
-  <%- partial('_partial/header') %>
-  <main>
-    <%- body %>
-  </main>
+  <div class="content-main-div min-vh-100">
+    <%- partial('_partial/header') %>
+    <main class="pd-t-120">
+      <div class="max-w-105 margin-center">
+        <%- body %>
+      </div>
+    </main>
+    <%- partial('_partial/footer') %>
+  </div>
+  <%- js('js/init.js') %>
 </body>
 </html>
