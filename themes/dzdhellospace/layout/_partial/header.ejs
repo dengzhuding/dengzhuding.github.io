@@ -1,10 +1,10 @@
-<header class="fixed height-120 top-0 width-percent-100">
+<header class="sticky height-120 top-0 width-percent-100">
   <div class="display-flex height-100- item-space-between max-w-105 margin-center">
-    <div>
-      <a href="<%- url_for() %>"><%= config.title%></a>
+    <div class="mg-l-rem-2 ">
+      <a class="color-white" href="<%- url_for() %>"><%= config.title%></a>
     </div>
     <nav>
-      <ul>
+      <ul class="menu">
         <% for (name in theme.menu) { %>
         <li>
           <a href="<%- url_for(theme.menu[name])%>"><%= name %></a>
@@ -12,6 +12,11 @@
         <% } %>
       </ul>
     </nav>
-    <span>here is header.</span>
+    <span class="mg-r-rem-2">here is header.</span>
+    <div class="absolute header-thumbtack cursor-pointer color-black-2 active">
+      <span>
+        <i class="absolute fa-thumbtack fas"></i>
+      </span>
+    </div>
   </div>
 </header>

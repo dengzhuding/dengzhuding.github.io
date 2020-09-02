@@ -4,4 +4,52 @@ header {
   color: #fff;
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.3);
   transition: height .2s;
+  .header-thumbtack {
+    right: 0;
+    top: 0;
+    border-width: 1.2rem;
+    border-style: solid;
+    border-color: white;
+    border-top: none;
+    border-right: none;
+    background: white;
+    border-bottom-left-radius: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-width 0.2s, border-bottom-left-radius .2s;
+    &.active {
+      color: #00aaf2;
+    }
+    &:hover {
+      border-color: #00aaf2;
+      color: white;
+      .fa-thumbtack {
+        transform: rotate(45deg);
+      }
+    }
+    .fa-thumbtack {
+      // transform: rotate(45deg);
+      right: 4px;
+      top: 4px;
+      font-size: .8rem;
+      transition: all .2s;
+    }
+  }
+  nav ul.menu>li {
+    display: inline-block;
+  }
+}
+header.height-120,
+header:hover {
+  height: 120px;
+  .header-thumbtack {
+    border-width: 2rem;
+    border-bottom-left-radius: 2rem;
+    .fa-thumbtack {
+      right: 6px;
+      top: 6px;
+      font-size: 1rem;
+    }
+  }
 }
