@@ -14,13 +14,13 @@
 <meta name="generator" content="Hexo 5.0.2"></head>
 <body>
   <div class="content-main-div min-vh-100">
-    <header class="fixed height-120 top-0 width-percent-100">
+    <header class="sticky height-120 top-0 width-percent-100">
   <div class="display-flex height-100- item-space-between max-w-105 margin-center">
-    <div>
-      <a href="/">dzdHello</a>
+    <div class="mg-l-rem-2 ">
+      <a class="color-white" href="/">dzdHello</a>
     </div>
     <nav>
-      <ul>
+      <ul class="menu">
         
         <li>
           <a href="/">Home</a>
@@ -32,10 +32,15 @@
         
       </ul>
     </nav>
-    <span>here is header.</span>
+    <span class="mg-r-rem-2">here is header.</span>
+    <div class="absolute header-thumbtack cursor-pointer color-black-2 active">
+      <span>
+        <i class="absolute fa-thumbtack fas"></i>
+      </span>
+    </div>
   </div>
 </header>
-    <main class="pd-t-120">
+    <main class="">
       <div class="max-w-105 margin-center">
         <article>
   <div>
@@ -54,19 +59,19 @@
 <li>拉取jenkins镜像<br><code>docker pull jenkins/jenkins:lts</code></li>
 <li>启动jenkins<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -u root --name jenkins_node \</span><br><span class="line">-p 9080:8080 -p 50000:50000 \</span><br><span class="line">-v $(which docker):&#x2F;usr&#x2F;bin&#x2F;docker \</span><br><span class="line">-v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock \</span><br><span class="line">-v &#x2F;var&#x2F;workspace-20200824&#x2F;jenkins_home:&#x2F;var&#x2F;jenkins_home \</span><br><span class="line">-e TZ&#x3D;&quot;Asia&#x2F;Shanghai&quot; -v &#x2F;etc&#x2F;localtime:&#x2F;etc&#x2F;localtime:ro \</span><br><span class="line">jenkins&#x2F;jenkins:lts</span><br></pre></td></tr></table></figure>
 <blockquote>
-<img src="/study-notes/ckek6wr0h0005zhln3wys97ju/t2.png" class="" title="运行效果图" alt="运行效果图"></blockquote>
+<img src="/study-notes/ckel2s89z0005zauicwg24bhn/t2.png" class="" title="运行效果图" alt="运行效果图"></blockquote>
 </li>
 <li>打开网站x.x.x.x:9080，要稍等一会，然后安装插件，我这里自己选的需要的<blockquote>
-<img src="/study-notes/ckek6wr0h0005zhln3wys97ju/t1.png" class="" title="安装插件" alt="安装插件"></blockquote>
+<img src="/study-notes/ckel2s89z0005zauicwg24bhn/t1.png" class="" title="安装插件" alt="安装插件"></blockquote>
 </li>
 <li>然后创建用户<blockquote>
-<img src="/study-notes/ckek6wr0h0005zhln3wys97ju/t3.png" class="" title="创建用户" alt="创建用户"></blockquote>
+<img src="/study-notes/ckel2s89z0005zauicwg24bhn/t3.png" class="" title="创建用户" alt="创建用户"></blockquote>
 </li>
 <li>一些配置<blockquote>
-<img src="/study-notes/ckek6wr0h0005zhln3wys97ju/t4.png" class="" title="进入全局配置" alt="进入全局配置">
-<img src="/study-notes/ckek6wr0h0005zhln3wys97ju/t5.png" class="" title="配置node" alt="配置node">
-<img src="/study-notes/ckek6wr0h0005zhln3wys97ju/t6.png" class="" title="进入系统配置" alt="进入系统配置">
-<img src="/study-notes/ckek6wr0h0005zhln3wys97ju/t7.png" class="" title="配置SSH连接并测试连接" alt="配置SSH连接并测试连接">
+<img src="/study-notes/ckel2s89z0005zauicwg24bhn/t4.png" class="" title="进入全局配置" alt="进入全局配置">
+<img src="/study-notes/ckel2s89z0005zauicwg24bhn/t5.png" class="" title="配置node" alt="配置node">
+<img src="/study-notes/ckel2s89z0005zauicwg24bhn/t6.png" class="" title="进入系统配置" alt="进入系统配置">
+<img src="/study-notes/ckel2s89z0005zauicwg24bhn/t7.png" class="" title="配置SSH连接并测试连接" alt="配置SSH连接并测试连接">
 </blockquote>
 </li>
 </ul>

@@ -118,6 +118,12 @@
 .mg-l-20 {
   margin-left: 20px;
 }
+.mg-l-rem-1 {
+  margin-left: 1rem;
+}
+.mg-l-rem-2 {
+  margin-left: 2rem;
+}
 .mg-r-5 {
   margin-right: 5px;
 }
@@ -132,6 +138,12 @@
 }
 .mg-r-20 {
   margin-right: 20px;
+}
+.mg-r-rem-1 {
+  margin-right: 1rem;
+}
+.mg-r-rem-2 {
+  margin-right: 2rem;
 }
 .mg-t-5 {
   margin-top: 5px;
@@ -190,6 +202,10 @@
 }
 .fixed {
   position: fixed;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
 }
 .static {
   position: static;
@@ -262,6 +278,9 @@
 .margin-center {
   margin: 0 auto;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 html {
   font-size: 16px;
 }
@@ -269,16 +288,75 @@ body {
   background-color: #f2f2f2;
   line-height: 1.5;
 }
+article img {
+  max-width: 100%;
+}
 header {
   background: #1976d2;
   color: #fff;
   box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.3);
   transition: height 0.2s;
 }
-main > div {
-  min-height: calc(100vh - 220px);
+header .header-thumbtack {
+  right: 0;
+  top: 0;
+  border-width: 1.2rem;
+  border-style: solid;
+  border-color: #fff;
+  border-top: none;
+  border-right: none;
   background: #fff;
+  border-bottom-left-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-width 0.2s, border-bottom-left-radius 0.2s;
+}
+header .header-thumbtack.active {
+  color: #00aaf2;
+}
+header .header-thumbtack:hover {
+  border-color: #00aaf2;
+  color: #fff;
+}
+header .header-thumbtack:hover .fa-thumbtack {
+  transform: rotate(45deg);
+}
+header .header-thumbtack .fa-thumbtack {
+  right: 4px;
+  top: 4px;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+header nav ul.menu>li {
+  display: inline-block;
+}
+header.height-120,
+header:hover {
+  height: 120px;
+}
+header.height-120 .header-thumbtack,
+header:hover .header-thumbtack {
+  border-width: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+header.height-120 .header-thumbtack .fa-thumbtack,
+header:hover .header-thumbtack .fa-thumbtack {
+  right: 6px;
+  top: 6px;
+  font-size: 1rem;
+}
+main > div {
   padding: 20px;
+}
+header.height-120 + main > div {
+  min-height: calc(100vh - 220px);
+}
+header.height-60 + main > div {
+  min-height: calc(100vh - 160px);
+}
+header.height-40 + main > div {
+  min-height: calc(100vh - 140px);
 }
 footer {
   height: 60px;
