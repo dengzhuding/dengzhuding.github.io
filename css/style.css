@@ -272,7 +272,7 @@
 .min-vh-100 {
   min-height: 100vh;
 }
-.max-w-105 {
+.max-w-mian-size {
   max-width: 105rem;
 }
 .margin-center {
@@ -362,4 +362,14 @@ footer {
   height: 60px;
   background: rgba(0,0,0,0.459);
   color: #fff;
+}
+@media only screen and (min-width: 1024px) {
+  main .max-w-mian-size {
+    max-width: 68rem;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  main .max-w-mian-size {
+    max-width: 105rem;
+  }
 }
