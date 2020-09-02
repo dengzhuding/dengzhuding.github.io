@@ -3,7 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: dzdHello
+title: dzd`s blog
+logoText: DZD-HELLO
 subtitle: 'welcome to dzd`s blog.'
 description: 'just for play'
 keywords: 'nodejs javascript vue '

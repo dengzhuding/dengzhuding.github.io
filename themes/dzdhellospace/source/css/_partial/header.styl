@@ -2,7 +2,7 @@
 header {
   background: #1976d2;
   color: #fff;
-  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.2);
   transition: height .2s;
   .header-thumbtack {
     right: 0;
@@ -38,7 +38,59 @@ header {
   }
   nav ul.menu>li {
     display: inline-block;
+    padding: 0 1rem;
+    position: relative;
+    .nav-a {
+      color: rgba(255 255 255 0.8);
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    &.active .nav-a {
+      color: #fff;
+      font-weight: bold;
+    }
+    &:hover .nav-a {
+      color: #fff;
+    }
+    &::before {
+      content: '';
+      width: 0;
+      border-bottom: 2px solid white;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 2px;
+      transition: width .2s;
+    }
+    &.active::before {
+      width: 100%;
+    }
+    &:hover::before {
+      width: 100%;
+    }
   }
+  .logo {
+    background-image: url(/images/blog-LOGO.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: width .2s, height .2s, border-radius .2s;
+  }
+  .logo-text {
+    align-self: flex-end;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: Microsoft Yahei;
+    text-shadow: 5px 4px 4px rgba(255 255 255 0.6);
+  }
+}
+header.height-40 .logo {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  border-radius: 50%;
 }
 header.height-120,
 header:hover {
@@ -51,5 +103,11 @@ header:hover {
       top: 6px;
       font-size: 1rem;
     }
+  }
+  .logo {
+    width: 120px;
+    height: 90px;
+    background-size: contain;
+    border-radius: 1rem;
   }
 }
