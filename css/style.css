@@ -184,6 +184,9 @@
 .mg-20 {
   margin: 20px;
 }
+.display-none {
+  display: none;
+}
 .display-b {
   display: block;
 }
@@ -211,6 +214,12 @@
 }
 .display-flex .shrink-1 {
   flex-shrink: 1;
+}
+.display-flex .flex-end {
+  align-self: flex-end;
+}
+.display-flex .flex-start {
+  align-self: flex-start;
 }
 .relative {
   position: relative;
@@ -350,6 +359,13 @@ header .header-thumbtack .fa-thumbtack {
   font-size: 0.8rem;
   transition: all 0.2s;
 }
+header .menu.mini {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #1976d2;
+  box-shadow: 0px 0px 6px 2px rgba(255,255,255,0.5);
+}
 header nav ul.menu>li {
   display: inline-block;
   padding: 0 1rem;
@@ -357,7 +373,7 @@ header nav ul.menu>li {
 }
 header nav ul.menu>li .nav-a {
   color: rgba(255,255,255,0.8);
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -391,13 +407,21 @@ header .logo {
   transition: width 0.2s, height 0.2s, border-radius 0.2s;
 }
 header .logo-text {
-  align-self: flex-end;
   text-decoration: none;
   font-style: italic;
   font-size: 0.8rem;
   font-weight: bold;
   font-family: Microsoft Yahei;
   text-shadow: 5px 4px 4px rgba(255,255,255,0.6);
+}
+header .nav-show-bar {
+  font-size: 1.5rem;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+  cursor: pointer;
+}
+header .nav-show-bar:hover {
+  color: #fff;
 }
 header.height-40 .logo {
   width: 40px;
@@ -422,8 +446,8 @@ header:hover .header-thumbtack .fa-thumbtack {
 }
 header.height-120 .logo,
 header:hover .logo {
-  width: 120px;
-  height: 90px;
+  width: 133px;
+  height: 100px;
   background-size: contain;
   border-radius: 1rem;
 }
