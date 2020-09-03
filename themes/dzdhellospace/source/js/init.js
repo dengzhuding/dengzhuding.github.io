@@ -54,6 +54,8 @@ const initListeners = () => {
     if (curIsActive) {
       _thumbtack.classList.remove('active')
       _header.classList.add('static')
+      _header.classList.add('height-120');
+      _header.classList.remove('height-60', 'height-40');
     } else {
       _thumbtack.classList.add('active')
       _header.classList.remove('static')
