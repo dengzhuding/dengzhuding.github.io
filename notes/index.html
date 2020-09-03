@@ -35,7 +35,7 @@
           <a class="nav-a" href="/bookmarks/bookmarks_2020_8_24" >Bookmarks</a>
         </li>
         
-        <li class="">
+        <li class="active">
           <a class="nav-a" href="/notes/index" >Notes</a>
         </li>
         
@@ -57,13 +57,29 @@
       <div class="max-w-mian-size margin-center bg-white">
         <article>
   <div>
-    <h2>test-page</h2>
+    <h2>日常小笔记</h2>
   </div>
   <div>
-    <span>2020-08-28</span>
+    <span>2020-09-03</span>
   </div>
   <div>
-    
+    <hr>
+<ul>
+<li>2020-09-03</li>
+</ul>
+<blockquote>
+<ol>
+<li>从表格复制单行数据格式为JSON数组<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// copyStr-从excel复制的文本</span></span><br><span class="line"><span class="keyword">let</span> copyStr = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment">// 返回 Object</span></span><br><span class="line">copyStr.replace(<span class="regexp">/\n/g</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="regexp">/\s+/g</span>, <span class="string">&#x27;,&#x27;</span>).replace(<span class="regexp">/\&quot;/g</span>, <span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;,&#x27;</span>).map(<span class="function"><span class="params">strItem</span> =&gt;</span> (&#123;<span class="attr">label</span>: strItem&#125;))</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>空格分隔的字符串首字母转为小写<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;Hello World! Man.&#x27;</span></span><br><span class="line"><span class="comment">// 返回 hello world! man.</span></span><br><span class="line">str.replace(<span class="regexp">/\s([^\s])/g</span>, <span class="function"><span class="params">word</span> =&gt;</span> (<span class="string">&#x27; &#x27;</span> + word.toLocaleLowerCase()))</span><br></pre></td></tr></table></figure> 
+</li>
+</ol>
+</blockquote>
+
   </div>
 </article>
       </div>
