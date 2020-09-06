@@ -321,12 +321,16 @@
 .cursor-pointer {
   cursor: pointer;
 }
+.z-index-2 {
+  z-index: 2;
+}
 html {
   font-size: 16px;
 }
 body {
   background-color: #f2f2f2;
   line-height: 1.5;
+  color: #595959;
 }
 article img {
   max-width: 100%;
@@ -374,12 +378,12 @@ header .header-thumbtack .fa-thumbtack {
 }
 header nav ul.menu>li {
   display: inline-block;
-  padding: 0 1rem;
   position: relative;
 }
 header nav ul.menu>li .nav-a {
   color: rgba(255,255,255,0.8);
   font-size: 1rem;
+  padding: 0 1rem;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -462,6 +466,7 @@ main > div {
   padding: 20px;
   border-radius: 3px;
   box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.2);
+  background-color: #fff;
 }
 header.height-120 + main > div {
   min-height: calc(100vh - 240px);
@@ -679,4 +684,61 @@ pre .javascript .function {
   main .max-w-mian-size {
     max-width: 85rem;
   }
+}
+.posts-div .post-item {
+  box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.15);
+  border-radius: 0.6rem;
+  padding: 1rem;
+  cursor: grab;
+  position: relative;
+  transition: all 0.2s;
+  overflow: hidden;
+  background: #fff;
+}
+.posts-div .post-item + .post-item {
+  margin-top: 20px;
+}
+.posts-div .post-item:hover {
+  color: #f96;
+  box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.3);
+  transform: translateY(-0.5rem);
+}
+.posts-div .post-item:hover .post-item-title > a::before {
+  width: 100%;
+}
+.posts-div .post-item .post-item-title > a {
+  color: #06c;
+  text-decoration: none;
+  line-height: 2rem;
+  padding-bottom: 0.25rem;
+  font-weight: bold;
+  position: relative;
+}
+.posts-div .post-item .post-item-title > a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  width: 0;
+  border-bottom: 2px solid #06c;
+  transition: width 0.2s;
+  border-radius: 1px;
+}
+.posts-div .post-item::before {
+  content: '';
+  position: absolute;
+  border-color: #f96;
+  border-style: solid;
+  border-left-width: 3rem;
+  border-bottom-width: 3rem;
+  border-right: none;
+  border-top: none;
+  border-radius: 50%;
+  right: -3rem;
+  top: -3rem;
+  transition: right 0.2s, top 0.2s;
+}
+.posts-div .post-item:hover::before {
+  right: -1.5rem;
+  top: -1.5rem;
 }

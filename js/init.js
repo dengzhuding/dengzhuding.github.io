@@ -57,11 +57,11 @@ const timers = {
 
 // 设置header class
 const setHeaderClass = () => {
-  console.log('main scroll.')
+  // console.log('main scroll.')
   const top = window.scrollY;
   const toBottomHeight = document.documentElement.scrollHeight - Math.min(document.body.clientHeight, document.documentElement.clientHeight) - document.documentElement.scrollTop;
   if (top && toBottomHeight <= 80) {
-    console.log(toBottomHeight)
+    // console.log(toBottomHeight)
     return
   }
   // position: static;不做计算
