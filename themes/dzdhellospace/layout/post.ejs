@@ -2,8 +2,26 @@
   <div>
     <h2><%= page.title %></h2>
   </div>
+  <div class="categories-div">
+    <span>分类</span>
+    <%- list_categories(page.categories, {
+      class: 'category-item',
+      show_count: false,
+      style: 'list'
+    }) %>
+  </div>
+  <div class="tags-div">
+    <span>标签</span>
+    <%- list_categories(page.categories, {
+      class: 'tag-item',
+      show_count: false,
+    }) %>
+  </div>
   <div>
-    <span><%- date(page.date, "YYYY-MM-DD")%></span>
+    <span>创建日期：</span>
+    <span class="post-time"><%- date(page.date, "YYYY-MM-DD hh:hh") %></span>
+    <span>最近更新：</span>
+    <span class="post-time"><%- date(page.upfated, "YYYY-MM-DD hh:mm") %></span>
   </div>
   <div>
     <%- page.content %>

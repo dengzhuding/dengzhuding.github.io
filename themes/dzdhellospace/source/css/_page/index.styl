@@ -1,0 +1,63 @@
+.posts-div {
+  .post-item {
+    // color: #CC6600;
+    box-shadow: 4px 4px 8px 0px rgba(0 0 0 0.15);
+    border-radius: 0.6rem;
+    padding: 1rem;
+    cursor: grab;
+    position: relative;
+    transition: all 0.2s;
+    overflow: hidden;
+    background: white;
+    & + .post-item {
+      margin-top: 20px;
+    }
+    &:hover {
+      color: #f96;
+      box-shadow: 4px 4px 8px 0px rgba(0 0 0 0.3);
+      transform: translateY(-0.5rem);
+      .post-item-title > a::before {
+        width: 100%;
+      }
+    }
+    .post-item-title > a {
+      color: #0066CC;
+      text-decoration: none;
+      line-height: 2rem;
+      padding-bottom: 0.25rem;
+      font-weight: bold;
+      position: relative;
+      &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          display: inline-block;
+          width: 0;
+          border-bottom: 2px solid #06c;
+          transition: width .2s;
+          border-radius: 1px;
+      }
+      :hover {
+      }
+    }
+  }
+  .post-item::before {
+    content: '';
+    position: absolute;
+    border-color: #f96;
+    // border-color: white;
+    border-style: solid;
+    border-left-width: 3rem;
+    border-bottom-width: 3rem;
+    border-right: none;
+    border-top: none;
+    border-radius: 50%;
+    right: -3rem;
+    top: -3rem;
+    transition: right .2s, top .2s;
+  }
+  .post-item:hover::before {
+    right: -1.5rem;
+    top: -1.5rem;
+  }
+}

@@ -1,8 +1,9 @@
 <% if (page.total > 1) { %>
   <nav>
     <%- paginator({
-      prev_text: "&laquo; Prev",
-      next_text: "Next &laquo;"
+      prev_text: '<i class="fa fa-angle-left"></i>',
+      next_text: '<i class="fa fa-angle-right"></i>',
+      escape: false
     }) %>
   </nav>
 <% } %>
