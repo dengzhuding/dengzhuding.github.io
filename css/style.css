@@ -213,6 +213,9 @@
   display: flex;
   align-items: center;
 }
+.display-flex.item-end {
+  justify-content: flex-end;
+}
 .display-flex.item-center {
   justify-content: center;
 }
@@ -359,6 +362,7 @@ html {
 }
 body {
   background-color: #f2f2f2;
+  font-family: "Microsoft YaHei";
   line-height: 1.5;
   color: #595959;
 }
@@ -496,13 +500,13 @@ main > div {
   border-radius: 3px;
 }
 header.height-120 + main > div {
-  min-height: calc(100vh - 240px);
+  min-height: calc(100vh - 232px);
 }
 header.height-60 + main > div {
-  min-height: calc(100vh - 180px);
+  min-height: calc(100vh - 172px);
 }
 header.height-40 + main > div {
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 152px);
 }
 footer {
   height: 40px;
@@ -512,7 +516,6 @@ footer {
 pre,
 .highlight {
   background: #2d2d2d;
-  margin: 0 -20px;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;
@@ -537,6 +540,7 @@ code {
   background: color-background;
   text-shadow: 0 1px #fff;
   padding: 0 0.3em;
+  word-break: break-all;
 }
 pre code {
   background: none;

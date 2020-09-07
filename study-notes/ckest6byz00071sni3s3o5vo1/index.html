@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  
+    <title>使用百度统计显示网站访问数据[dzd]</title>
+  
+  <!-- <title>使用百度统计显示网站访问数据[dzd]</title> -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- 字体图标 -->
+  <script src="https://kit.fontawesome.com/895a2e3e9e.js" crossorigin="anonymous" async></script>
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<meta name="generator" content="Hexo 5.0.2"></head>
+<body>
+  <div class="content-main-div min-vh-100 bg-line-type1">
+    <header class="sticky static height-120 top-0 width-percent-100 z-index-2">
+  <div class="display-flex height-100- item-space-between max-w-mian-size margin-center">
+    <div class="mg-l-rem-2 display-flex shrink-0 height-100-">
+      <span class="logo flex-end"></span>
+      <span class="color-white logo-text flex-end">DZD-HELLO</span>
+    </div>
+    <nav class="grow-1 pd-l-60 relative z-index-2">
+      <ul class="menu mg-0 pd-0">
+        
+        <li class="">
+          <a class="nav-a" href="/" >Home</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/archives" >Archives</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/bookmarks/bookmarks_2020_8_24" >Bookmarks</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/notes/index" >Notes</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/about/me" >About</a>
+        </li>
+        
+      </ul>
+    </nav>
+    <i class="nav-show-bar mg-r-rem-2 fas fa-bars"></i>
+    <span class="mg-r-rem-2 display-none">here is header.</span>
+    <div class="absolute header-thumbtack cursor-pointer color-black-2">
+      <span>
+        <i class="absolute fa-thumbtack fas"></i>
+      </span>
+    </div>
+  </div>
+</header>
+    <main class="mg-b-20 mg-t-20">
+      <div class="max-w-mian-size margin-center bg-white--5 pd--1">
+        <article>
+  <div>
+    <h2>使用百度统计显示网站访问数据</h2>
+  </div>
+  <div class="categories-div">
+    <span>分类</span>
+    <ul class="category-item-list"><li class="category-item-list-item"><a class="category-item-list-link" href="/categories/study-notes/">study notes</a></li></ul>
+  </div>
+  <div class="tags-div">
+    <span>标签</span>
+    <ul class="tag-item-list" itemprop="keywords"><li class="tag-item-list-item"><a class="tag-item-list-link" href="/tags/baidu/" rel="tag">baidu</a></li><li class="tag-item-list-item"><a class="tag-item-list-link" href="/tags/data/" rel="tag">data</a></li></ul>
+  </div>
+  <div>
+    <span>创建日期：</span>
+    <span class="post-time">2020-09-07 10:10</span>
+    <span>最近更新：</span>
+    <span class="post-time">2020-09-08 01:38</span>
+  </div>
+  <div>
+    <h2 id="一、准备阶段"><a href="#一、准备阶段" class="headerlink" title="一、准备阶段"></a>一、准备阶段</h2><ol>
+<li>用百度账号登录<a target="_blank" rel="noopener" href="https://tongji.baidu.com/">百度统计</a>，建立一个应用，按照官方教程埋码直到能查看网站访问数据<blockquote>
+<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t1-a.png" class="" title="新建网站" alt="新建网站">
+<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t1-b.png" class="" title="插入代码" alt="插入代码">
+<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t1-c.png" class="" title="查看统计" alt="查看统计"></blockquote>
+</li>
+<li>用百度账号登录<a target="_blank" rel="noopener" href="http://developer.baidu.com/">百度开发者中心</a>，同样【创建工程】，创建完了在 <strong>* 基本信息 *</strong>模块可以看到2个参数：API Key - {CLIENT_ID}，Secret Key - {CLIENT_SECRET}；在【安全设置】页配置授权回调页面，也就是第3个参数{REDIRECT_URI}<blockquote>
+<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t2-a.png" class="" title="工程基本信息" alt="工程基本信息">
+<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t1-b.png" class="" title="工程安全设置" alt="工程安全设置">
+</blockquote>
+</li>
+</ol>
+<h2 id="二、以下操作全部基于下图-2-1实现"><a href="#二、以下操作全部基于下图-2-1实现" class="headerlink" title="二、以下操作全部基于下图-2.1实现"></a>二、以下操作全部基于下图-2.1实现</h2><blockquote>
+<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t3-a.png" class="" title="图 2.1 接入方法" alt="图 2.1 接入方法">
+</blockquote>
+<ol>
+<li><p>如果 <strong>* 准备阶段 *</strong> 步骤已完成，可获得下面3个参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &#x2F;&#x2F; API Key - 开发者工程key</span><br><span class="line">  client_id: Cxxxxxxxxxxxxx5,</span><br><span class="line">  &#x2F;&#x2F; Secret Key - 开发者密钥</span><br><span class="line">  client_secret: uxxxxxxxxxxxxxxxG,</span><br><span class="line">  &#x2F;&#x2F; 登录重定向地址 - 开发者配置</span><br><span class="line">  redirect_uri: https:&#x2F;&#x2F;www.dengzhuding.site</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>浏览器输入一下地址，用百度账号登录，得到 <code>&#123;code&#125; = bxxxxxxxxxxxxxxxxxxxxxxx7</code></p>
+<p><code>https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&amp;client_id=Cxxxxxxxxxxxxx5&amp;redirect_uri=https://dengzhuding.site&amp;scope=basic&amp;display=popup</code></p>
+<blockquote>
+<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t3-b.png" class="" title="第三方登录页" alt="第三方登录页"> 
+</blockquote>
+<p><strong>重定向后的地址为：</strong><code>https://www.dengzhuding.site/?code=bxxxxxxxxxxxxxxxxxxxxxxx7</code></p>
+<blockquote>
+<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t3-c.png" class="" title="登录完成" alt="登录完成"> 
+</blockquote>
+</li>
+<li><p>通过code, client_id, client_secret, 及redirect_uri参数，换取ACCESS_TOKEN</p>
+<p><code>http://openapi.baidu.com/oauth/2.0/token?grant_type=authorization_code&amp;code=bxxxxxxxxxxxxxxxxxxxxxxx7&amp;client_id=Cxxxxxxxxxxxxx5&amp;client_secret=uxxxxxxxxxxxxxxxG&amp;redirect_uri=https://www.dengzhuding.site</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; return</span><br><span class="line">&#123;</span><br><span class="line">  &quot;expires_in&quot;: 2592000,</span><br><span class="line">  &quot;refresh_token&quot;: &quot;122.yyyyyyyy.CwR_uQ&quot;,</span><br><span class="line">  &quot;access_token&quot;: &quot;121.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.F9-Dcg&quot;,</span><br><span class="line">  &quot;session_secret&quot;: &quot;&quot;,</span><br><span class="line">  &quot;session_key&quot;: &quot;&quot;,</span><br><span class="line">  &quot;scope&quot;: &quot;basic&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用百度统计API，这里可使用<em>postman</em> 或者<a target="_blank" rel="noopener" href="https://tongji.baidu.com/api/debug/#">在线调试工具</a>调试接口</p>
+<p><code>https://openapi.baidu.com/rest/2.0/tongji/config/getSiteList?access_token=121.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.F9-Dcg</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;list&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;site_id&quot;: 15798554,</span><br><span class="line">      &quot;domain&quot;: &quot;dengzhuding.site&quot;,</span><br><span class="line">      &quot;status&quot;: 0,</span><br><span class="line">      &quot;create_time&quot;: &quot;2020-09-07 11:15:11&quot;,</span><br><span class="line">      &quot;sub_dir_list&quot;: []</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="三、网站数据应用"><a href="#三、网站数据应用" class="headerlink" title="三、网站数据应用"></a>三、网站数据应用</h2><blockquote>
+<p>没想好</p>
+</blockquote>
+
+  </div>
+</article>
+      </div>
+    </main>
+    <footer class="bg-white--3 color-black-1 font--75">
+  <div class="display-flex item-center max-w-mian-size margin-center height-100-">
+    <p class="mg-0 nowrap"> © dzd</p>
+  </div>
+</footer>
+  </div>
+  
+<script src="/js/init.js"></script>
+
+</body>
+</html>
