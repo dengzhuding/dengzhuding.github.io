@@ -6,7 +6,7 @@ tags:
 - docker
 - jenkins
 - vue
-excerpt: 我是摘要。。。。。。。
+excerpt: 使用虚拟机模拟主机运行docker服务，启用Jenkins实现自动pull代码、构建，并部署nginx网站
 ---
 
 

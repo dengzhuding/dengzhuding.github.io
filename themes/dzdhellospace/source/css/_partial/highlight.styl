@@ -21,7 +21,7 @@ font-mono = "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace
 
 $code-block
   background: highlight-background
-  margin: 0 article-padding * -1
+  // margin: 0 article-padding * -1
   padding: 15px article-padding
   border-style: solid
   border-color: color-border
@@ -42,6 +42,7 @@ $line-numbers
     background: color-background
     text-shadow: 0 1px #fff
     padding: 0 0.3em
+    word-break: break-all;
   pre
     @extend $code-block
     code

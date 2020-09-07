@@ -7,11 +7,11 @@
     <div class="post-item-excerpt">
       <%- post.excerpt || '暂无摘要' %>
     </div>
-    <div class="post-item-date">
-      <span>创建日期：</span>
-      <span class="post-time"><%- date(post.date, "YYYY-MM-DD hh:hh") %></span>
-      <span>最近更新：</span>
-      <span class="post-time"><%- date(post.upfated, "YYYY-MM-DD hh:mm") %></span>
+    <div class="post-item-date display-flex font--75 item-end post-item-date">
+      <span class="color-black-2 shrink-0">创建日期：</span>
+      <span class="ellipsis post-time"><%- date(post.date, "YYYY-MM-DD hh:hh") %></span>
+      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
+      <span class="ellipsis post-time"><%- date(post.upfated, "YYYY-MM-DD hh:mm") %></span>
     </div>
   </article>
   <% })%>
