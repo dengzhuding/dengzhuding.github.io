@@ -4,7 +4,7 @@
       <span class="logo flex-end"></span>
       <span class="color-white logo-text flex-end"><%= config.logoText%></span>
     </div>
-    <nav class="grow-1 pd-l-60 relative">
+    <nav class="grow-1 pd-l-60 relative z-index-2">
       <ul class="menu mg-0 pd-0">
         <% for (name in theme.menu) { %>
         <li class="<%- is_current(theme.menu[name]) ? 'active' : '' %>">

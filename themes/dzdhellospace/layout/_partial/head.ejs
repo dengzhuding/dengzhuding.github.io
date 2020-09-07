@@ -1,8 +1,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-  <title><%= config.title %></title>
+  <% if(is_page() || is_post()) { %>
+    <title><%= (page.title || config.title) + config.siteTag %></title>
+  <% } else { %>
+    <title><%= config.title %></title>
+  <% } %>
+  <!-- <title><%= (page.title || config.title) + config.siteTag %></title> -->
   <%- css('css/normalize.css') %>
   <%- css('css/style.css') %>
-  <script src="https://kit.fontawesome.com/895a2e3e9e.js" crossorigin="anonymous"></script>
+  <!-- 字体图标 -->
+  <script src="https://kit.fontawesome.com/895a2e3e9e.js" crossorigin="anonymous" async></script>
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
 </head>
