@@ -112,6 +112,9 @@
 .pd-0 {
   padding: 0;
 }
+.pd--1 {
+  padding: 1rem;
+}
 .pd-20 {
   padding: 20px;
 }
@@ -292,11 +295,38 @@
 .color-black-3 {
   color: #999;
 }
+.font--75 {
+  font-size: 0.75rem;
+}
+.font-1 {
+  font-size: 1rem;
+}
+.font-1-25 {
+  font-size: 1.25rem;
+}
+.font-1-5 {
+  font-size: 1.5rem;
+}
+.font-2 {
+  font-size: 2rem;
+}
 .bg-transparent {
   background: transparent;
 }
 .bg-white {
   background: #fff;
+}
+.bg-line-type1 {
+  background: linear-gradient(0.25turn, rgba(63,135,166,0.5), #ebf8e1, rgba(246,157,60,0.5));
+}
+.bg-white--3 {
+  background: rgba(255,255,255,0.3);
+}
+.bg-white--5 {
+  background: rgba(255,255,255,0.5);
+}
+.bg-white--8 {
+  background: rgba(255,255,255,0.8);
 }
 .opacity {
   opacity: 0;
@@ -463,10 +493,7 @@ header:hover .logo {
   border-radius: 1rem;
 }
 main > div {
-  padding: 20px;
   border-radius: 3px;
-  box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.2);
-  background-color: #fff;
 }
 header.height-120 + main > div {
   min-height: calc(100vh - 240px);
