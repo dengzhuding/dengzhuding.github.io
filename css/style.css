@@ -695,6 +695,9 @@ pre .javascript .function {
     display: block !important;
     margin: 1rem;
   }
+  header nav .menu > li > a {
+    display: block;
+  }
   header nav .menu.height-0 {
     box-shadow: none;
   }

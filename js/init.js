@@ -32,6 +32,8 @@ const widthMediaQueryObj = {
     // 大屏幕
     if (!event.matches) {
       _menu.classList.remove('height-0', widthMediaQueryObj.menuHeightClass || 'xxxx');
+    } else if (!_menu.clientHeight && !_menu.classList.contains('height-0')) {
+      _menu.classList.add('height-0');
     }
     console.log('event.matches', event.matches);
   },
