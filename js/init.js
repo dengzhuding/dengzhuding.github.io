@@ -91,9 +91,15 @@ const mainScrollEvent = event => {
 const initListeners = () => {
   /* Feature detection */
   /*特诊检测*/
-  var passiveIfSupported = false;
+  // 是否 listener 永远不会调用 preventDefault()
+  let passiveIfSupported = false;
+  // 是否 listener 在添加之后最多只调用一次
+  let onceSupported = false;
   try {
-    window.addEventListener("test", null, Object.defineProperty({}, "passive", { get: function() { passiveIfSupported = { passive: true }; } }));
+    let testoOption = {};
+    Object.defineProperty(testoOption, "passive", { get: function() { passiveIfSupported = { passive: true }; } })
+    Object.defineProperty(testoOption, "once", { get: function() { onceSupported = { once: true }; } })
+    window.addEventListener("test", null, testoOption);
   } catch(err) {}
   // scroll
   window.addEventListener('scroll', mainScrollEvent, passiveIfSupported);
@@ -116,30 +122,44 @@ const initListeners = () => {
   widthMediaQueryObj.addListener();
 
   const _navShowBarIcon = document.querySelector('header .nav-show-bar');
-  _navShowBarIcon.addEventListener('click', (event) => {
+  // 切换导航栏状态，hidden-是否设置隐藏
+  const navShowBarClickHander = (event, hidden) => {
     if (widthMediaQueryObj && widthMediaQueryObj.value && widthMediaQueryObj.value.matches) {
-      if (_menu.clientHeight) {
+      if (_menu.clientHeight || hidden) {
         _menu.classList.remove(widthMediaQueryObj.menuHeightClass || 'xxxx');
         _menu.classList.add('height-0');
+        if (!onceSupported) {
+          document.removeEventListener('click', windowClickHanderToggle, onceSupported)
+        }
       } else {
         _menu.classList.remove('height-0');
         _menu.classList.add(widthMediaQueryObj.menuHeightClass || 'xxxx');
+        // 添加单次点击事件
+        event.stopPropagation();
+        document.addEventListener('click', windowClickHanderToggle, onceSupported)
       }
     } else {
       _menu.classList.remove('height-0', widthMediaQueryObj.menuHeightClass || 'xxxx');
+      if (!onceSupported) {
+        document.removeEventListener('click', windowClickHanderToggle, onceSupported)
+      }
     }
-    console.log('click')
-  })
+  }
+  // document单次点击
+  const windowClickHanderToggle = (event) => {
+    console.log('document click.')
+    navShowBarClickHander(null, true);
+  }
+  _navShowBarIcon.addEventListener('click', navShowBarClickHander)
 }
 
-// onLoad初始化
-const load = () => {
-  // main标签scroll事件处理
-  initListeners();
-}
 const unload = () => {
   // 移除媒体查询监听
   widthMediaQueryObj.removeListener();
 }
-window.onload = load;
+// window.onload = load;
+document.addEventListener('DOMContentLoaded', (event) => {
+  // main标签scroll事件处理
+  initListeners();
+});
 window.unload = unload;

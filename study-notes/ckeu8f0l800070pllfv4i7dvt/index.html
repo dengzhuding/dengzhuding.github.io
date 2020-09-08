@@ -28,7 +28,7 @@
 <meta name="generator" content="Hexo 5.0.2"></head>
 <body>
   <div class="content-main-div min-vh-100 bg-line-type1">
-    <header class="sticky static height-120 top-0 width-percent-100 z-index-2">
+    <header class="sticky height-120 top-0 width-percent-100 z-index-2">
   <div class="display-flex height-100- item-space-between max-w-mian-size margin-center">
     <div class="mg-l-rem-2 display-flex shrink-0 height-100-">
       <span class="logo flex-end"></span>
@@ -61,7 +61,7 @@
     </nav>
     <i class="nav-show-bar mg-r-rem-2 fas fa-bars"></i>
     <span class="mg-r-rem-2 display-none">here is header.</span>
-    <div class="absolute header-thumbtack cursor-pointer color-black-2">
+    <div class="absolute header-thumbtack cursor-pointer color-black-2 active">
       <span>
         <i class="absolute fa-thumbtack fas"></i>
       </span>
@@ -86,23 +86,23 @@
     <span>创建日期：</span>
     <span class="post-time">2020-09-07 10:10</span>
     <span>最近更新：</span>
-    <span class="post-time">2020-09-08 01:38</span>
+    <span class="post-time">2020-09-09 01:32</span>
   </div>
   <div>
     <h2 id="一、准备阶段"><a href="#一、准备阶段" class="headerlink" title="一、准备阶段"></a>一、准备阶段</h2><ol>
 <li>用百度账号登录<a target="_blank" rel="noopener" href="https://tongji.baidu.com/">百度统计</a>，建立一个应用，按照官方教程埋码直到能查看网站访问数据<blockquote>
-<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t1-a.png" class="" title="新建网站" alt="新建网站">
-<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t1-b.png" class="" title="插入代码" alt="插入代码">
-<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t1-c.png" class="" title="查看统计" alt="查看统计"></blockquote>
+<img src="/study-notes/ckeu8f0l800070pllfv4i7dvt/t1-a.png" class="" title="新建网站" alt="新建网站">
+<img src="/study-notes/ckeu8f0l800070pllfv4i7dvt/t1-b.png" class="" title="插入代码" alt="插入代码">
+<img src="/study-notes/ckeu8f0l800070pllfv4i7dvt/t1-c.png" class="" title="查看统计" alt="查看统计"></blockquote>
 </li>
 <li>用百度账号登录<a target="_blank" rel="noopener" href="http://developer.baidu.com/">百度开发者中心</a>，同样【创建工程】，创建完了在 <strong>* 基本信息 *</strong>模块可以看到2个参数：API Key - {CLIENT_ID}，Secret Key - {CLIENT_SECRET}；在【安全设置】页配置授权回调页面，也就是第3个参数{REDIRECT_URI}<blockquote>
-<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t2-a.png" class="" title="工程基本信息" alt="工程基本信息">
-<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t1-b.png" class="" title="工程安全设置" alt="工程安全设置">
+<img src="/study-notes/ckeu8f0l800070pllfv4i7dvt/t2-a.png" class="" title="工程基本信息" alt="工程基本信息">
+<img src="/study-notes/ckeu8f0l800070pllfv4i7dvt/t1-b.png" class="" title="工程安全设置" alt="工程安全设置">
 </blockquote>
 </li>
 </ol>
 <h2 id="二、以下操作全部基于下图-2-1实现"><a href="#二、以下操作全部基于下图-2-1实现" class="headerlink" title="二、以下操作全部基于下图-2.1实现"></a>二、以下操作全部基于下图-2.1实现</h2><blockquote>
-<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t3-a.png" class="" title="图 2.1 接入方法" alt="图 2.1 接入方法">
+<img src="/study-notes/ckeu8f0l800070pllfv4i7dvt/t3-a.png" class="" title="图 2.1 接入方法" alt="图 2.1 接入方法">
 </blockquote>
 <ol>
 <li><p>如果 <strong>* 准备阶段 *</strong> 步骤已完成，可获得下面3个参数</p>
@@ -110,11 +110,11 @@
 <li><p>浏览器输入一下地址，用百度账号登录，得到 <code>&#123;code&#125; = bxxxxxxxxxxxxxxxxxxxxxxx7</code></p>
 <p><code>https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&amp;client_id=Cxxxxxxxxxxxxx5&amp;redirect_uri=https://dengzhuding.site&amp;scope=basic&amp;display=popup</code></p>
 <blockquote>
-<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t3-b.png" class="" title="第三方登录页" alt="第三方登录页"> 
+<img src="/study-notes/ckeu8f0l800070pllfv4i7dvt/t3-b.png" class="" title="第三方登录页" alt="第三方登录页"> 
 </blockquote>
 <p><strong>重定向后的地址为：</strong><code>https://www.dengzhuding.site/?code=bxxxxxxxxxxxxxxxxxxxxxxx7</code></p>
 <blockquote>
-<img src="/study-notes/ckest6byz00071sni3s3o5vo1/t3-c.png" class="" title="登录完成" alt="登录完成"> 
+<img src="/study-notes/ckeu8f0l800070pllfv4i7dvt/t3-c.png" class="" title="登录完成" alt="登录完成"> 
 </blockquote>
 </li>
 <li><p>通过code, client_id, client_secret, 及redirect_uri参数，换取ACCESS_TOKEN</p>
