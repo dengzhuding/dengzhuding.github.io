@@ -86,7 +86,7 @@
     <span>创建日期：</span>
     <span class="post-time">2020-09-03 10:10</span>
     <span>最近更新：</span>
-    <span class="post-time">2020-09-09 01:32</span>
+    <span class="post-time">2020-09-10 12:15</span>
   </div>
   <div>
     <hr>
@@ -95,13 +95,18 @@
 </ul>
 <blockquote>
 <ol>
-<li>从表格复制单行数据格式为JSON数组<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// copyStr-从excel复制的文本</span></span><br><span class="line"><span class="keyword">let</span> copyStr = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment">// 返回 Object</span></span><br><span class="line">copyStr.replace(<span class="regexp">/\n/g</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="regexp">/\s+/g</span>, <span class="string">&#x27;,&#x27;</span>).replace(<span class="regexp">/\&quot;/g</span>, <span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;,&#x27;</span>).map(<span class="function"><span class="params">strItem</span> =&gt;</span> (&#123;<span class="attr">label</span>: strItem&#125;))</span><br></pre></td></tr></table></figure>
+<li>从表格复制单行数据格式为JSON数组<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// copyStr-从excel复制的文本</span>
+<span class="token keyword">let</span> copyStr <span class="token operator">=</span> <span class="token string">''</span>
+<span class="token comment">// 返回 Object</span>
+copyStr<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\n/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\s+/g</span><span class="token punctuation">,</span> <span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\"/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">strItem</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>label<span class="token operator">:</span> strItem<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 </blockquote>
 <blockquote>
 <ol start="2">
-<li>空格分隔的字符串首字母转为小写<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;Hello World! Man.&#x27;</span></span><br><span class="line"><span class="comment">// 返回 hello world! man.</span></span><br><span class="line">str.replace(<span class="regexp">/\s([^\s])/g</span>, <span class="function"><span class="params">word</span> =&gt;</span> (<span class="string">&#x27; &#x27;</span> + word.toLocaleLowerCase()))</span><br></pre></td></tr></table></figure> 
+<li>空格分隔的字符串首字母转为小写<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'Hello World! Man.'</span>
+<span class="token comment">// 返回 hello world! man.</span>
+str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\s([^\s])/g</span><span class="token punctuation">,</span> <span class="token parameter">word</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token string">' '</span> <span class="token operator">+</span> word<span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre> 
 </li>
 </ol>
 </blockquote>
