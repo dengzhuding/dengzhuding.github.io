@@ -347,3 +347,22 @@ template {
 [hidden] {
   display: none;
 }
+
+/*
+* customer set
+*/
+p {
+  margin: 0;
+}
+code {
+  word-break: break-all;
+}
+blockquote {
+  border-left: 0.25rem solid #009688;
+  padding: 0.5rem 1rem;
+  word-break: break-word;
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin: 0 0 0 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+}
