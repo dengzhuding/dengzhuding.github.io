@@ -87,30 +87,38 @@
     <span>创建日期：</span>
     <span class="post-time">2020-09-03 10:10</span>
     <span>最近更新：</span>
-    <span class="post-time">2020-09-10 12:29</span>
+    <span class="post-time">2020-09-11 04:56</span>
   </div>
   <div>
     <hr>
-<ul>
-<li>2020-09-03</li>
-</ul>
 <blockquote>
+<p>2020-09-10</p>
+</blockquote>
 <ol>
-<li>从表格复制单行数据格式为JSON数组<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// copyStr-从excel复制的文本</span>
+<li>计算日期相差天数<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> dateStart <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'2020-09-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> dateEnd <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'2020-09-15'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> difValue <span class="token operator">=</span> <span class="token punctuation">(</span>dateEnd <span class="token operator">-</span> dateStart<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 14</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ol>
+<hr>
+<blockquote>
+<p>2020-09-03</p>
+</blockquote>
+<ol>
+<li><p>从表格复制单行数据格式为JSON数组</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// copyStr-从excel复制的文本</span>
 <span class="token keyword">let</span> copyStr <span class="token operator">=</span> <span class="token string">''</span>
 <span class="token comment">// 返回 Object</span>
 copyStr<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\n/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\s+/g</span><span class="token punctuation">,</span> <span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\"/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">strItem</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>label<span class="token operator">:</span> strItem<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>空格分隔的字符串首字母转为小写<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'Hello World! Man.'</span>
+<li><p>空格分隔的字符串首字母转为小写</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'Hello World! Man.'</span>
 <span class="token comment">// 返回 hello world! man.</span>
-str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\s([^\s])/g</span><span class="token punctuation">,</span> <span class="token parameter">word</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token string">' '</span> <span class="token operator">+</span> word<span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre> 
+str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\s([^\s])/g</span><span class="token punctuation">,</span> <span class="token parameter">word</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token string">' '</span> <span class="token operator">+</span> word<span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 </li>
 </ol>
-</blockquote>
 
   </div>
 </article>
