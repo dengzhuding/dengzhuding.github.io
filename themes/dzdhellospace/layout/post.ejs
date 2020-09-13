@@ -1,4 +1,19 @@
-<article>
+
+<!-- top -->
+<div class="content-toc-div">
+  <div class="article-toc-parent z-index-2">
+    <div>目录：</div>
+    <div class="article-toc-div">
+      <%- toc(page.content, {
+        list_number: false,
+        max_depth: 6,
+        min_depth: 1
+      }) %>
+    </div>
+  </div>
+</div>
+<!-- content -->
+<article class="relative">
   <div>
     <h2><%= page.title %></h2>
   </div>
@@ -23,7 +38,7 @@
     <span>最近更新：</span>
     <span class="post-time"><%- date(page.upfated, "YYYY-MM-DD hh:mm") %></span>
   </div>
-  <div>
+  <div class="content-div">
     <%- page.content %>
   </div>
 </article>

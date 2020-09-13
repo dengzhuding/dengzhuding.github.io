@@ -1,10 +1,10 @@
-<header class="sticky height-120 top-0 width-percent-100 z-index-2">
+<header class="sticky height-120 top-0 width-percent-100 z-index-99">
   <div class="display-flex height-100- item-space-between max-w-mian-size margin-center">
     <div class="mg-l-rem-2 display-flex shrink-0 height-100-">
       <span class="logo flex-end"></span>
       <span class="color-white logo-text flex-end"><%= config.logoText%></span>
     </div>
-    <nav class="grow-1 pd-l-60 relative z-index-2">
+    <nav class="grow-1 pd-l-60 relative">
       <ul class="menu mg-0 pd-0">
         <% for (name in theme.menu) { %>
         <li class="<%- is_current(theme.menu[name]) ? 'active' : '' %>">
@@ -13,12 +13,16 @@
         <% } %>
       </ul>
     </nav>
-    <i class="nav-show-bar mg-r-rem-2 fas fa-bars"></i>
-    <span class="mg-r-rem-2 display-none">here is header.</span>
+    <div class="nav-show-bar">
+      <i class="fas fa-bars"></i>
+    </div>
+    
+    <!--
     <div class="absolute header-thumbtack cursor-pointer color-black-2 active">
       <span>
         <i class="absolute fa-thumbtack fas"></i>
       </span>
     </div>
+    -->
   </div>
 </header>

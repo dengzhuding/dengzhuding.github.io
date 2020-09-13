@@ -366,3 +366,8 @@ blockquote {
   margin: 0 0 0 1.5rem;
   background: rgba(255, 255, 255, 0.5);
 }
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

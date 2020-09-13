@@ -1,0 +1,70 @@
+// post styl
+
+.content-toc-div {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  .article-toc-parent {
+    position: sticky;
+    top: 0;
+    transition: top 0.2s;
+    padding: 1rem 0;
+    background: white;
+    max-width: 20rem;
+    box-shadow: -1px 1px 6px 0px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 0;
+    .article-toc-div {
+      max-height: 500px;
+      overflow: auto;
+      .toc-item > .toc-link {
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        text-overflow: ellipsis;
+        color: #3366CC;
+        text-decoration: none;
+        padding: 0.2rem 1rem;
+        text-decoration: none;
+        padding: 0.2rem 1rem;
+        transition: background .2s, color .2s;
+        &:hover {
+          background: #1976d2;
+          color: white;
+        }
+      }
+      .toc > .toc-item > .toc-child > .toc-item {
+        & > .toc-link  {
+          padding-left: 2rem;
+        }
+        & > .toc-child > .toc-item {
+          & > .toc-link  {
+            padding-left: 3rem;
+          }
+          & > .toc-child > .toc-item {
+            & > .toc-link  {
+              padding-left: 4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+header {
+  &.height-40 + main {
+    .content-toc-div .article-toc-parent {
+      top: 40px;
+    }
+  }
+  &.height-120 + main {
+    .content-toc-div .article-toc-parent {
+      top: 120px !important;
+    }
+  }
+  &.static + main {
+    .content-toc-div .article-toc-parent {
+      top: 0 !important;
+    }
+  }
+}
