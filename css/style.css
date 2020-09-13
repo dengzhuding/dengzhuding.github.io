@@ -360,6 +360,9 @@
 .z-index-2 {
   z-index: 2;
 }
+.z-index-99 {
+  z-index: 99;
+}
 html {
   font-size: 16px;
 }
@@ -467,11 +470,16 @@ header .nav-show-bar {
   display: none;
   font-size: 1.5rem;
   color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0);
   transition: color 0.2s;
   cursor: pointer;
+  height: 100%;
+  padding: 0 2rem;
+  align-items: center;
 }
 header .nav-show-bar:hover {
   color: #fff;
+  background: rgba(255,255,255,0.2);
 }
 header.height-40 .logo {
   width: 40px;
@@ -479,23 +487,19 @@ header.height-40 .logo {
   background-size: cover;
   border-radius: 50%;
 }
-header.height-120,
-header:hover {
+header.height-120 {
   height: 120px;
 }
-header.height-120 .header-thumbtack,
-header:hover .header-thumbtack {
+header.height-120 .header-thumbtack {
   border-width: 2rem;
   border-bottom-left-radius: 2rem;
 }
-header.height-120 .header-thumbtack .fa-thumbtack,
-header:hover .header-thumbtack .fa-thumbtack {
+header.height-120 .header-thumbtack .fa-thumbtack {
   right: 6px;
   top: 6px;
   font-size: 1rem;
 }
-header.height-120 .logo,
-header:hover .logo {
+header.height-120 .logo {
   width: 133px;
   height: 100px;
   background-size: contain;
@@ -710,7 +714,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
     box-shadow: none;
   }
   header .nav-show-bar {
-    display: block !important;
+    display: flex !important;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -779,4 +783,58 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .posts-div .post-item:hover::before {
   right: -1.5rem;
   top: -1.5rem;
+}
+.content-toc-div {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+.content-toc-div .article-toc-parent {
+  position: sticky;
+  top: 0;
+  transition: top 0.2s;
+  padding: 1rem 0;
+  background: #fff;
+  max-width: 20rem;
+  box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.3);
+  border-bottom-left-radius: 0;
+}
+.content-toc-div .article-toc-parent .article-toc-div {
+  max-height: 500px;
+  overflow: auto;
+}
+.content-toc-div .article-toc-parent .article-toc-div .toc-item > .toc-link {
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  color: #36c;
+  text-decoration: none;
+  padding: 0.2rem 1rem;
+  text-decoration: none;
+  padding: 0.2rem 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.content-toc-div .article-toc-parent .article-toc-div .toc-item > .toc-link:hover {
+  background: #1976d2;
+  color: #fff;
+}
+.content-toc-div .article-toc-parent .article-toc-div .toc > .toc-item > .toc-child > .toc-item > .toc-link {
+  padding-left: 2rem;
+}
+.content-toc-div .article-toc-parent .article-toc-div .toc > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-link {
+  padding-left: 3rem;
+}
+.content-toc-div .article-toc-parent .article-toc-div .toc > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-link {
+  padding-left: 4rem;
+}
+header.height-40 + main .content-toc-div .article-toc-parent {
+  top: 40px;
+}
+header.height-120 + main .content-toc-div .article-toc-parent {
+  top: 120px !important;
+}
+header.static + main .content-toc-div .article-toc-parent {
+  top: 0 !important;
 }

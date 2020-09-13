@@ -80,11 +80,14 @@ const setHeaderClass = () => {
 }
 // window scroll事件
 const mainScrollEvent = event => {
+  // 设置header高度
   setHeaderClass();
   // if (timers.window_scroll) {
   //   window.clearTimeout(timers.window_scroll);
   // }
   // timers.window_scroll = window.setTimeout(setHeaderClass, 50);
+  
+  // 设置文章当前标题位置
 }
 
 // 添加监听
@@ -105,7 +108,7 @@ const initListeners = () => {
   window.addEventListener('scroll', mainScrollEvent, passiveIfSupported);
   // 添加header右上角图标点击事件，是否固定显示header
   const _thumbtack = document.querySelector('header .header-thumbtack');
-  _thumbtack.addEventListener('click', (event) => {
+  _thumbtack && _thumbtack.addEventListener('click', (event) => {
     const curIsActive = _thumbtack.classList.contains('active');
     if (curIsActive) {
       _thumbtack.classList.remove('active');

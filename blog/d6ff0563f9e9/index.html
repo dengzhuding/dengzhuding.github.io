@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  
+    <title>SVG学习笔记--1[dzd]</title>
+  
+  <!-- <title>SVG学习笔记--1[dzd]</title> -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- 字体图标 -->
+  <script src="https://kit.fontawesome.com/895a2e3e9e.js" crossorigin="anonymous" async></script>
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      // hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
+      hm.src = "https://hm.baidu.com/hm.js?64cba5c79d730cff73ae4a75bdb75bf2";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<meta name="generator" content="Hexo 5.0.2"></head>
+<body>
+  <div class="content-main-div min-vh-100 bg-line-type1">
+    <header class="sticky height-120 top-0 width-percent-100 z-index-99">
+  <div class="display-flex height-100- item-space-between max-w-mian-size margin-center">
+    <div class="mg-l-rem-2 display-flex shrink-0 height-100-">
+      <span class="logo flex-end"></span>
+      <span class="color-white logo-text flex-end">DZD-HELLO</span>
+    </div>
+    <nav class="grow-1 pd-l-60 relative">
+      <ul class="menu mg-0 pd-0">
+        
+        <li class="">
+          <a class="nav-a" href="/" >Home</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/archives" >Archives</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/bookmarks/bookmarks_2020_8_24" >Bookmarks</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/notes/index" >Notes</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/about/me" >About</a>
+        </li>
+        
+      </ul>
+    </nav>
+    <div class="nav-show-bar">
+      <i class="fas fa-bars"></i>
+    </div>
+    
+    <!--
+    <div class="absolute header-thumbtack cursor-pointer color-black-2 active">
+      <span>
+        <i class="absolute fa-thumbtack fas"></i>
+      </span>
+    </div>
+    -->
+  </div>
+</header>
+    <main class="mg-b-20 mg-t-20">
+      <div class="max-w-mian-size margin-center bg-white--5 pd--1 relative">
+        
+<!-- top -->
+<div class="content-toc-div">
+  <div class="article-toc-parent z-index-2">
+    <div>目录：</div>
+    <div class="article-toc-div">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2%E5%AE%9E%E4%BE%8B"><span class="toc-text">一、基本图形实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C"><span class="toc-text">实现效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BA%90%E7%A0%81"><span class="toc-text">源码</span></a></li></ol></li></ol>
+    </div>
+  </div>
+</div>
+<!-- content -->
+<article class="relative">
+  <div>
+    <h2>SVG学习笔记--1</h2>
+  </div>
+  <div class="categories-div">
+    <span>分类</span>
+    
+  </div>
+  <div class="tags-div">
+    <span>标签</span>
+    
+  </div>
+  <div>
+    <span>创建日期：</span>
+    <span class="post-time">2020-09-12 01:01</span>
+    <span>最近更新：</span>
+    <span class="post-time">2020-09-14 12:02</span>
+  </div>
+  <div class="content-div">
+    <h3 id="一、基本图形实例"><a href="#一、基本图形实例" class="headerlink" title="一、基本图形实例"></a>一、基本图形实例</h3><blockquote>
+<p>svg属性version-1.0或1.1，xmlns（命名空间，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Namespaces_Crash_Course">参考</a>）- <code>http://www.w3.org/2000/svg</code></p>
+</blockquote>
+<h4 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h4><style>
+  .test-svg-div {
+    margin: 1rem 0;
+    width: 20rem;
+    height: 20rem;
+    background: #666666;
+  }
+</style>
+<div class="test-svg-div">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <rect x="10" y="10" rx="2" ry="2" width="50" height="50" fill="red" stroke="white" stroke-width="2"></rect>
+    <line x1="10" y1="70" x2="60" y2="120" stroke="white"></line>
+    <circle cx="95" cy="35" r="25" stroke="white"></circle>
+    <ellipse cx="180" cy="35" rx="50" ry="25" stroke="white" stroke-width="2" fill="#00aaf2"></ellipse>
+    <polyline points="70 70 130 70 70 130 130 130" stroke="orange" fill="transparent">
+    </polyline><polygon points="200 90, 180 120 220 120" stroke="#00aaf2" fill="white"></polygon>
+    <!-- 大写字母代表相对原点(0, 0)的绝对坐标，小写字母代表相对当前位置移动相对距离 -->
+    <!-- M(a)-移动到坐标点，V(v)-水平位移，H(h)-垂直位移，Z(z)-回到路径起点 -->
+    <path d="M 10 130 L 310 130 v 180 h -300 Z" stroke="white" stroke-width="2" fill="transparent"></path>
+    <!-- C(c)-绘制三次贝塞尔曲线，参数：2个控制点、终点（起点为当前位置点） S(s)-绘制跟前面曲线连接的平滑三次贝塞尔曲线，参数第二个控制点、终点（起点为前面曲线结束的位置点第一个控制点自动设为前一个曲线的第二个控制点的对称点，若前面没有C或S，则起点和第一个控制点均为起点位置） -->
+    <path d="M 10 160 C 10 180, 50 180, 50 160 S 100 140 , 100 160" stroke="#00aaf2" fill="transparent"></path>
+    <path d="M 120 160 S 160 180, 160 160 S 200 160, 200 160" stroke="#00aaf2" fill="transparent"></path>
+    <!-- Q(q)-绘制二次贝塞尔曲线，参数：一个控制点+终点  T(t)-前面为Q或另一个T时，控制点自动生成，参数：终点；前面为其他命令则画出直线 -->
+    <path d="M 10 190 Q 30 220, 50 190 T 90 190" stroke="red" fill="transparent"></path>
+    <path d="M 100 190 T 120 190" stroke="red" fill="transparent"></path>
+    <!-- A(a)-绘制弧形(椭圆的一段线条),参数:2个半径长度(rx,ry)、x轴的旋转角度(-360到360)、弧线跟中心的组成的角度是否大于180°(1或0)、弧线从起点到终点是狗为顺时针方向画弧线(1或0)、终点坐标(x, y) -->
+    <path d="M 10 220 L 20 220 A 20 30 -45 1 0 100 250 h 20" stroke="green" stroke-width="3" fill="white"></path>
+  </svg>
+</div>
+
+<h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><blockquote>
+<p>说明：</p>
+<ul>
+<li>1.大写字母代表相对原点(0, 0)的绝对坐标，小写字母代表相对当前位置移动相对距离</li>
+<li>2.M(a)-移动到坐标点，V(v)-水平位移，H(h)-垂直位移，Z(z)-回到路径起点</li>
+<li>3.C(c)-绘制三次贝塞尔曲线，参数：2个控制点、终点（起点为当前位置点）</li>
+<li>4.S(s)-绘制跟前面曲线连接的平滑三次贝塞尔曲线，参数第二个控制点、终点（起点为前面曲线结束的位置点第一个控制点自动设为前一个曲线的第二个控制点的对称点，若前面没有C或S，则起点和第一个控制点均为起点位置）</li>
+<li>5.Q(q)-绘制二次贝塞尔曲线，参数：一个控制点+终点  T(t)-前面为Q或另一个T时，控制点自动生成，参数：终点；前面为其他命令则画出直线</li>
+<li>6.A(a)-绘制弧形(椭圆的一段线条),参数:2个半径长度(rx,ry)、x轴的旋转角度(-360到360)、弧线跟中心的组成的角度是否大于180°(1或0)、弧线从起点到终点是狗为顺时针方向画弧线(1或0)、终点坐标(x, y)</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.1<span class="token punctuation">"</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2000/svg<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">rx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">ry</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rect</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>line</span> <span class="token attr-name">x1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">y1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>70<span class="token punctuation">"</span></span> <span class="token attr-name">x2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60<span class="token punctuation">"</span></span> <span class="token attr-name">y2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>120<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>line</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>95<span class="token punctuation">"</span></span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>35<span class="token punctuation">"</span></span> <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>25<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>circle</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ellipse</span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>180<span class="token punctuation">"</span></span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>35<span class="token punctuation">"</span></span> <span class="token attr-name">rx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span> <span class="token attr-name">ry</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>25<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#00aaf2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ellipse</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>polyline</span> <span class="token attr-name">points</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>70 70 130 70 70 130 130 130<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>orange<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transparent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>polyline</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>polygon</span> <span class="token attr-name">points</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>200 90, 180 120 220 120<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#00aaf2<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>polygon</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M 10 130 L 310 130 v 180 h -300 Z<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transparent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M 10 160 C 10 180, 50 180, 50 160 S 100 140 , 100 160<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#00aaf2<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transparent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M 120 160 S 160 180, 160 160 S 200 160, 200 160<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#00aaf2<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transparent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M 10 190 Q 30 220, 50 190 T 90 190<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transparent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M 100 190 T 120 190<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>transparent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>M 10 220 L 20 220 A 20 30 -45 1 0 100 250 h 20<span class="token punctuation">"</span></span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>green<span class="token punctuation">"</span></span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>white<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+  </div>
+</article>
+      </div>
+    </main>
+    <footer class="bg-white--3 color-black-1 font--75">
+  <div class="display-flex item-center max-w-mian-size margin-center height-100-">
+    <p class="mg-0 nowrap"> © dzd</p>
+  </div>
+</footer>
+  </div>
+  
+<script src="/js/init.js"></script>
+
+</body>
+</html>
