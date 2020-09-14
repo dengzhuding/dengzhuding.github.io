@@ -190,6 +190,9 @@
 .mg-b-20 {
   margin-bottom: 20px;
 }
+.mg-b-rem-2 {
+  margin-bottom: 2rem;
+}
 .mg-0 {
   margin: 0;
 }
@@ -362,6 +365,12 @@
 }
 .z-index-99 {
   z-index: 99;
+}
+.border-bottom-blue-1 {
+  border-bottom: 1px solid #00aaf2;
+}
+.align {
+  text-align: center;
 }
 html {
   font-size: 16px;
@@ -799,6 +808,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   max-width: 20rem;
   box-shadow: -1px 1px 6px 0px rgba(0,0,0,0.3);
   border-bottom-left-radius: 0;
+  border-radius: 0.3rem;
+  opacity: 0.85;
 }
 .content-toc-div .article-toc-parent .article-toc-div {
   max-height: 500px;
@@ -853,4 +864,36 @@ header.static + main .content-toc-div .article-toc-parent.top-0 {
 }
 .article-title.static > div {
   display: none;
+}
+.category-item-list,
+.category-item-list-child,
+.tag-item-list {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.category-item-list-item,
+.tag-item-list-item {
+  display: inline-block;
+}
+.category-item-list-child::before {
+  content: '>';
+  margin: 0 0.5rem;
+}
+.icon-svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.category-item-list-link {
+  color: #3f87a6;
+}
+.tag-item-list-item {
+  padding: 0 0.5rem;
+  background: #f69d3c;
+  margin-right: 1rem;
+  border-radius: 0.2rem;
+}
+.tag-item-list-item .tag-item-list-link {
+  color: #fff;
 }
