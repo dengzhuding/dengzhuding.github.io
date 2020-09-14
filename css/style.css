@@ -787,7 +787,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .content-toc-div {
   position: absolute;
   right: 0;
-  top: 52px;
+  top: 0;
   height: 100%;
 }
 .content-toc-div .article-toc-parent {
@@ -838,7 +838,7 @@ header.height-120 + main .content-toc-div .article-toc-parent {
   top: 120px !important;
 }
 header.static + main .content-toc-div .article-toc-parent {
-  top: 36px !important;
+  top: 0 !important;
 }
 header.static + main .content-toc-div .article-toc-parent.top-0 {
   top: 0 !important;
