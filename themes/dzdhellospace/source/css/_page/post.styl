@@ -3,7 +3,8 @@
 .content-toc-div {
   position: absolute;
   right: 0;
-  top: 0;
+  // top: 0;
+  top: 52px;
   height: 100%;
   .article-toc-parent {
     position: sticky;
@@ -36,10 +37,12 @@
       .toc > .toc-item > .toc-child > .toc-item {
         & > .toc-link  {
           padding-left: 2rem;
+          font-size: 0.85rem;
         }
         & > .toc-child > .toc-item {
           & > .toc-link  {
             padding-left: 3rem;
+            font-size: 0.75rem;
           }
           & > .toc-child > .toc-item {
             & > .toc-link  {
@@ -64,7 +67,23 @@ header {
   }
   &.static + main {
     .content-toc-div .article-toc-parent {
+      // top: 0 !important;
+      top: 36px !important;
+    }
+    .content-toc-div .article-toc-parent.top-0  {
       top: 0 !important;
     }
+  }
+}
+
+.article-title {
+  position: sticky;
+  top: 0;
+  margin: 0 -1rem;
+  padding-left: 2rem;
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  &.static > div {
+    display: none;
   }
 }
