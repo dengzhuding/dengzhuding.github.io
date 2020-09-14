@@ -29,7 +29,7 @@
 <meta name="generator" content="Hexo 5.0.2"></head>
 <body>
   <div class="content-main-div min-vh-100 bg-line-type1">
-    <header class="sticky height-120 top-0 width-percent-100 z-index-99">
+    <header class="sticky height-120 top-0 width-percent-100 z-index-99 static">
   <div class="display-flex height-100- item-space-between max-w-mian-size margin-center">
     <div class="mg-l-rem-2 display-flex shrink-0 height-100-">
       <span class="logo flex-end"></span>
@@ -77,6 +77,7 @@
       <div class="max-w-mian-size margin-center bg-white--5 pd--1 relative">
         
 <!-- top -->
+
 <div class="content-toc-div">
   <div class="article-toc-parent z-index-2">
     <div>目录：</div>
@@ -85,10 +86,31 @@
     </div>
   </div>
 </div>
+
 <!-- content -->
 <article class="relative">
-  <div>
-    <h2>SVG学习笔记--1</h2>
+  <div class="article-title z-index-2">
+    <h2 class="ellipsis mg-0">SVG学习笔记--1</h2>
+    <div
+      class="absolute cursor-pointer right-0 top-0"
+      onclick="this.parentElement.classList.contains('static') ? this.parentElement.classList.remove('static') : this.parentElement.classList.add('static');document.querySelector('.article-toc-parent').classList.add('top-0');"
+    >
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <defs>
+          <style type="text/css">
+            g:hover {
+              stroke: #00aaf2;
+              stroke-opacity: 0.8;
+            }
+          </style>
+        </defs>
+        <g stroke="white" stroke-width="4" stroke-linecap="round" transform="rotate(45, 18, 18)">
+          <circle cx="18" cy="18" stroke-width="3" fill="transparent" r="15"></circle>
+          <line x1="8" y1="18" x2="28" y2="18"></line>
+          <line x1="18" y1="8" x2="18" y2="28"></line>
+        </g>
+      </svg>
+    </div>
   </div>
   <div class="categories-div">
     <span>分类</span>
@@ -102,7 +124,7 @@
     <span>创建日期：</span>
     <span class="post-time">2020-09-12 01:01</span>
     <span>最近更新：</span>
-    <span class="post-time">2020-09-14 12:02</span>
+    <span class="post-time">2020-09-14 06:16</span>
   </div>
   <div class="content-div">
     <h3 id="一、基本图形实例"><a href="#一、基本图形实例" class="headerlink" title="一、基本图形实例"></a>一、基本图形实例</h3><blockquote>

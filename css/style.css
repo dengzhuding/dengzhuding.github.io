@@ -254,7 +254,7 @@
   position: sticky;
 }
 .static {
-  position: static;
+  position: static !important;
 }
 .top-0 {
   top: 0;
@@ -787,7 +787,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .content-toc-div {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 52px;
   height: 100%;
 }
 .content-toc-div .article-toc-parent {
@@ -822,9 +822,11 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 }
 .content-toc-div .article-toc-parent .article-toc-div .toc > .toc-item > .toc-child > .toc-item > .toc-link {
   padding-left: 2rem;
+  font-size: 0.85rem;
 }
 .content-toc-div .article-toc-parent .article-toc-div .toc > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-link {
   padding-left: 3rem;
+  font-size: 0.75rem;
 }
 .content-toc-div .article-toc-parent .article-toc-div .toc > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-link {
   padding-left: 4rem;
@@ -836,5 +838,19 @@ header.height-120 + main .content-toc-div .article-toc-parent {
   top: 120px !important;
 }
 header.static + main .content-toc-div .article-toc-parent {
+  top: 36px !important;
+}
+header.static + main .content-toc-div .article-toc-parent.top-0 {
   top: 0 !important;
+}
+.article-title {
+  position: sticky;
+  top: 0;
+  margin: 0 -1rem;
+  padding-left: 2rem;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+}
+.article-title.static > div {
+  display: none;
 }
