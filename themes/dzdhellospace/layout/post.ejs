@@ -16,8 +16,10 @@
 <% } %>
 <!-- content -->
 <article class="relative">
-  <div class="article-title z-index-2">
+  <!-- <div class="article-title z-index-2"> -->
+  <div>
     <h2 class="ellipsis mg-0"><%= page.title %></h2>
+    <!--
     <div
       class="absolute cursor-pointer right-0 top-0"
       onclick="this.parentElement.classList.contains('static') ? this.parentElement.classList.remove('static') : this.parentElement.classList.add('static');document.querySelector('.article-toc-parent').classList.add('top-0');"
@@ -38,9 +40,11 @@
         </g>
       </svg>
     </div>
+    -->
   </div>
   <div class="categories-div">
     <span>分类</span>
+    <svg t="1600094711353" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3622" width="128" height="128"><path d="M128 576h342.016v342.016H128V576z m425.984 169.984q0-80 56.021333-136.021333t136.021334-56.021334 136.021333 56.021334 56.021333 136.021333-56.021333 136.021333-136.021333 56.021334-136.021334-56.021334-56.021333-136.021333zM512 86.016l233.984 384H277.973333z" p-id="3623" fill="#1296db"></path></svg>
     <%- list_categories(page.categories, {
       class: 'category-item',
       show_count: false,
