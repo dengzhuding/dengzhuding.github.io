@@ -58,6 +58,9 @@
 .pd-l-60 {
   padding-left: 60px;
 }
+.pd-l-rem--1 {
+  padding-left: 1rem;
+}
 .pd-r-5 {
   padding-right: 5px;
 }
@@ -72,6 +75,12 @@
 }
 .pd-r-20 {
   padding-right: 20px;
+}
+.pd-r-rem--1 {
+  padding-right: 1rem;
+}
+.pd-t-0 {
+  padding-top: 0 !important;
 }
 .pd-t-5 {
   padding-top: 5px;
@@ -94,6 +103,12 @@
 .pd-t-120 {
   padding-top: 120px;
 }
+.pd-t-rem---5 {
+  padding-top: 0.5rem;
+}
+.pd-t-rem--1 {
+  padding-top: 1rem;
+}
 .pd-b-5 {
   padding-bottom: 5px;
 }
@@ -108,6 +123,12 @@
 }
 .pd-b-20 {
   padding-bottom: 20px;
+}
+.pd-b-rem---5 {
+  padding-bottom: 0.5rem;
+}
+.pd-b-rem--1 {
+  padding-bottom: 1rem;
 }
 .pd-0 {
   padding: 0;
@@ -237,6 +258,9 @@
 .display-flex .shrink-1 {
   flex-shrink: 1;
 }
+.display-flex.flex-end {
+  justify-content: flex-end;
+}
 .display-flex .flex-end {
   align-self: flex-end;
 }
@@ -263,25 +287,31 @@
   top: 0;
 }
 .top-10 {
-  top: 10;
+  top: 10px;
+}
+.top-rem--1 {
+  top: 1rem;
+}
+.top-rem--1-5 {
+  top: 1.5rem;
 }
 .left-0 {
   left: 0;
 }
 .left-10 {
-  left: 10;
+  left: 10px;
 }
 .right-0 {
   right: 0;
 }
 .right-10 {
-  right: 10;
+  right: 10px;
 }
 .bottom-0 {
   bottom: 0;
 }
 .bottom-10 {
-  bottom: 10;
+  bottom: 10px;
 }
 .color-white {
   color: #fff;
@@ -291,6 +321,12 @@
 }
 .color-blue-1 {
   color: #00aaf2;
+}
+.color-blue-2 {
+  color: #3f87a6;
+}
+.color-yellow-2 {
+  color: #f69d3c;
 }
 .color-black-1 {
   color: #595959;
@@ -793,6 +829,25 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   right: -1.5rem;
   top: -1.5rem;
 }
+article a:active {
+  background-color: #285c76;
+  color: #fff;
+}
+article .content-header {
+  margin: 0 -1rem;
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+  background: #fff;
+  border-bottom-left-radius: 1rem;
+  box-shadow: 6px 4px 4px 0px rgba(0,0,0,0.1);
+}
+article .data-layout-div {
+  margin-right: -2rem;
+}
+article .data-layout-div .date-div {
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.1);
+}
 .content-toc-div {
   position: absolute;
   right: 0;
@@ -812,6 +867,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   opacity: 0.85;
 }
 .content-toc-div .article-toc-parent .article-toc-div {
+  display: none;
   max-height: 500px;
   overflow: auto;
 }
@@ -841,6 +897,18 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 }
 .content-toc-div .article-toc-parent .article-toc-div .toc > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-link {
   padding-left: 4rem;
+}
+.content-toc-div .article-toc-parent #circle-item {
+  transform: translateX(0);
+  fill: #fff;
+  transition: transform 0.2s;
+}
+.content-toc-div .article-toc-parent.show-detail .article-toc-div {
+  display: block;
+}
+.content-toc-div .article-toc-parent.show-detail #circle-item {
+  transform: translateX(-320px);
+  fill: #00aaf2;
 }
 header.height-40 + main .content-toc-div .article-toc-parent {
   top: 40px;
@@ -884,6 +952,10 @@ header.static + main .content-toc-div .article-toc-parent.top-0 {
 .icon-svg {
   width: 1.2rem;
   height: 1.2rem;
+}
+.icon-svg-b {
+  width: 2rem;
+  height: 2rem;
 }
 .category-item-list-link {
   color: #3f87a6;
