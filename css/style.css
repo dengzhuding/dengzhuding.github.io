@@ -830,7 +830,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   right: -1.5rem;
   top: -1.5rem;
 }
-article a:active {
+article .content-div a:active {
   background-color: #285c76;
   color: #fff;
 }
