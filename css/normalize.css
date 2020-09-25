@@ -371,10 +371,40 @@ ol {
   margin: 0;
   padding: 0;
 }
-a {
-  color: #3d7e9a;
-  text-decoration: none;
+ul {
+  margin: 1rem 0;
+  margin-left: 1rem;
+  padding: 0;
+  list-style: none;
 }
-a:active, a:focus, a:hover {
-  text-decoration: underline
+a {
+  color: #005aff;
+  word-break: break-all;
+  border-radius: 2px;
+  /* transition: all .2s; */
+}
+a:active, a:focus, a:hover, a:visited {
+  /* text-decoration: underline */
+  background: rgba(0, 90, 255, 0.1);
+}
+code, pre, tt {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-size: 12px;
+}
+:not(pre)>code {
+  background: #ffffff;
+  padding: 2px 4px;
+  color: #00aaf2;
+  border-radius: 3px;
+}
+:not(pre)>code:hover {
+  /* background: #00aaf2;
+  color: #fff; */
+}
+hr {
+  margin: 1rem 0;
+  border: none;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(45deg, #a7c7d0, #f3cfa2);
 }
