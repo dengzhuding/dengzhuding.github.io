@@ -47,29 +47,30 @@ header {
       padding: 0 1rem;
       text-decoration: none;
       transition: color .2s;
+      word-break: normal;
+      &::before {
+        content: '';
+        width: 0;
+        border-bottom: 2px solid white;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 2px;
+        transition: width .2s;
+      }
     }
     &.active .nav-a {
       color: #fff;
       font-weight: bold;
+      &::before {
+        width: 100%;
+      }
     }
     &:hover .nav-a {
       color: #fff;
-    }
-    &::before {
-      content: '';
-      width: 0;
-      border-bottom: 2px solid white;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      border-radius: 2px;
-      transition: width .2s;
-    }
-    &.active::before {
-      width: 100%;
-    }
-    &:hover::before {
-      width: 100%;
+      &::before {
+        width: 100%;
+      }
     }
   }
   .logo {
