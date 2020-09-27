@@ -237,6 +237,9 @@
   display: flex;
   align-items: center;
 }
+.display-flex.item-start {
+  justify-content: flex-start;
+}
 .display-flex.item-end {
   justify-content: flex-end;
 }
@@ -407,6 +410,9 @@
 }
 .align {
   text-align: center;
+}
+.hover-bg-gray1:hover {
+  background: #eee;
 }
 html {
   font-size: 16px;
