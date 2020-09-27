@@ -5,7 +5,10 @@ date: 2020-09-23 11:56:35
 updated: 2020-09-27 10:00:00
 categories:
 - [notes, javascript]
-tags: holiday
+tags:
+- 节假日
+- javascript
+- Date
 permalink:
 excerpt: 根据万年历取得节假日、调休数据，记录一些常规用法。
 ---
