@@ -1,4 +1,6 @@
 ---
+date: 2020-08-01
+updated: 2020-08-01
 title: Hello World
 categories:
 - test
