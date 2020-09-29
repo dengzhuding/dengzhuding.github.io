@@ -2,14 +2,14 @@
 <html lang="zh-cn">
 <%- partial('_partial/head') %>
 <body>
-  <div class="content-main-div min-vh-100 bg-line-type1">
+  <div class="content-main-div min-vh-100">
     <%- partial('_partial/header') %>
     <main class="mg-b-20 mg-t-20">
-      <div class="max-w-mian-size margin-center bg-white--8 pd--1 relative <%= is_post() || is_page() ? 'pd-t-0' : ''%>">
+      <div class="max-w-mian-size margin-center bg-line-type3 pd--1 relative <%= is_post() || is_page() ? 'pd-t-0' : ''%>">
         <%- body %>
       </div>
+      <%- partial('_partial/footer') %>
     </main>
-    <%- partial('_partial/footer') %>
   </div>
   <%- js('js/init.js') %>
 </body>
