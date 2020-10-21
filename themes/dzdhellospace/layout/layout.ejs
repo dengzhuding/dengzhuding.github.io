@@ -4,8 +4,8 @@
 <body>
   <div class="content-main-div min-vh-100">
     <%- partial('_partial/header') %>
-    <main class="mg-b-20 mg-t-20">
-      <div class="max-w-mian-size margin-center bg-line-type3 pd--1 relative <%= is_post() || is_page() ? 'pd-t-0' : ''%>">
+    <main class="display-flex direction-column">
+      <div class="max-w-mian-size bg-line-type3 relative shrink-0 grow-1 width-percent-100 mg-t-20 <%= is_post() || is_page() ? 'pd-t-0' : ''%>">
         <%- body %>
       </div>
       <%- partial('_partial/footer') %>

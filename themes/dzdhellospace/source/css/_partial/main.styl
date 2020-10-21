@@ -1,4 +1,7 @@
 // main style
+main {
+  min-height: calc(100vh - 120px);
+}
 main > div {
   // padding: 20px;
   border-radius: 3px;
@@ -7,22 +10,6 @@ main > div {
   // background-color: #F2F2F2;
   // box-shadow: inset 2px 2px 8px 1px rgba(0,0,0,0.2);
 }
-header.height-120 + main > div {
-  // min-height: calc(100vh - 240px);
-  // min-height: calc(100vh - 232px);
-  min-height: calc(100vh - 264px);
-}
-header.height-60 + main > div {
-  // min-height: calc(100vh - 180px);
-  // min-height: calc(100vh - 172px);
-  min-height: calc(100vh - 204px);
-}
-header.height-40 + main > div {
-  // min-height: calc(100vh - 160px);
-  // min-height: calc(100vh - 152px);
-  min-height: calc(100vh - 184px);
-}
-
 .bookmarks-content-item {
   display: none;
   &:target {
