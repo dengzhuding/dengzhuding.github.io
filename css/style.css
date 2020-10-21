@@ -249,6 +249,9 @@
 .display-flex.item-space-between {
   justify-content: space-between;
 }
+.display-flex.direction-column {
+  flex-direction: column;
+}
 .display-flex .grow-0 {
   flex-grow: 0;
 }
@@ -565,17 +568,11 @@ header.height-120 .logo {
   background-size: contain;
   border-radius: 1rem;
 }
+main {
+  min-height: calc(100vh - 120px);
+}
 main > div {
   border-radius: 3px;
-}
-header.height-120 + main > div {
-  min-height: calc(100vh - 264px);
-}
-header.height-60 + main > div {
-  min-height: calc(100vh - 204px);
-}
-header.height-40 + main > div {
-  min-height: calc(100vh - 184px);
 }
 .bookmarks-content-item {
   display: none;
@@ -857,10 +854,11 @@ article .content-div a:active {
   color: #fff;
 }
 article .content-header {
-  margin: 0 -1rem;
   margin-bottom: 1.5rem;
   padding: 0 2rem;
-  background: #d5e6ff;
+  background: #002e6f;
+  opacity: 0.75;
+  color: #fff;
 }
 article .data-layout-div {
   margin-right: -2rem;
@@ -868,7 +866,7 @@ article .data-layout-div {
 article .data-layout-div .date-div {
   border-bottom-left-radius: 1.5rem;
   max-width: calc(100% - 2rem);
-  background: #d5e6ff;
+  background: #002e6f;
 }
 .content-toc-div {
   position: absolute;
@@ -967,10 +965,6 @@ header.static + main .content-toc-div .article-toc-parent.top-0 {
 .tag-item-list-item {
   display: inline-block;
 }
-.category-item-list-child::before {
-  content: '>';
-  margin: 0 0.5rem;
-}
 .category-item-link {
   padding: 0 0.25rem;
 }
@@ -982,8 +976,16 @@ header.static + main .content-toc-div .article-toc-parent.top-0 {
   width: 2rem;
   height: 2rem;
 }
-.category-item-list-link {
-  color: #3f87a6;
+.categories-div .category-item-link {
+  text-decoration: none;
+  padding: 0 0.25rem;
+  background-image: linear-gradient(145deg, rgba(232,87,237,0.15) 0%, rgba(109,137,69,0.15) 100%), linear-gradient(75deg, #218ab8, #00f1b5);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.categories-div .category-item-link:hover {
+  -webkit-background-clip: padding-box;
+  color: #fff;
 }
 .tag-item-list-item {
   margin-right: 0.5rem;

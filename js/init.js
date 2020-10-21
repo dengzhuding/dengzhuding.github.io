@@ -1,5 +1,16 @@
 // 执行相关初始化脚本，监听相关事件
 
+// common 方法
+
+/**
+ * @description 节流工具函数
+ * @param func 执行函数
+ * @param waitTime 防抖等待时间
+ * @param mustRunTime 节流时间，即执行的最小频率
+ */
+function throttle (func, waitTime, mustRunTime) {
+}
+
 // 相关页面元素
 const _header = document.getElementsByTagName('header')[0];
 const _main = document.getElementsByTagName('main');
@@ -70,6 +81,7 @@ const setHeaderClass = () => {
   if (_header.classList.contains('static')) {
     return
   }
+  console.log('top: ', top)
   if (!top) {
     _header.classList.add('height-120');
     _header.classList.remove('height-60', 'height-40');
