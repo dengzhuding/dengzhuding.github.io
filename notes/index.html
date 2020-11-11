@@ -137,6 +137,16 @@
   <div class="content-div pd-l-rem--1 pd-r-rem--1">
     <hr>
 <blockquote>
+<p>2020-11-11<br>将正常格式.vue格式化为vscode用户代码片段</p>
+</blockquote>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ul>
+<li>a.新建用户代码模板：<code>File&gt; Preferences&gt; User Snippets&gt; new ...</code>，输入名称确认；</li>
+<li>b.将代码贴到body属性值里；</li>
+<li>c.将模板代码中双引号<code>&quot;</code>转为<code>\&quot;</code>(用vscode替换文本功能)；</li>
+<li>d.将模板代码行做替换-<code>^(\s&#123;6&#125;)(.+)</code>转为<code>$1&quot;$2&quot;,</code>(选择匹配正则表达式)，注意有空行需要手动加上；<br><img src="/images/vscode%E5%BF%AB%E9%80%9F%E7%94%9F%E4%BA%A7%E7%94%A8%E6%88%B7%E4%BB%A3%E7%A0%81.png" alt="vscode快速生产用户代码" title="vscode快速生产用户代码"></li>
+</ul>
+<hr>
+<blockquote>
 <p>2020-09-10</p>
 </blockquote>
 <ol>
