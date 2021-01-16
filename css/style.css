@@ -103,6 +103,9 @@
 .pd-t-120 {
   padding-top: 120px;
 }
+.pd-t-180 {
+  padding-top: 180px;
+}
 .pd-t-rem---5 {
   padding-top: 0.5rem;
 }
@@ -196,6 +199,9 @@
 .mg-t-20 {
   margin-top: 20px;
 }
+.mg-t-180 {
+  margin-top: 180px;
+}
 .mg-b-5 {
   margin-bottom: 5px;
 }
@@ -249,6 +255,9 @@
 .display-flex.item-space-between {
   justify-content: space-between;
 }
+.display-flex.item-wrap {
+  flex-wrap: wrap;
+}
 .display-flex.direction-column {
   flex-direction: column;
 }
@@ -300,6 +309,9 @@
 }
 .top-rem--1-5 {
   top: 1.5rem;
+}
+.top--120 {
+  top: -120px;
 }
 .left-0 {
   left: 0;
@@ -396,8 +408,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
 .nowrap {
   white-space: nowrap;
+}
+.transition-a-2 {
+  transition: all 0.2s;
 }
 .min-vh-100 {
   min-height: 100vh;
@@ -521,6 +539,26 @@ header .logo {
   background-position: center;
   transition: width 0.2s, height 0.2s, border-radius 0.2s;
 }
+header .logo-svg-span {
+  border-radius: 10px;
+  box-shadow: 6px 6px 4px 0px rgba(0,0,0,0.3);
+  overflow: hidden;
+  max-height: 100px;
+}
+header .logo-svg-span .logo-svg-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  font-family: fantasy;
+  background-image: linear-gradient(145deg, #000 20%, #fff 60%, #000 20%);
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: scale(1);
+  opacity: 1;
+  transition: all 1.2s;
+  cursor: default;
+}
 header .logo-text {
   text-decoration: none;
   font-style: italic;
@@ -549,6 +587,13 @@ header.height-40 .logo {
   height: 40px;
   background-size: cover;
   border-radius: 50%;
+}
+header.height-40 .logo-svg-text {
+  position: relative;
+  line-height: 40px;
+}
+header.height-40 .logo-svg-span img {
+  display: none;
 }
 header.height-120 {
   height: 120px;
@@ -1001,4 +1046,30 @@ header.static + main .content-toc-div .article-toc-parent.top-0 {
 .tag-item-list-item .tag-item-list-link:hover {
   -webkit-background-clip: padding-box;
   color: #fff;
+}
+.bookmarks-title-div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.bookmarks-title-item {
+  margin: 1rem 1rem 0 1rem;
+  background: #f2f2f2;
+  position: relative;
+  width: 200px;
+  flex-grow: 1;
+  text-align: center;
+}
+.bookmarks-title-item:last-child>a::after {
+  content: 'New';
+  font-size: 12px;
+  display: inline-block;
+  height: 14px;
+  line-height: 14px;
+  background: #f00;
+  color: #fff;
+  border-radius: 2px;
+  padding: 0 2px;
+  transform: scale(0.8);
 }

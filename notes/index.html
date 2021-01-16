@@ -33,12 +33,16 @@
 <meta name="generator" content="Hexo 5.0.2"></head>
 <body>
   <div class="content-main-div min-vh-100">
-    <header class="sticky height-120 top-0 width-percent-100 z-index-99 bg-line-type2">
+    <header class="fixed top-0 transition-a-2 height-120 width-percent-100 z-index-99 bg-line-type2">
   <!--  -->
   <div class="display-flex height-100- item-space-between max-w-mian-size margin-center">
     <div class="mg-l-rem-2 display-flex shrink-0 height-100-">
-      <span class="logo flex-end"></span>
-      <span class="color-white logo-text flex-end">DZD-HELLO</span>
+      <!-- <span class="logo flex-end"></span> -->
+      <!-- <span class="color-white logo-text flex-end">DZD-HELLO</span> -->
+      <span class="logo-svg-span bg-white relative height-100-">
+        <img src="/images/blog-LOGO.svg" />
+        <span class="logo-svg-text">DZD-HELLO</span>
+      </span>
     </div>
     <nav class="grow-1 pd-l-60 relative z-index-99">
       <ul class="menu mg-0 pd-0">
@@ -81,7 +85,7 @@
     -->
   </div>
 </header>
-    <main class="display-flex direction-column">
+    <main class="display-flex direction-column pd-t-120">
       <div class="max-w-mian-size bg-line-type3 relative shrink-0 grow-1 width-percent-100 mg-t-20 pd-t-0">
         
 <!-- top -->
@@ -134,8 +138,37 @@
       </div>
     </div>
   </div>
-  <div class="content-div pd-l-rem--1 pd-r-rem--1">
-    <hr>
+  <div class="content-div pd-l-rem--1 pd-r-rem--1 overflow-hidden">
+    <style>
+blockquote {
+   margin: 0 -1rem;
+   font-size: 1rem;
+   font-weight: bold;
+   /* background: linear-gradient(to left, #f2f2f2, transparent); */
+   position: relative;
+   border-radius: 0px;
+}
+
+blockquote::after {
+   content: '';
+   position: absolute;
+   width: 4rem;
+   height: 4rem;
+   border-radius: 2rem;
+   box-shadow: inset 0 0 0px 1px #f3cfa2;
+   right: -3rem;
+   top: -3rem;
+   background: #f2f2f2;
+}
+</style>
+
+<hr>
+<blockquote>
+<p>2021-01-17<br>移除自动插入的广告js</p>
+</blockquote>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'.google-auto-placed.ap_container'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> item<span class="token punctuation">.</span>parentElement<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+<hr>
 <blockquote>
 <p>2020-11-17<br>html空格</p>
 </blockquote>
@@ -163,33 +196,27 @@
 </ul>
 <hr>
 <blockquote>
-<p>2020-09-10</p>
+<p>2020-09-10<br>计算日期相差天数</p>
 </blockquote>
-<ol>
-<li>计算日期相差天数<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> dateStart <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'2020-09-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> dateStart <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'2020-09-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> dateEnd <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">'2020-09-15'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> difValue <span class="token operator">=</span> <span class="token punctuation">(</span>dateEnd <span class="token operator">-</span> dateStart<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 14</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-</li>
-</ol>
 <hr>
 <blockquote>
 <p>2020-09-03</p>
 </blockquote>
-<ol>
-<li><p>从表格复制单行数据格式为JSON数组</p>
+<p>1. 从表格复制单行数据格式为JSON数组</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// copyStr-从excel复制的文本</span>
 <span class="token keyword">let</span> copyStr <span class="token operator">=</span> <span class="token string">''</span>
 <span class="token comment">// 返回 Object</span>
 copyStr<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\n/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\s+/g</span><span class="token punctuation">,</span> <span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\"/g</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">strItem</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>label<span class="token operator">:</span> strItem<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>空格分隔的字符串首字母转为小写</p>
+
+<p>2. 空格分隔的字符串首字母转为小写</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'Hello World! Man.'</span>
 <span class="token comment">// 返回 hello world! man.</span>
 str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\s([^\s])/g</span><span class="token punctuation">,</span> <span class="token parameter">word</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token string">' '</span> <span class="token operator">+</span> word<span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-</li>
-</ol>
 
   </div>
 </article>
