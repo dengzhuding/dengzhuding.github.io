@@ -1,0 +1,17 @@
+// 书签页样式
+.bookmarks-title-div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.bookmarks-title-item {
+  margin: 1rem 1rem 0 1rem;
+  background: #f2f2f2;
+  position: relative;
+  width: 200px;
+  flex-grow: 1;
+  text-align: center;
+}
+.bookmarks-title-item:last-child>a::after {content: 'New';font-size: 12px;display: inline-block;height: 14px;line-height: 14px;background: red;color: white;border-radius: 2px;padding: 0 2px;transform: scale(0.8);}
+

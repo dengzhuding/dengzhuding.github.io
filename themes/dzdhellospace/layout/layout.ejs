@@ -4,7 +4,7 @@
 <body>
   <div class="content-main-div min-vh-100">
     <%- partial('_partial/header') %>
-    <main class="display-flex direction-column">
+    <main class="display-flex direction-column pd-t-120">
       <div class="max-w-mian-size bg-line-type3 relative shrink-0 grow-1 width-percent-100 mg-t-20 <%= is_post() || is_page() ? 'pd-t-0' : ''%>">
         <%- body %>
       </div>

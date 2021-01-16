@@ -180,7 +180,7 @@ function addBackToTop () {
 // window scroll事件
 const mainScrollEvent = event => {
   // 设置header高度
-  setHeaderClass();
+  // setHeaderClass();
   // if (timers.window_scroll) {
   //   window.clearTimeout(timers.window_scroll);
   // }

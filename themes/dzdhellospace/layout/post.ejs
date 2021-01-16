@@ -2,7 +2,7 @@
 <!-- top -->
 <% if (is_post()) { %>
 <div class="content-toc-div">
-  <div class="article-toc-parent z-index-2">
+  <div class="article-toc-parent z-index-2 mg-t-180">
     <div
       class="color-blue-1 cursor-pointer border-bottom-blue-1 pd-l-12 pd-r-12 display-flex item-start hover-bg-gray1"
       onclick="this.parentElement.classList.contains('show-detail') ? this.parentElement.classList.remove('show-detail') : this.parentElement.classList.add('show-detail');"
@@ -97,7 +97,7 @@
       </div>
     </div>
   </div>
-  <div class="content-div pd-l-rem--1 pd-r-rem--1">
+  <div class="content-div pd-l-rem--1 pd-r-rem--1 overflow-hidden">
     <%- page.content %>
   </div>
 </article>

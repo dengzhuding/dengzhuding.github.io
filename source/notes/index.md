@@ -6,6 +6,36 @@ updated: 2020-09-10 14:02:00
 excerpt: 日常笔记记录，想到啥就记啥
 ---
 
+<style>
+blockquote {
+   margin: 0 -1rem;
+   font-size: 1rem;
+   font-weight: bold;
+   /* background: linear-gradient(to left, #f2f2f2, transparent); */
+   position: relative;
+   border-radius: 0px;
+}
+
+blockquote::after {
+   content: '';
+   position: absolute;
+   width: 4rem;
+   height: 4rem;
+   border-radius: 2rem;
+   box-shadow: inset 0 0 0px 1px #f3cfa2;
+   right: -3rem;
+   top: -3rem;
+   background: #f2f2f2;
+}
+</style>
+
+***
+> 2021-01-17
+> 移除自动插入的广告js
+{% codeblock lang:javascript line_number:false %}
+document.querySelectorAll('.google-auto-placed.ap_container').forEach(item => item.parentElement.removeChild(item))
+{% endcodeblock %}
+
 ***
 > 2020-11-17
 > html空格
@@ -27,7 +57,7 @@ excerpt: 日常笔记记录，想到啥就记啥
 ![vscode快速生产用户代码](/images/vscode快速生产用户代码.png "vscode快速生产用户代码")
 ***
 > 2020-09-10
-1. 计算日期相差天数
+> 计算日期相差天数
 ```javascript
 const dateStart = new Date('2020-09-01');
 const dateEnd = new Date('2020-09-15');
@@ -37,7 +67,7 @@ const difValue = (dateEnd - dateStart) / (1000 * 60 * 60 * 24); // 14
 ***
 > 2020-09-03
 
-1. 从表格复制单行数据格式为JSON数组
+1\. 从表格复制单行数据格式为JSON数组
 {% codeblock  lang:javascript line_number:true highlight:true %}
    // copyStr-从excel复制的文本
    let copyStr = ''
@@ -45,7 +75,7 @@ const difValue = (dateEnd - dateStart) / (1000 * 60 * 60 * 24); // 14
    copyStr.replace(/\n/g, '').replace(/\s+/g, ',').replace(/\"/g, '').split(',').map(strItem => ({label: strItem}))
 {% endcodeblock %}
 
-2. 空格分隔的字符串首字母转为小写
+2\. 空格分隔的字符串首字母转为小写
 {% codeblock  lang:javascript line_number:true highlight:true %}
    const str = 'Hello World! Man.'
    // 返回 hello world! man.

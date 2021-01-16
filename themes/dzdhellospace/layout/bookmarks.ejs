@@ -1,11 +1,11 @@
 <!-- tabs -->
-<div class="bookmarks-title-div">
+<div class="bookmarks-title-div pd--1 display-flex item-wrap">
     <% site.pages.each(function (page) { %>
         <% if (page.path.match(/^bookmarks\/bookmarks/) !== null) { %>
         <div class="bookmarks-title-item">
-            <a href="#<%= page.path %>">
+            <a class="display-b pd--1" href="#<%= page.path %>">
                 <span><%= page.path.match(/^bookmarks\/(.*)\.html$/)[1] %></span>
-                <span>(<%= date(page.date, "YYYY-MM-DD") %>)</span>
+                <!-- <span>(<%= date(page.date, "YYYY-MM-DD") %>)</span> -->
             </a>
         </div>
         <% } %>
@@ -13,7 +13,7 @@
 </div>
 
 <!-- content -->
-<div class="bookmarks-content-div">
+<div class="bookmarks-content-div pd--1">
     <% site.pages.each(function (page) { %>
         <% if (page.path.match(/^bookmarks\/bookmarks/) !== null) { %>
         <div class="bookmarks-content-item" id="<%= page.path %>">

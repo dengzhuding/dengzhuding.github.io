@@ -1,9 +1,13 @@
-<header class="sticky height-120 top-0 width-percent-100 z-index-99 bg-line-type2">
+<header class="fixed top-0 transition-a-2 height-120 width-percent-100 z-index-99 bg-line-type2">
   <!-- <%= is_post() ? 'static' : ''%> -->
   <div class="display-flex height-100- item-space-between max-w-mian-size margin-center">
     <div class="mg-l-rem-2 display-flex shrink-0 height-100-">
-      <span class="logo flex-end"></span>
-      <span class="color-white logo-text flex-end"><%= config.logoText%></span>
+      <!-- <span class="logo flex-end"></span> -->
+      <!-- <span class="color-white logo-text flex-end"><%= config.logoText%></span> -->
+      <span class="logo-svg-span bg-white relative height-100-">
+        <img src="/images/blog-LOGO.svg" />
+        <span class="logo-svg-text"><%= config.logoText%></span>
+      </span>
     </div>
     <nav class="grow-1 pd-l-60 relative z-index-99">
       <ul class="menu mg-0 pd-0">
