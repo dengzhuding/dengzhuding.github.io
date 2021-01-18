@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gitment</title>
+  <link rel="stylesheet" href="/static/css/default.css">
+  <script src="/static/js/gitment.browser.min.js"></script>
+</head>
+<body>
+  <div id="comments"></div>
+  <script type="application/javascript">
+    const gitment = new Gitment({
+      id: '1', // optional
+      owner: 'dengzhuding',
+      repo: 'demo-ts',
+      oauth: {
+        client_id: 'd9feb3f2183ffbe4174a',
+        client_secret: '8939cc07d08297e50ad8b6f8bb745f25271f0b02',
+      },
+      // redirect_uri: 'https://www.dzdhello.site/app_authorization/github_login_calback.html'
+      // redirect_uri: 'http://localhost:4002/app_authorization/gitment.html'
+      // redirect_uri: 'https://www.dzdhello.site/app_authorization/github_login_calback.html'
+      // ...
+      // For more available options, check out the documentation below
+    })
+
+    gitment.render('comments');
+  </script>
+</body>
+</html>

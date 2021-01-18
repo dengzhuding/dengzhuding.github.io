@@ -101,3 +101,9 @@
     <%- page.content %>
   </div>
 </article>
+<!-- gitment -->
+<% if (is_post() && config.gitment.post) { %>
+<div class="gitment-ifrme-div">
+  <iframe src="/app_authorization/github_login_calback.html" frameborder="0"></iframe>
+</div>
+<% } %>

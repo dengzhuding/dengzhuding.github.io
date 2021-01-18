@@ -1,0 +1,24 @@
+{
+  "name": "hexo-site",
+  "description": "blog",
+  "main": "public/index.html",
+  "authors": [
+    "dzd_global <dengzhuding@123.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "blog"
+  ],
+  "homepage": "https://github.com/dengzhuding/dengzhuding.github.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gitment": "https://github.com/imsun/gitment.git"
+  }
+}

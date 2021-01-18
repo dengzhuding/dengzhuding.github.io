@@ -39,6 +39,7 @@ i18n_dir: :lang
 skip_render:
   # - "bookmarks/bookmarks*"
   - "app_authorization/*"
+  - "static/*"
 
 # Writing
 # new_post_name: :title.md # File name of new posts
@@ -106,6 +107,7 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+  # - static/gitment/*
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -118,3 +120,8 @@ theme: dzdhellospace
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+# gitment 全部评论是否启用
+gitment:
+  post: true
+  home: false
