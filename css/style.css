@@ -504,6 +504,12 @@ header .header-thumbtack .fa-thumbtack {
   font-size: 0.8rem;
   transition: all 0.2s;
 }
+header .header-thumbtack .svg-thumbtack {
+  width: 1rem;
+  height: 1rem;
+  right: 4px;
+  top: 4px;
+}
 header nav ul.menu>li {
   display: inline-block;
   position: relative;
@@ -621,6 +627,9 @@ header.height-120 .logo {
 }
 header.top--120 {
   box-shadow: none;
+}
+header.static + main {
+  padding-top: 0 !important;
 }
 main {
   min-height: calc(100vh - 120px);
