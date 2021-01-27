@@ -355,6 +355,9 @@
 .color-black-3 {
   color: #999;
 }
+.color-green {
+  color: #008000;
+}
 .font-bold {
   font-weight: bold;
 }
@@ -443,6 +446,9 @@
 }
 .hover-bg-gray1:hover {
   background: #eee;
+}
+.line-through {
+  text-decoration: line-through;
 }
 html {
   font-size: 16px;
@@ -965,14 +971,18 @@ article .data-layout-div .date-div {
 }
 .content-toc-div .article-toc-parent #circle-item {
   transform: translateX(0);
-  fill: #fff;
   transition: transform 0.2s;
+}
+.content-toc-div .article-toc-parent #circle-bg {
+  fill: rgba(204,204,204,0.8) c;
 }
 .content-toc-div .article-toc-parent.show-detail .article-toc-div {
   display: block;
 }
 .content-toc-div .article-toc-parent.show-detail #circle-item {
   transform: translateX(-320px);
+}
+.content-toc-div .article-toc-parent.show-detail #circle-bg {
   fill: #00aaf2;
 }
 header.height-40 + main .content-toc-div .article-toc-parent {
