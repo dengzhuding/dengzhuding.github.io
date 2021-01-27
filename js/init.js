@@ -9,6 +9,7 @@
  * @param mustRunTime 节流时间，即执行的最小频率
  */
 function throttle (func, waitTime, mustRunTime) {
+  // let 
 }
 
 // 相关页面元素
