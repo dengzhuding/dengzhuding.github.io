@@ -619,6 +619,9 @@ header.height-120 .logo {
   background-size: contain;
   border-radius: 1rem;
 }
+header.top--120 {
+  box-shadow: none;
+}
 main {
   min-height: calc(100vh - 120px);
 }

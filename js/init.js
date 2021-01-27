@@ -4,12 +4,41 @@
 
 /**
  * @description 节流工具函数
- * @param func 执行函数
- * @param waitTime 防抖等待时间
- * @param mustRunTime 节流时间，即执行的最小频率
+ * @param {function} func 执行函数
+ * @param {number} waitTime 防抖等待时间
+ * @param {boolean} firstTimeRun 第一次触发是否执行（只有第一次有效）
+ * @param {boolean} lastTimeRun 最后一次触发是否执行
+ * @returns {void}
  */
-function throttle (func, waitTime, mustRunTime) {
-  // let 
+function throttle (func, waitTime, firstTimeRun, lastTimeRun) {
+  // 上次执行时间
+  let preTime = 0;
+  waitTime = waitTime || 1000;
+  // 默认true
+  firstTimeRun = firstTimeRun !== false;
+  // 默认true
+  lastTimeRun = lastTimeRun !== false;
+  // 用于设置了执行频率时保存计时器
+  let timer = null;
+  const run = function () {
+    func(arguments);
+    // 可能上一步执行会经过一段时间，这里更新执行后时间为本次执行时间
+    preTime = Date.now();
+  }
+  return function () {
+    const arg = arguments;
+    const curTime = Date.now();
+    const IntervalTime = curTime - preTime;
+    window.clearTimeout(timer);
+    if (IntervalTime >= waitTime || (!preTime && firstTimeRun)) {
+      // 第一次以及之后的执行
+      run(arg);
+    } else if (lastTimeRun) {
+      timer = window.setTimeout(() => {
+        run(arg)
+      } , waitTime - IntervalTime);
+    }
+  }
 }
 
 // 相关页面元素
@@ -69,6 +98,16 @@ const timers = {
   window_scroll: null
 }
 
+// 判断是否向上滚动
+const calcIsScrollToTop = (() => {
+  let preTop = 0;
+  return (top) => {
+    console.log(top - preTop)
+    const isScrollToTop = top < preTop;
+    preTop = top;
+    return isScrollToTop
+  }
+})()
 // 设置header class
 const setHeaderClass = () => {
   // console.log('main scroll.')
@@ -82,13 +121,19 @@ const setHeaderClass = () => {
   if (_header.classList.contains('static')) {
     return
   }
-  console.log('top: ', top)
-  if (!top) {
-    _header.classList.add('height-120');
-    _header.classList.remove('height-60', 'height-40');
+  // console.log('top: ', top)
+  // if (!top) {
+  //   _header.classList.add('height-120');
+  //   _header.classList.remove('height-60', 'height-40');
+  // } else {
+  //   _header.classList.add('height-40');
+  //   _header.classList.remove('height-60', 'height-120');
+  // }
+  const isScrollToTop = calcIsScrollToTop(top);
+  if (top <= 120 || isScrollToTop) {
+    _header.classList.remove('top--120');
   } else {
-    _header.classList.add('height-40');
-    _header.classList.remove('height-60', 'height-120');
+    _header.classList.add('top--120');
   }
 }
 
@@ -154,7 +199,7 @@ function addBackToTop () {
       o
   }()
     , E = !0;
-  window.addEventListener("scroll", z),
+  window.addEventListener("scroll", throttle(z, 500)),
   z();
   function z() {
       M() >= i ? function() {
@@ -181,7 +226,7 @@ function addBackToTop () {
 // window scroll事件
 const mainScrollEvent = event => {
   // 设置header高度
-  // setHeaderClass();
+  setHeaderClass();
   // if (timers.window_scroll) {
   //   window.clearTimeout(timers.window_scroll);
   // }
@@ -205,7 +250,7 @@ const initListeners = () => {
     window.addEventListener("test", null, testoOption);
   } catch(err) {}
   // scroll
-  window.addEventListener('scroll', mainScrollEvent, passiveIfSupported);
+  window.addEventListener('scroll', throttle(mainScrollEvent, 200), passiveIfSupported);
   // 添加header右上角图标点击事件，是否固定显示header
   const _thumbtack = document.querySelector('header .header-thumbtack');
   _thumbtack && _thumbtack.addEventListener('click', (event) => {
