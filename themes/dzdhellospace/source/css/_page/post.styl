@@ -89,8 +89,10 @@ article {
     // }
     #circle-item {
       transform: translateX(0);
-      fill: #fff;
       transition: transform .2s;
+    }
+    #circle-bg {
+      fill: #ccccc;
     }
     &.show-detail {
       .article-toc-div {
@@ -98,6 +100,8 @@ article {
       }
       #circle-item {
         transform: translateX(-320px);
+      }
+      #circle-bg {
         fill: #00aaf2;
       }
     }
