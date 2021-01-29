@@ -916,6 +916,10 @@ article .content-div a:active {
   background-color: #005aff;
   color: #fff;
 }
+article .content-div ul {
+  margin-left: 1.2rem;
+  list-style-type: '➤ ';
+}
 article .content-header {
   margin-bottom: 1.5rem;
   padding: 0 2rem;
