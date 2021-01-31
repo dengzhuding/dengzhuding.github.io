@@ -19,6 +19,10 @@
   <script>
     var _hmt = _hmt || [];
     (function() {
+      // 本地调试不启用统计
+      if (/localhost|127.0.0.1/.test(location.hostname)) {
+        return
+      }
       var hm = document.createElement("script");
       // hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
       hm.src = "https://hm.baidu.com/hm.js?64cba5c79d730cff73ae4a75bdb75bf2";
@@ -93,13 +97,13 @@
       <a href="/blog/759b1a3ca4d9/">架设私人git托管服务器</a>
     </div>
     <div class="post-item-excerpt">
-      记录配置过程
+      记录git服务搭建以及配置过程，顺便加上了node + mongodb + react 部署过程。由于之前对linux不熟，只能一步步参考网络上教程一步步来，持续更新中。。
     </div>
     <div class="post-item-date display-flex font--75 item-end post-item-date">
       <span class="color-black-2 shrink-0">创建日期：</span>
       <span class="ellipsis post-time">2021-01-24 01:01</span>
       <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-01-29 06:52</span>
+      <span class="ellipsis post-time">2021-01-31 05:56</span>
     </div>
   </article>
   
@@ -174,7 +178,7 @@
       <span class="color-black-2 shrink-0">创建日期：</span>
       <span class="ellipsis post-time">2020-09-07 10:10</span>
       <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-01-29 06:52</span>
+      <span class="ellipsis post-time">2021-01-31 05:56</span>
     </div>
   </article>
   
@@ -189,7 +193,7 @@
       <span class="color-black-2 shrink-0">创建日期：</span>
       <span class="ellipsis post-time">2020-08-24 11:11</span>
       <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-01-29 06:52</span>
+      <span class="ellipsis post-time">2021-01-31 05:56</span>
     </div>
   </article>
   
@@ -204,7 +208,7 @@
       <span class="color-black-2 shrink-0">创建日期：</span>
       <span class="ellipsis post-time">2020-08-16 11:11</span>
       <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-01-29 06:52</span>
+      <span class="ellipsis post-time">2021-01-31 05:56</span>
     </div>
   </article>
   

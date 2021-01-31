@@ -80,7 +80,8 @@ const widthMediaQueryObj = {
   },
   // 添加screen width监听
   addListener () {
-    this.value = window.matchMedia('(max-width: 1024px)');
+    // this.value = window.matchMedia('(max-width: 1024px)');
+    this.value = window.matchMedia('(max-width: 768px)');
     this.hander(this.value);
     this.value.addListener(this.hander);
   },
