@@ -631,6 +631,12 @@ header.top--120 {
 header.static + main {
   padding-top: 0 !important;
 }
+header:not(.static).top-0 {
+  transition: all 0.8s;
+}
+header:not(.static).top--120 {
+  transition: all 0.2s;
+}
 main {
   min-height: calc(100vh - 120px);
 }
