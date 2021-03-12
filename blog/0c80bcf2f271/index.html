@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   
-    <title>Welcome to here[dzd]</title>
+    <title>Centos7.5安装docker及基础配置使用[dzd]</title>
   
-  <!-- <title>Welcome to here[dzd]</title> -->
+  <!-- <title>Centos7.5安装docker及基础配置使用[dzd]</title> -->
   
 <link rel="stylesheet" href="/css/normalize.css">
 
@@ -106,7 +106,7 @@
       </svg>
     </div>
     <div class="article-toc-div hidden">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Welcome-here"><span class="toc-text">Welcome here</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85docker"><span class="toc-text">一、安装docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E4%BD%BF%E7%94%A8repository%E5%AE%89%E8%A3%85"><span class="toc-text">1.1 使用repository安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%90%AF%E5%8A%A8docker%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.2 启动docker服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="toc-text">1.3 基础配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83"><span class="toc-text">二、搭建基础环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="toc-text">三、简单使用</span></a></li></ol>
     </div>
   </div>
 </div>
@@ -116,7 +116,7 @@
   <!-- <div class="article-title z-index-2"> -->
   <div class="content-header mg-b-rem-2 relative">
     <div>
-      <h2 class="ellipsis mg-0 pd-b-rem--1 pd-t-rem--1">Welcome to here</h2>
+      <h2 class="ellipsis mg-0 pd-b-rem--1 pd-t-rem--1">Centos7.5安装docker及基础配置使用</h2>
       <!--
       <div
         class="absolute cursor-pointer right-0 top-0"
@@ -149,11 +149,11 @@
         style: 'list'
       }) 
       -->
-      
+      <a class="category-item-link" href="/categories/docker/">docker</a>
     </div>
     <div class="tags-div display-flex">
       <svg class="icon-svg mg-r-5" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8927" width="200" height="200"><path d="M256 256q0-30.285714-21.428571-51.714286T182.857143 182.857143t-51.714286 21.428571T109.714286 256t21.428571 51.714286T182.857143 329.142857t51.714286-21.428571T256 256z m609.714286 329.142857q0 30.285714-21.142857 51.428572l-280.571429 281.142857q-22.285714 21.142857-52 21.142857-30.285714 0-51.428571-21.142857L52 508.571429q-21.714286-21.142857-36.857143-57.714286T0 384V146.285714q0-29.714286 21.714286-51.428571t51.428571-21.714286h237.714286q30.285714 0 66.857143 15.142857T436 125.142857l408.571429 408q21.142857 22.285714 21.142857 52z m219.428571 0q0 30.285714-21.142857 51.428572l-280.571429 281.142857q-22.285714 21.142857-52 21.142857-20.571429 0-33.714285-8t-30.285715-25.714286l268.571429-268.571428q21.142857-21.142857 21.142857-51.428572 0-29.714286-21.142857-52L527.428571 125.142857q-21.714286-21.714286-58.285714-36.857143T402.285714 73.142857h128q30.285714 0 66.857143 15.142857t58.285714 36.857143l408.571429 408q21.142857 22.285714 21.142857 52z" p-id="8928" fill="currentColor"></path></svg>
-      
+      <ul class="tag-item-list" itemprop="keywords"><li class="tag-item-list-item"><a class="tag-item-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
     </div>
     
     <div class="data-layout-div display-flex relative top-rem--1 font--75">
@@ -165,26 +165,53 @@
           <path d="M20.897959 376.163265h961.306123v41.795919H20.897959z" fill="#fff" p-id="14452"></path>
           <path d="M455.115755 801.729306L734.396082 522.44898l29.549714 29.549714-295.538939 295.538939-6.123102-6.123102-13.291102 13.291102L271.673469 677.386449 301.223184 647.836735l153.892571 153.892571z" fill="#fff" p-id="14453"></path>
         </svg>
-        <span class="post-time ellipsis mg-r-rem-1 shrink-1" title="创建时间">2020-08-16 04:04</span>
+        <span class="post-time ellipsis mg-r-rem-1 shrink-1" title="创建时间">2021-03-12 11:11</span>
         <svg class="icon-svg mg-r-5 shrink-0" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12476" width="200" height="200">
           <path d="M993.85823 51.261514a51.261514 51.261514 0 0 0-102.523028 0v85.709251A512.615138 512.615138 0 0 0 141.686824 831.871846a51.261514 51.261514 0 1 0 79.967962-64.384461 410.092111 410.092111 0 0 1 602.220264-553.624349L722.582299 205.046055a51.261514 51.261514 0 0 0-9.227073 102.523028l225.550661 20.504605h12.712855l4.921106-1.02523 4.716059-1.435322 4.716059-2.050461 4.305968-2.255506 4.100921-2.870645 3.690829-3.075691c1.230276-1.02523 2.255507-2.255507 3.485783-3.485783l2.05046-4.305967 2.665599-4.100921 2.460552-4.511013 1.845415-4.511014a41.009211 41.009211 0 0 0 1.435322-4.716059 24.400481 24.400481 0 0 0 1.025231-5.331197 12.507809 12.507809 0 0 0 0-2.665599V277.017221zM453.76692 914.505406a45.72527 45.72527 0 0 0-10.457349-3.895875 399.429716 399.429716 0 0 1-83.65879-31.167c-12.507809-6.151382-24.810573-13.122948-36.703244-20.504605l-4.511013-2.665599a51.261514 51.261514 0 0 0-50.236284 89.195034c11.892671 7.586704 23.990388 14.55827 36.703244 20.504605h26.861033l2.255507 1.025231a515.485783 515.485783 0 0 0 82.018422 28.296355 51.261514 51.261514 0 0 0 35.267922-95.551461z" fill="#fff" p-id="12477"></path>
           <path d="M672.961153 915.530637a50.646376 50.646376 0 0 0-34.857829-4.100921 405.991189 405.991189 0 0 1-64.794553 10.252302 51.261514 51.261514 0 0 0-18.864238 96.986785 50.236284 50.236284 0 0 0 26.450942 5.126151 517.331197 517.331197 0 0 0 82.018422-12.712855 51.261514 51.261514 0 0 0 37.728474-61.513817 50.646376 50.646376 0 0 0-27.681218-34.037645z m166.497397-77.302363a51.261514 51.261514 0 0 0-53.311974 4.716059c-8.81698 6.356428-18.044053 12.507809-27.271125 18.249099a51.46656 51.46656 0 0 0-16.608731 70.535843 51.261514 51.261514 0 0 0 70.535843 16.608731c11.687625-7.176612 22.965158-14.763316 34.037645-22.965159a51.46656 51.46656 0 0 0-7.381658-87.144573z m109.289548-102.728074a51.261514 51.261514 0 1 0 13.943131 71.150981 51.46656 51.46656 0 0 0-13.943131-71.150981z" fill="#fff" p-id="12478"></path>
         </svg>
-        <span class="post-time ellipsis shrink-1" title="更新时间">2021-03-12 03:16</span>
+        <span class="post-time ellipsis shrink-1" title="更新时间">2021-03-12 11:23</span>
       </div>
     </div>
   </div>
   <div class="content-div pd-l-rem--1 pd-r-rem--1 overflow-hidden">
-    <h1 id="Welcome-here"><a href="#Welcome-here" class="headerlink" title="Welcome here"></a>Welcome here</h1><a id="more"></a>
-<blockquote>
-<p>静态图片</p>
+    <h3 id="一、安装docker"><a href="#一、安装docker" class="headerlink" title="一、安装docker"></a>一、安装docker</h3><h4 id="1-1-使用repository安装"><a href="#1-1-使用repository安装" class="headerlink" title="1.1 使用repository安装"></a>1.1 使用repository安装</h4><blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/#install-using-the-repository">官方文档</a></p>
 </blockquote>
-<img src="/blog/d0251d8c6e44/91870.jpg" class="" title="hello, Spiderman!">
+<ul>
+<li>安装<code>yum-utils</code>（用于配置安装源，也可手动添加<code>/etc/yum.repos.d/$&#123;packageName&#125;.repo</code>文件，参考<a href="/blog/759b1a3ca4d9/" title="架设私人git托管服务器">架设私人git托管服务器</a>中安装 <b>安装mongodb</b> 过程）
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装</span>
+<span class="token function">sudo</span> yum <span class="token function">install</span> -y yum-utils
+<span class="token comment"># 添加repo文件</span>
+<span class="token function">sudo</span> yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+<span class="token comment"># 查看版本</span>
+yum list docker docker-ce --showduplicates <span class="token operator">|</span> <span class="token function">sort</span> -r
+<span class="token comment"># Install the latest version of Docker Engine and containerd</span>
+<span class="token comment"># 安装最新版</span>
+<span class="token comment"># 指定版本可用：sudo yum install docker-ce-&lt;VERSION_STRING> docker-ce-cli-&lt;VERSION_STRING> containerd.io</span>
+<span class="token function">sudo</span> yum <span class="token function">install</span> docker-ce docker-ce-cli containerd.io
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p>公共数据<br>&lt;% for (var link in site.data.menu) { %&gt;<br>  <a href="<%= site.data.menu[link] %>"> &lt;%= link %&gt; </a><br>&lt;% } %&gt;</p>
+</li>
+</ul>
+<h4 id="1-2-启动docker服务"><a href="#1-2-启动docker服务" class="headerlink" title="1.2 启动docker服务"></a>1.2 启动docker服务</h4><blockquote>
+<p>到上一步完了，会生成用户组-docker（如果没有，手动添加：<code>sudo groupadd docker</code>），查看docker组：cat /etc/group | grep docker<br>我们可以添加用户到docker用户组，就不用每次执行docker命令都在前面添加sudo了<br>添加用户到docker用户组（username为你登录的用户，如果是root用户可不用）：<code>sudo usermod -a -G docker username</code><br>查看：<code>cat /etc/group | grep docker</code>，里面如果有username代表已经加组成功</p>
 </blockquote>
-
+<p>此时还不能使用docker命令，需执行以下命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># start docker</span>
+<span class="token comment"># 会在/var/run/路径下生成 docker docker.pid docker.sock 文件</span>
+<span class="token function">sudo</span> systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>使用<code>docker version</code>后能正常输出版本信息即可</p>
+<blockquote>
+<p>加完docker组后，如果执行不加sudo执行如<code>docker ps</code>或其他docker命令还是会提示”permission denied”，重新登录即可</p>
+</blockquote>
+<h4 id="1-3-基础配置"><a href="#1-3-基础配置" class="headerlink" title="1.3 基础配置"></a>1.3 基础配置</h4><ul>
+<li>配置远程连接（需要配置证书，不然不安全，也可以配置单一ip。。。有空再弄）<blockquote>
+<p>参考(<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/linux-postinstall/#configuring-remote-access-with-systemd-unit-file">https://docs.docker.com/engine/install/linux-postinstall/#configuring-remote-access-with-systemd-unit-file</a>)<br>(<a target="_blank" rel="noopener" href="https://www.cnblogs.com/niceyoo/p/13270224.html">https://www.cnblogs.com/niceyoo/p/13270224.html</a>)</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="二、搭建基础环境"><a href="#二、搭建基础环境" class="headerlink" title="二、搭建基础环境"></a>二、搭建基础环境</h3><h3 id="三、简单使用"><a href="#三、简单使用" class="headerlink" title="三、简单使用"></a>三、简单使用</h3>
   </div>
 </article>
 <!-- gitment -->
