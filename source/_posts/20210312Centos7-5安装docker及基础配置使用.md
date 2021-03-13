@@ -51,6 +51,19 @@ sudo systemctl start docker
 > 参考(https://docs.docker.com/engine/install/linux-postinstall/#configuring-remote-access-with-systemd-unit-file)
 > (https://www.cnblogs.com/niceyoo/p/13270224.html)
 
+#### 1.4 使用Docker Compose
+* 下载执行文件[查看最新版本](https://github.com/docker/compose/releases/)
+```bash
+# 下载较慢，如果卡住可ctl + c取消再重试
+sudo curl -L \
+ "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" \
+ -o /usr/local/bin/docker-compose
+```
+* 添加可执行(x)权限：`sudo chmod +x /usr/local/bin/docker-compose`
+* 测试：`docker-compose -v`
+> 小笔记:
+> 1. `npm ci` VS `npm install` 前者需要`package-lock.json`文件，安装快，主要用于自动化环境，如测试平台，持续集成和部署
+> 2. `npm ci --production` 加 --production目的是不安装开发依赖（即"devDependencies"属性中的依赖包）
 ### 二、搭建基础环境
 
 ### 三、简单使用
