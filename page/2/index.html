@@ -26,6 +26,8 @@
       var hm = document.createElement("script");
       // hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
       hm.src = "https://hm.baidu.com/hm.js?64cba5c79d730cff73ae4a75bdb75bf2";
+      hm.defer = true
+      hm.async = true
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
@@ -103,7 +105,7 @@
       <span class="color-black-2 shrink-0">创建日期：</span>
       <span class="ellipsis post-time">2020-08-24 11:11</span>
       <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-03-14 02:38</span>
+      <span class="ellipsis post-time">2021-03-17 02:15</span>
     </div>
   </article>
   
@@ -118,7 +120,7 @@
       <span class="color-black-2 shrink-0">创建日期：</span>
       <span class="ellipsis post-time">2020-08-16 11:11</span>
       <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-03-14 02:38</span>
+      <span class="ellipsis post-time">2021-03-17 02:15</span>
     </div>
   </article>
   
@@ -133,7 +135,7 @@
       <span class="color-black-2 shrink-0">创建日期：</span>
       <span class="ellipsis post-time">2020-08-16 04:04</span>
       <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-03-14 02:38</span>
+      <span class="ellipsis post-time">2021-03-17 02:15</span>
     </div>
   </article>
   
@@ -168,10 +170,31 @@
   </article>
   
 </section>
-<div>
+<div class="paginator-div">
   
   <nav>
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <ul class="display-flex item-center item-wrap">
+      
+      <li><a class="page-prev mg-r-rem-1" href="/">上一页</a></li>
+      
+      
+        <li>
+          <a class="page-number " href="/">
+            1
+          </a>
+        </li>
+      
+        <li>
+          <a class="page-number active" href="/page/2">
+            2
+          </a>
+        </li>
+      
+      
+    </ul>
+    <!--
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    -->
   </nav>
 
 </div>

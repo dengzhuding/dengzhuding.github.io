@@ -26,6 +26,8 @@
       var hm = document.createElement("script");
       // hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
       hm.src = "https://hm.baidu.com/hm.js?64cba5c79d730cff73ae4a75bdb75bf2";
+      hm.defer = true
+      hm.async = true
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
@@ -94,11 +96,17 @@
 <!-- top -->
 
 <!-- content -->
-<article class="relative">
+<article class="relative border-bottom-blue-1">
   <!-- <div class="article-title z-index-2"> -->
   <div class="content-header mg-b-rem-2 relative">
     <div>
       <h2 class="ellipsis mg-0 pd-b-rem--1 pd-t-rem--1">About Me</h2>
+      <div class="display-flex mg-b-12">
+        <svg class="icon-svg mg-r-5 shrink-0" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4898" width="200" height="200"><path d="M911.194 151.785v539.172L730.253 845.451h-589.66V151.785h770.601zM679.765 614.021H255.706v76.936h424.059v-76.936zM795.479 460.15H255.706v76.936h539.773V460.15z m0-154.494H255.706v77.559h539.773v-77.559z m0 0" fill="#ffffff" p-id="4899"></path></svg>
+        <div class="color-black-2 ellipsis" title="">
+          太懒了，暂无简介^v^
+        </div>
+      </div>
       <!--
       <div
         class="absolute cursor-pointer right-0 top-0"
@@ -141,7 +149,7 @@
       </div>
     </div>
   </div>
-  <div class="content-div pd-l-rem--1 pd-r-rem--1 overflow-hidden">
+  <div class="content-div pd-l-rem--1 pd-r-rem--1 overflow-hidden min-height-100">
     <h2 id="网站说明"><a href="#网站说明" class="headerlink" title="网站说明"></a>网站说明</h2><blockquote>
 <p>此网站用于记录个人学习笔记以及技术收藏Blog，如有问题或者文章有误欢迎评论指正（反正联系不到我）。本人目前为前端程序员，2年工作经验，学无止境，还需努力。</p>
 </blockquote>
@@ -159,6 +167,7 @@
 
   </div>
 </article>
+
 <!-- gitment -->
 
       </div>

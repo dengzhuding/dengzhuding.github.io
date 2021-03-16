@@ -26,6 +26,8 @@
       var hm = document.createElement("script");
       // hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
       hm.src = "https://hm.baidu.com/hm.js?64cba5c79d730cff73ae4a75bdb75bf2";
+      hm.defer = true
+      hm.async = true
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
@@ -208,15 +210,36 @@
       <span class="color-black-2 shrink-0">创建日期：</span>
       <span class="ellipsis post-time">2020-09-07 10:10</span>
       <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-03-14 02:38</span>
+      <span class="ellipsis post-time">2021-03-17 02:15</span>
     </div>
   </article>
   
 </section>
-<div>
+<div class="paginator-div">
   
   <nav>
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <ul class="display-flex item-center item-wrap">
+      
+      
+        <li>
+          <a class="page-number active" href="/">
+            1
+          </a>
+        </li>
+      
+        <li>
+          <a class="page-number " href="/page/2">
+            2
+          </a>
+        </li>
+      
+      
+      <li><a class="page-next mg-l-rem-1" href="page/2/">下一页</a></li>
+      
+    </ul>
+    <!--
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    -->
   </nav>
 
 </div>

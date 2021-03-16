@@ -26,6 +26,8 @@
       var hm = document.createElement("script");
       // hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
       hm.src = "https://hm.baidu.com/hm.js?64cba5c79d730cff73ae4a75bdb75bf2";
+      hm.defer = true
+      hm.async = true
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
@@ -94,7 +96,7 @@
 <!-- top -->
 
 <div class="content-toc-div">
-  <div class="article-toc-parent z-index-2 mg-t-180">
+  <div class="article-toc-parent z-index-2 mg-t-207">
     <div
       class="color-blue-1 cursor-pointer border-bottom-blue-1 pd-l-12 pd-r-12 display-flex item-start hover-bg-gray1"
       onclick="this.parentElement.classList.contains('show-detail') ? this.parentElement.classList.remove('show-detail') : this.parentElement.classList.add('show-detail');"
@@ -112,11 +114,17 @@
 </div>
 
 <!-- content -->
-<article class="relative">
+<article class="relative border-bottom-blue-1">
   <!-- <div class="article-title z-index-2"> -->
   <div class="content-header mg-b-rem-2 relative">
     <div>
       <h2 class="ellipsis mg-0 pd-b-rem--1 pd-t-rem--1">Hello World</h2>
+      <div class="display-flex mg-b-12">
+        <svg class="icon-svg mg-r-5 shrink-0" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4898" width="200" height="200"><path d="M911.194 151.785v539.172L730.253 845.451h-589.66V151.785h770.601zM679.765 614.021H255.706v76.936h424.059v-76.936zM795.479 460.15H255.706v76.936h539.773V460.15z m0-154.494H255.706v77.559h539.773v-77.559z m0 0" fill="#ffffff" p-id="4899"></path></svg>
+        <div class="color-black-2 ellipsis" title="">
+          太懒了，暂无简介^v^
+        </div>
+      </div>
       <!--
       <div
         class="absolute cursor-pointer right-0 top-0"
@@ -174,7 +182,7 @@
       </div>
     </div>
   </div>
-  <div class="content-div pd-l-rem--1 pd-r-rem--1 overflow-hidden">
+  <div class="content-div pd-l-rem--1 pd-r-rem--1 overflow-hidden min-height-100">
     <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -191,11 +199,24 @@
 
   </div>
 </article>
-<!-- gitment -->
 
-<div class="gitment-ifrme-div">
-  <iframe src="/app_authorization/github_login_calback.html" frameborder="0"></iframe>
+<div class="display-flex item-center mg-b-12 mg-t-12">
+  <a class="page-link width-percent-50 no-decoration" href="/blog/aa30815703a0/" title="">
+    <div class="align-end direction-column display-flex pd-r-rem--1">
+      
+      <p class="color-black-1">前一篇</p>
+      <div class="ellipsis font-1-25 width-percent-100 align-right">post title</div>
+      
+    </div>
+  </a>
+  <a class="page-link width-percent-50 no-decoration" href="/" title="">
+    <div class="align-start direction-column display-flex pd-l-rem--1">
+      
+    </div>
+  </a>
 </div>
+
+<!-- gitment -->
 
       </div>
       <footer class="max-w-mian-size color-black-1 font--75 bg-gray-type1 width-percent-100">

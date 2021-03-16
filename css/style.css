@@ -34,6 +34,9 @@
 .width-120 {
   width: 120px;
 }
+.width-percent-50 {
+  width: 50%;
+}
 .width-percent-100 {
   width: 100%;
 }
@@ -202,6 +205,9 @@
 .mg-t-180 {
   margin-top: 180px;
 }
+.mg-t-207 {
+  margin-top: 207px;
+}
 .mg-b-5 {
   margin-bottom: 5px;
 }
@@ -281,6 +287,12 @@
 }
 .display-flex .flex-start {
   align-self: flex-start;
+}
+.display-flex .align-end {
+  align-items: flex-end;
+}
+.display-flex .align-start {
+  align-items: flex-start;
 }
 .relative {
   position: relative;
@@ -417,8 +429,14 @@
 .nowrap {
   white-space: nowrap;
 }
+.no-decoration {
+  text-decoration: none;
+}
 .transition-a-2 {
   transition: all 0.2s;
+}
+.min-height-100 {
+  min-height: 100px;
 }
 .min-vh-100 {
   min-height: 100vh;
@@ -443,6 +461,12 @@
 }
 .align {
   text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
 }
 .hover-bg-gray1:hover {
   background: #eee;
@@ -867,7 +891,6 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
   box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.15);
   border-radius: 0.6rem;
   padding: 1rem;
-  cursor: grab;
   position: relative;
   transition: all 0.2s;
   overflow: hidden;
@@ -917,6 +940,20 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 .posts-div .post-item:hover::before {
   right: -1.5rem;
   top: -1.5rem;
+}
+.paginator-div a.page-number {
+  width: 2rem;
+  padding: 0;
+/* margin: 0 0.5rem; */
+  min-width: 1rem;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+.paginator-div a.page-number.active {
+  background: rgba(0,90,255,0.8);
+  color: #fff;
+  pointer-events: none;
 }
 article .content-div a:active {
   background-color: #005aff;
