@@ -358,13 +358,15 @@ code {
   word-break: break-all;
 }
 blockquote {
-  border-left: 0.25rem solid #009688;
+  /* border-left: 0.25rem solid #009688; */
+  border-left: 0.25rem solid #406293;
   padding: 0.5rem 1rem;
   word-break: break-word;
   font-size: 0.85rem;
   font-weight: normal;
   margin: 0 0 0 1.5rem;
-  background: rgba(255, 255, 255, 0.5);
+  /* background: rgba(255, 255, 255, 0.5); */
+  background: rgb(242 242 242);
 }
 ol {
   list-style-type: none;

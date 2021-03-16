@@ -14,6 +14,7 @@ blockquote {
    /* background: linear-gradient(to left, #f2f2f2, transparent); */
    position: relative;
    border-radius: 0px;
+   background: none;
 }
 
 blockquote::after {
