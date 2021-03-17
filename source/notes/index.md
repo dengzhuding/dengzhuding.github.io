@@ -29,6 +29,16 @@ blockquote::after {
    background: #f2f2f2;
 }
 </style>
+***
+> 2021-03-17
+> github.com能ping通，但是无法访问，试试添加以下解析至hosts文件(windows - `C:\Windows\System32\drivers\etc`, linux - `/etc/hosts`)
+```bash
+# ...
+140.82.114.4      github.com
+151.101.88.249    github.global.ssl.fastly.net
+151.101.73.194    github.global.ssl.fastly.net
+151.101.229.194   github.global.ssl.fastly.net
+```
 
 ***
 > 2021-01-17

@@ -2,7 +2,7 @@
 layout: post
 title: Centos7.5安装docker及基础配置使用
 date: 2021-03-12 11:23:23
-updated: 2021-03-12 11:23:23
+updated: 2021-03-17 15:00:00
 categories: [docker]
 tags:
   - docker
@@ -48,6 +48,7 @@ sudo systemctl start docker
 
 #### 1.3 基础配置
 * 配置远程连接（需要配置证书，不然不安全，也可以配置单一ip。。。有空再弄）
+
 > 参考(https://docs.docker.com/engine/install/linux-postinstall/#configuring-remote-access-with-systemd-unit-file)
 > (https://www.cnblogs.com/niceyoo/p/13270224.html)
 
@@ -61,9 +62,33 @@ sudo curl -L \
 ```
 * 添加可执行(x)权限：`sudo chmod +x /usr/local/bin/docker-compose`
 * 测试：`docker-compose -v`
+
 > 小笔记:
 > 1. `npm ci` VS `npm install` 前者需要`package-lock.json`文件，安装快，主要用于自动化环境，如测试平台，持续集成和部署
 > 2. `npm ci --production` 加 --production目的是不安装开发依赖（即"devDependencies"属性中的依赖包）
+
 ### 二、搭建基础环境
 
-### 三、简单使用
+### 三、简单使用案例(bookmark-manager)
+#### 3.1 服务需求
+> **服务包括前端(bookmark-manager-web)和后台，见下图：**
+
+> {% asset_img bookmark-manage-services.png %}
+
+#### 3.2 Dockerfile配置
+> 大致执行步骤以及配置思路:
+> 1\. 搭建服务器git,本地开发通过添加tag触发对应项目钩子(hook);
+> 2\. 将项目源码clone/pull至服务器一个目录下,如`/srv/source-code/bookmark-manager/`;
+> 3\. 配置docker-compose.yml各个指定dockerfile(Dockerfile)以及context(构建上下文);
+> 4\. 配置docker-compose.yml启动顺序以及相关network等;
+> 5\. 重启容器服务;
+
+通过{% post_link 架设私人git托管服务器 %}这一步,服务器上已经可以使用git服务了,将相关子项目映射到git服务器上然后就进行下列配置:
+* 配置git hook
+```bash
+# /srv/source-code/bookmark-manager/xxxProject.git/hooks/post-receive
+# 待写
+```
+* docker-compose配置文件
+* web静态资源Dockerfile
+
