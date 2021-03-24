@@ -92,3 +92,15 @@ sudo curl -L \
 * docker-compose配置文件
 * web静态资源Dockerfile
 
+注意需要开启转发配置，否则容器内无法访问外网：
+```bash
+# 编辑/etc/sysctl.conf文件，配置net.ipv4.ip_forward = 1
+sudo vim /etc/sysctl.conf
+# 保存退出，重启network服务
+sudo systemctl restart network
+# 验证net.ipv4.ip_forward = 1
+sudo sysctl net.ipv4.ip_forward
+# 重启docker服务
+sudo systemctl restart docker.service
+```
+
