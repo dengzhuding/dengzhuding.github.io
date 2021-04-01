@@ -410,3 +410,7 @@ hr {
   border-radius: 2px;
   background: linear-gradient(45deg, #a7c7d0, #f3cfa2);
 }
+pre[class*="language-"] {
+  max-height: 500px;
+  border-radius: 3px;
+}

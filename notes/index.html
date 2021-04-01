@@ -173,6 +173,139 @@ blockquote::after {
    background: #f2f2f2;
 }
 </style>
+<div class="pd-b-10"></div>
+
+<hr>
+<blockquote>
+<p>2021-04-01<br>loading加载效果</p>
+</blockquote>
+<p>效果：</p>
+<style type="text/css">
+   @keyframes color-t {
+      0% {
+         background: #008eff;
+      }
+      50% {
+         background: #0001ff;
+      }
+      100% {
+         background: #008eff;
+      }
+   }
+   @keyframes bgc-t {
+      0% {
+         transform: rotateZ(0);
+      }
+      100% {
+         transform: rotateZ(360deg);
+      }
+   }
+   .loading-div {
+      display: flex;
+      flex-direction: column;
+      height: 100px;
+      width: 100px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      user-select: none;
+      margin: 0 auto;
+      background: #448de0;
+      animation: color-t 2s infinite ease;
+   }
+   .loading-div .bg-translate {
+      position: absolute;
+      padding: 72%;
+      left: -22%;
+      top: -22%;
+      z-index: 1;
+      background-image: linear-gradient(#fff,#448de000);
+      animation: bgc-t 2s infinite linear;
+   }
+   .loading-div .bg-content {
+      z-index: 2;
+      flex-grow: 1;
+      margin: 8px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      color: #6b6b6b;
+      font-size: 12px;
+   }
+</style>
+<div class="loading-div">
+   <div class="bg-translate"></div>
+   <div class="bg-content">
+      <span>loading...</span>
+   </div>
+</div>
+
+<p>html:</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test-div<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-translate<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>loading...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>css:</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> color-t</span> <span class="token punctuation">&#123;</span>
+   <span class="token selector">0%</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span> #008eff<span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+   <span class="token selector">50%</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span> #0001ff<span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+   <span class="token selector">100%</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span> #008eff<span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token atrule"><span class="token rule">@keyframes</span> bgc-t</span> <span class="token punctuation">&#123;</span>
+   <span class="token selector">0%</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+   <span class="token selector">100%</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateZ</span><span class="token punctuation">(</span>360deg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.loading-div</span> <span class="token punctuation">&#123;</span>
+   <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+   <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+   <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+   <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+   <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+   <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+   <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+   <span class="token property">user-select</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+   <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+   <span class="token property">background</span><span class="token punctuation">:</span> #448de0<span class="token punctuation">;</span>
+   <span class="token property">animation</span><span class="token punctuation">:</span> color-t 2s infinite ease<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.loading-div .bg-translate</span> <span class="token punctuation">&#123;</span>
+   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+   <span class="token property">padding</span><span class="token punctuation">:</span> 72%<span class="token punctuation">;</span>
+   <span class="token property">left</span><span class="token punctuation">:</span> -22%<span class="token punctuation">;</span>
+   <span class="token property">top</span><span class="token punctuation">:</span> -22%<span class="token punctuation">;</span>
+   <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+   <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>#fff<span class="token punctuation">,</span>#448de000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token property">animation</span><span class="token punctuation">:</span> bgc-t 2s infinite linear<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.loading-div .bg-content</span> <span class="token punctuation">&#123;</span>
+   <span class="token property">z-index</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+   <span class="token property">flex-grow</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+   <span class="token property">margin</span><span class="token punctuation">:</span> 8px<span class="token punctuation">;</span>
+   <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+   <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+   <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+   <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+   <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+   <span class="token property">font-family</span><span class="token punctuation">:</span> sans-serif<span class="token punctuation">;</span>
+   <span class="token property">color</span><span class="token punctuation">:</span> #6b6b6b<span class="token punctuation">;</span>
+   <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 <blockquote>
 <p>2021-03-17<br>github.com能ping通，但是无法访问，试试添加以下解析至hosts文件(windows - <code>C:\Windows\System32\drivers\etc</code>, linux - <code>/etc/hosts</code>)</p>
