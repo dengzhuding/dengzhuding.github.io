@@ -6,7 +6,7 @@
     function addModel() {
         const templateStr = `
                 <div class="img-content">
-                    <img src="" class="preview-img" draggable="true" style="position: relative; transition: all 0.2s ease 0s;">
+                    <img src="" class="preview-img cursor-pointer" draggable="true" style="position: relative; transition: all 0.2s ease 0s;">
                 </div>
             `;
         const styleStr = `

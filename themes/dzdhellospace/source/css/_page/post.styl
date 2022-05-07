@@ -89,6 +89,19 @@ article {
           }
         }
       }
+      .toc-item .toc-link {
+        position: relative;
+        &.active::before {
+          background: #00aaf2;
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 8px;
+          height: 100%;
+          border-radius: 2px
+        }
+      }
     }
     // & > div:first-child:before {
     //   content: '<'
@@ -217,4 +230,9 @@ header {
     justify-content: center;
     align-items: center;
   }
+}
+
+html {
+  // 滚动行为设置为-平稳的滚动
+  scroll-behavior: smooth;
 }
