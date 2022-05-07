@@ -2,7 +2,7 @@
 layout: post
 title: 日常小笔记
 date: 2020-09-03 10:19:53
-updated: 2020-09-10 14:02:00
+# updated: 2020-09-10 14:02:00
 excerpt: 日常笔记记录，想到啥就记啥
 ---
 
@@ -17,7 +17,7 @@ blockquote {
    background: none;
 }
 
-blockquote::after {
+/* blockquote::after {
    content: '';
    position: absolute;
    width: 4rem;
@@ -27,9 +27,40 @@ blockquote::after {
    right: -3rem;
    top: -3rem;
    background: #f2f2f2;
-}
+} */
 </style>
 <div class="pd-b-10"></div>
+
+***
+> 2022-05-07
+> css 粘性边界
+
+**通过filter的2个函数方法: 对比度-`filter: contrast(10);`、高斯模糊-`filter: blur(4px);`组合产生粘性效果**
+效果：
+<div style="height: 300px;">
+    <div style="width: 200px;height: 200px;filter: contrast(10);position: relative;left: 50%;top: 50%;transform: translate(-50%, -50%);background: black;border-radius: 50%;" class="test-div">
+        <style>
+        .test-div > * {
+            filter: blur(4px);
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;transform: translate(-50%, -50%);
+        }
+        @keyframes ball {
+            0%, 100% {
+                left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+            50%{
+                left: 180px
+            }
+        }
+        </style>
+        <div style="position: relative;width: 80px;height: 80px;background: white;"></div>
+        <span style="position: absolute;background: red;animation: ball 5s infinite;animation-timing-function: linear;"></span>
+    </div>
+</div>
 
 ***
 > 2021-04-01
