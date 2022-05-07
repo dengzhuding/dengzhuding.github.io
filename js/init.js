@@ -20,8 +20,8 @@ function throttle (func, waitTime, firstTimeRun, lastTimeRun) {
   lastTimeRun = lastTimeRun !== false;
   // 用于设置了执行频率时保存计时器
   let timer = null;
-  const run = function () {
-    func(arguments);
+  const run = function (arg) {
+    func.call(null, ...arg);
     // 可能上一步执行会经过一段时间，这里更新执行后时间为本次执行时间
     preTime = Date.now();
   }

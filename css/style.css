@@ -88,6 +88,9 @@
 .pd-t-5 {
   padding-top: 5px;
 }
+.pd-t-8 {
+  padding-top: 8px;
+}
 .pd-t-10 {
   padding-top: 10px;
 }
@@ -1028,6 +1031,19 @@ article .data-layout-div .date-div {
 .content-toc-div .article-toc-parent .article-toc-div .toc > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-child > .toc-item > .toc-link {
   padding-left: 4rem;
 }
+.content-toc-div .article-toc-parent .article-toc-div .toc-item .toc-link {
+  position: relative;
+}
+.content-toc-div .article-toc-parent .article-toc-div .toc-item .toc-link.active::before {
+  background: #00aaf2;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  border-radius: 2px;
+}
 .content-toc-div .article-toc-parent #circle-item {
   transform: translateX(0);
   transition: transform 0.2s;
@@ -1115,6 +1131,24 @@ header.static + main .content-toc-div .article-toc-parent.top-0 {
 .tag-item-list-item .tag-item-list-link:hover {
   -webkit-background-clip: padding-box;
   color: #fff;
+}
+#image-model-div {
+  display: none;
+}
+#image-model-div.show {
+  display: flex;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+html {
+  scroll-behavior: smooth;
 }
 .bookmarks-title-div {
   display: flex;
