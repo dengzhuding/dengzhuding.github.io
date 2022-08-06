@@ -7,6 +7,10 @@
     <title><%= config.title %></title>
   <% } %>
   <!-- <title><%= (page.title || config.title) + config.siteTag %></title> -->
+
+  <!-- Web application manifests -->
+  <link rel="manifest" crossorigin="use-credentials" href="manifest.json">
+
   <%- css('css/normalize.css') %>
   <%- css('css/style.css') %>
   <!-- 字体图标 -->
