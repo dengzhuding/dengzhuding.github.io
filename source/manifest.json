@@ -14,8 +14,8 @@
       "type": "image/png"
     },
     {
-      "src": "images/blog-LOGO480x480.png",
-      "sizes": "480x480",
+      "src": "images/blog-LOGO144x144.png",
+      "sizes": "144x144",
       "type": "image/png"
     }
   ]
