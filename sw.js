@@ -3,6 +3,7 @@
  * 在app.js中注册
  */
 
- self.onstatechange = ({target: { state }}) => {
-  console.log('state change to:', state);
-}
+self.addEventListener('install', (e) => {
+  console.log('[Service Worker] Install');
+});
+
