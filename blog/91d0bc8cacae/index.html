@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  
+    <title>openssl常用功能[dzd]</title>
+  
+  <!-- <title>openssl常用功能[dzd]</title> -->
+
+  <!-- Web application manifests -->
+  <link rel="manifest" crossorigin="use-credentials" href="manifest.json">
+  
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- 字体图标 -->
+  <!-- <script src="https://kit.fontawesome.com/895a2e3e9e.js" crossorigin="anonymous" async></script> -->
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      // 本地调试不启用统计
+      if (/localhost|127.0.0.1/.test(location.hostname)) {
+        return
+      }
+      var hm = document.createElement("script");
+      // hm.src = "https://hm.baidu.com/hm.js?1b2d862f6763024eb69795ab8ef8c404";
+      hm.src = "https://hm.baidu.com/hm.js?64cba5c79d730cff73ae4a75bdb75bf2";
+      hm.defer = true
+      hm.async = true
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <!-- svg图标 -->
+  <!-- <svg>
+  <symbol></symbol>
+</svg> -->
+<meta name="generator" content="Hexo 5.0.2"></head>
+<body>
+  <div class="content-main-div min-vh-100">
+    <header class="fixed top-0 transition-a-2 height-120 width-percent-100 z-index-99 bg-line-type2 static">
+  <!-- static -->
+  <div class="display-flex height-100- item-space-between max-w-mian-size margin-center">
+    <div class="mg-l-rem-2 display-flex shrink-0 height-100-">
+      <!-- <span class="logo flex-end"></span> -->
+      <!-- <span class="color-white logo-text flex-end">DZD-HELLO</span> -->
+      <span class="logo-svg-span bg-white relative height-100-">
+        <img src="/images/blog-LOGO.svg" />
+        <span class="logo-svg-text">DZD-HELLO</span>
+      </span>
+    </div>
+    <nav class="grow-1 pd-l-60 relative z-index-99">
+      <ul class="menu mg-0 pd-0">
+        
+        <li class="">
+          <a class="nav-a" href="/" >Home</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/archives" >Archives</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/bookmarks/index" >Bookmarks</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/notes/index" >Notes</a>
+        </li>
+        
+        <li class="">
+          <a class="nav-a" href="/about/me" >About</a>
+        </li>
+        
+      </ul>
+    </nav>
+    <div class="nav-show-bar">
+      <!-- <i class="fas fa-bars"></i> -->
+      <svg class="icon-svg" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="30869" width="200" height="200">
+        <path d="M997.44827 485.043045l-80.873935 0 0 0.028653c-15.600303 0-28.106128 13.249769-26.855648 29.114085 1.029446 13.057387 11.608386 23.636327 24.665773 24.665773 0.73678 0.058328 1.465374 0.075725 2.188852 0.075725l0 0.028653 80.873935 0c14.889105 0 26.957978-12.068873 26.957978-26.954909C1024.406249 497.111918 1012.337375 485.043045 997.44827 485.043045zM997.44827 889.413745l-80.873935 0 0 0.047072c-15.600303 0-28.106128 13.249769-26.855648 29.114085 1.029446 13.057387 11.608386 23.636327 24.665773 24.665773 0.73678 0.058328 1.465374 0.075725 2.188852 0.075725l0 0.010233 80.873935 0c14.889105 0 26.957978-12.068873 26.957978-26.954909C1024.406249 901.482619 1012.337375 889.413745 997.44827 889.413745zM811.991418 80.758302c-1.096984-0.086981-2.180666-0.103354-3.25002-0.061398l0-0.024559L26.957974 80.672344c-14.889105 0-26.957978 12.068873-26.957978 26.954909 0 14.891152 12.068873 26.961048 26.957978 26.961048L808.741397 134.588301l0-0.068562c16.090467 0.618077 29.195949-12.873192 27.916816-29.095665C835.628768 92.367711 825.049828 81.788771 811.991418 80.758302zM914.384459 134.463458c0.73678 0.058328 1.465374 0.075725 2.188852 0.075725l0 0.049119 80.873935 0c14.889105 0 26.957978-12.068873 26.957978-26.961048 0-14.886035-12.068873-26.954909-26.957978-26.954909l-80.873935 0 0 0.010233c-15.600303 0-28.106128 13.249769-26.855648 29.114085C890.748133 122.854049 901.327072 133.432988 914.384459 134.463458zM811.991418 485.147422c-1.096984-0.086981-2.180666-0.103354-3.25002-0.061398l0-0.042979L26.957974 485.043045c-14.889105 0-26.957978 12.068873-26.957978 26.957978 0 14.886035 12.068873 26.954909 26.957978 26.954909L808.741397 538.955932l0-0.047072c16.090467 0.618077 29.195949-12.873192 27.916816-29.095665C835.628768 496.755808 825.049828 486.176868 811.991418 485.147422zM811.991418 889.536542c-1.096984-0.086981-2.180666-0.103354-3.25002-0.061398l0-0.061398L26.957974 889.413745c-14.889105 0-26.957978 12.068873-26.957978 26.957978 0 14.886035 12.068873 26.954909 26.957978 26.954909L808.741397 943.326633l0-0.029676c16.090467 0.618077 29.195949-12.873192 27.916816-29.095665C835.628768 901.144928 825.049828 890.565988 811.991418 889.536542z" p-id="30870" fill="currentColor"></path>
+      </svg>
+    </div>
+    <!-- 固定header -->
+    <div class="absolute header-thumbtack cursor-pointer color-black-2">
+      <span>
+        <!-- <i class="absolute fa-thumbtack fas"></i> -->
+        <svg class="absolute svg-thumbtack" t="1611770899771" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2821" width="200" height="200"><path d="M381.298 418.828h-157.703l-37.575 38.272 155.61 158.377-278.212 345.128 356.040-265.838 154.71 157.41 38.813-39.51 2.407-157.972 238.838-313.29 71.685 73.013 34.695-35.28-310.185-315.743-34.672 35.257 77.287 79.402-311.737 240.773z" p-id="2822" fill="currentColor"></path></svg>
+      </span>
+    </div>
+  </div>
+</header>
+    <main class="display-flex direction-column pd-t-120">
+      <div class="max-w-mian-size bg-line-type3 relative shrink-0 grow-1 width-percent-100 mg-t-20 pd-t-0">
+        
+<!-- top -->
+
+<div class="content-toc-div">
+  <div class="article-toc-parent z-index-2 mg-t-207">
+    <div
+      class="color-blue-1 cursor-pointer border-bottom-blue-1 pd-l-12 pd-r-12 display-flex item-start hover-bg-gray1"
+      onclick="this.parentElement.classList.contains('show-detail') ? this.parentElement.classList.remove('show-detail') : this.parentElement.classList.add('show-detail');"
+    >
+      <div>目录</div>
+      <svg class="icon-svg-b" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="20324" width="128" height="128">
+        <path id="circle-bg" d="M688.64 757.76H360.96c-135.168 0-245.76-110.592-245.76-245.76s110.592-245.76 245.76-245.76h327.68c135.168 0 245.76 110.592 245.76 245.76s-110.592 245.76-245.76 245.76z" fill="#ccc"></path>
+        <path id="circle-item" fill="white" d="M686.08 512m-202.24 0a202.24 202.24 0 1 0 404.48 0 202.24 202.24 0 1 0-404.48 0Z"></path>
+      </svg>
+    </div>
+    <div class="article-toc-div pd-t-8 hidden">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-text">一、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-openssl%E7%BB%84%E6%88%90"><span class="toc-text">1.1 openssl组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%8A%9F%E8%83%BD"><span class="toc-text">1.2 功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="toc-text">二、常用功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6MD5%E6%88%96sha256%E5%80%BC"><span class="toc-text">2.1 查看文件MD5或sha256值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E4%BD%BF%E7%94%A8-des3%E8%BF%9B%E8%A1%8C%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-text">2.2 使用-des3进行对称加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-text">2.3 生成随机数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E7%94%9F%E6%88%90rsa%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-text">2.4 生成rsa密钥对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E9%85%8D%E7%BD%AECA%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">2.5 配置CA服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E4%B8%BA%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%81%E4%B9%A6%E7%AD%BE%E5%90%8D"><span class="toc-text">2.6 为客户端证书签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-%E8%BD%AC%E6%8D%A2%E8%AF%81%E4%B9%A6%E4%B8%BAPKCS12%E6%96%87%E4%BB%B6"><span class="toc-text">2.7 转换证书为PKCS12文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE%E8%AF%81%E4%B9%A6%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF"><span class="toc-text">三、配置证书到服务器端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-nginx%E9%85%8D%E7%BD%AE-%E5%BE%85%E9%AA%8C%E8%AF%81"><span class="toc-text">3.1 nginx配置(待验证)</span></a></li></ol></li></ol>
+    </div>
+  </div>
+</div>
+
+<!-- content -->
+<article class="relative border-bottom-blue-1">
+  <!-- <div class="article-title z-index-2"> -->
+  <div class="content-header mg-b-rem-2 relative">
+    <div>
+      <h2 class="ellipsis mg-0 pd-b-rem--1 pd-t-rem--1">openssl常用功能</h2>
+      <div class="display-flex mg-b-12">
+        <svg class="icon-svg mg-r-5 shrink-0" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4898" width="200" height="200"><path d="M911.194 151.785v539.172L730.253 845.451h-589.66V151.785h770.601zM679.765 614.021H255.706v76.936h424.059v-76.936zM795.479 460.15H255.706v76.936h539.773V460.15z m0-154.494H255.706v77.559h539.773v-77.559z m0 0" fill="#ffffff" p-id="4899"></path></svg>
+        <div class="color-black-2 ellipsis" title="简单描述opensssl命名的一些常用功能">
+          简单描述opensssl命名的一些常用功能
+        </div>
+      </div>
+      <!--
+      <div
+        class="absolute cursor-pointer right-0 top-0"
+        onclick="this.parentElement.classList.contains('static') ? this.parentElement.classList.remove('static') : this.parentElement.classList.add('static');document.querySelector('.article-toc-parent').classList.add('top-0');"
+      >
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+          <defs>
+            <style type="text/css">
+              g:hover {
+                stroke: #00aaf2;
+                stroke-opacity: 0.8;
+              }
+            </style>
+          </defs>
+          <g stroke="white" stroke-width="4" stroke-linecap="round" transform="rotate(45, 18, 18)">
+            <circle cx="18" cy="18" stroke-width="3" fill="transparent" r="15"></circle>
+            <line x1="8" y1="18" x2="28" y2="18"></line>
+            <line x1="18" y1="8" x2="18" y2="28"></line>
+          </g>
+        </svg>
+      </div>
+      -->
+    </div>
+    
+    <div class="categories-div display-flex mg-b-12">
+      <svg class="icon-svg mg-r-5" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9860" data-spm-anchor-id="a313x.7781069.0.i3" width="32" height="32"><path d="M810.666667 853.333333H170.666667a85.333333 85.333333 0 0 1-85.333334-85.333333V256c0-47.36 37.973333-85.333333 85.333334-85.333333h256l85.333333 85.333333h298.666667c46.805333 0 85.333333 38.528 85.333333 85.333333H170.666667v426.666667l91.306666-341.333333h728.32l-97.28 362.666666c-9.813333 37.12-43.093333 64-82.346666 64z" fill="#ffffff" p-id="9861" data-spm-anchor-id="a313x.7781069.0.i0" class=""></path></svg>      <!--
+      %- list_categories(page.categories, {
+        class: 'category-item',
+        show_count: false,
+        style: 'list'
+      }) 
+      -->
+      
+    </div>
+    <div class="tags-div display-flex">
+      <svg class="icon-svg mg-r-5" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8927" width="200" height="200"><path d="M256 256q0-30.285714-21.428571-51.714286T182.857143 182.857143t-51.714286 21.428571T109.714286 256t21.428571 51.714286T182.857143 329.142857t51.714286-21.428571T256 256z m609.714286 329.142857q0 30.285714-21.142857 51.428572l-280.571429 281.142857q-22.285714 21.142857-52 21.142857-30.285714 0-51.428571-21.142857L52 508.571429q-21.714286-21.142857-36.857143-57.714286T0 384V146.285714q0-29.714286 21.714286-51.428571t51.428571-21.714286h237.714286q30.285714 0 66.857143 15.142857T436 125.142857l408.571429 408q21.142857 22.285714 21.142857 52z m219.428571 0q0 30.285714-21.142857 51.428572l-280.571429 281.142857q-22.285714 21.142857-52 21.142857-20.571429 0-33.714285-8t-30.285715-25.714286l268.571429-268.571428q21.142857-21.142857 21.142857-51.428572 0-29.714286-21.142857-52L527.428571 125.142857q-21.714286-21.714286-58.285714-36.857143T402.285714 73.142857h128q30.285714 0 66.857143 15.142857t58.285714 36.857143l408.571429 408q21.142857 22.285714 21.142857 52z" p-id="8928" fill="currentColor"></path></svg>
+      <ul class="tag-item-list" itemprop="keywords"><li class="tag-item-list-item"><a class="tag-item-list-link" href="/tags/openssl/" rel="tag">openssl</a></li></ul>
+    </div>
+    
+    <div class="data-layout-div display-flex relative top-rem--1 font--75">
+      <div class="grow-1"></div>
+      <div class="date-div bg-white shrink-0 display-flex flex-end pd-b-rem---5 pd-l-rem--1 pd-r-rem--1">
+        <svg class="icon-svg mg-r-5 shrink-0" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14449" width="200" height="200">
+          <path d="M41.795918 188.081633v794.122449h940.408164V188.081633H41.795918z m982.204082-41.795919v877.714286H0V146.285714h1024z" fill="#fff" p-id="14450"></path>
+          <path d="M229.877551 0h41.795918v292.571429h-41.795918zM773.22449 0h41.795918v292.571429h-41.795918z" fill="#fff" p-id="14451"></path>
+          <path d="M20.897959 376.163265h961.306123v41.795919H20.897959z" fill="#fff" p-id="14452"></path>
+          <path d="M455.115755 801.729306L734.396082 522.44898l29.549714 29.549714-295.538939 295.538939-6.123102-6.123102-13.291102 13.291102L271.673469 677.386449 301.223184 647.836735l153.892571 153.892571z" fill="#fff" p-id="14453"></path>
+        </svg>
+        <span class="post-time ellipsis mg-r-rem-1 shrink-1" title="创建时间">2022-08-08 11:11</span>
+        <svg class="icon-svg mg-r-5 shrink-0" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12476" width="200" height="200">
+          <path d="M993.85823 51.261514a51.261514 51.261514 0 0 0-102.523028 0v85.709251A512.615138 512.615138 0 0 0 141.686824 831.871846a51.261514 51.261514 0 1 0 79.967962-64.384461 410.092111 410.092111 0 0 1 602.220264-553.624349L722.582299 205.046055a51.261514 51.261514 0 0 0-9.227073 102.523028l225.550661 20.504605h12.712855l4.921106-1.02523 4.716059-1.435322 4.716059-2.050461 4.305968-2.255506 4.100921-2.870645 3.690829-3.075691c1.230276-1.02523 2.255507-2.255507 3.485783-3.485783l2.05046-4.305967 2.665599-4.100921 2.460552-4.511013 1.845415-4.511014a41.009211 41.009211 0 0 0 1.435322-4.716059 24.400481 24.400481 0 0 0 1.025231-5.331197 12.507809 12.507809 0 0 0 0-2.665599V277.017221zM453.76692 914.505406a45.72527 45.72527 0 0 0-10.457349-3.895875 399.429716 399.429716 0 0 1-83.65879-31.167c-12.507809-6.151382-24.810573-13.122948-36.703244-20.504605l-4.511013-2.665599a51.261514 51.261514 0 0 0-50.236284 89.195034c11.892671 7.586704 23.990388 14.55827 36.703244 20.504605h26.861033l2.255507 1.025231a515.485783 515.485783 0 0 0 82.018422 28.296355 51.261514 51.261514 0 0 0 35.267922-95.551461z" fill="#fff" p-id="12477"></path>
+          <path d="M672.961153 915.530637a50.646376 50.646376 0 0 0-34.857829-4.100921 405.991189 405.991189 0 0 1-64.794553 10.252302 51.261514 51.261514 0 0 0-18.864238 96.986785 50.236284 50.236284 0 0 0 26.450942 5.126151 517.331197 517.331197 0 0 0 82.018422-12.712855 51.261514 51.261514 0 0 0 37.728474-61.513817 50.646376 50.646376 0 0 0-27.681218-34.037645z m166.497397-77.302363a51.261514 51.261514 0 0 0-53.311974 4.716059c-8.81698 6.356428-18.044053 12.507809-27.271125 18.249099a51.46656 51.46656 0 0 0-16.608731 70.535843 51.261514 51.261514 0 0 0 70.535843 16.608731c11.687625-7.176612 22.965158-14.763316 34.037645-22.965159a51.46656 51.46656 0 0 0-7.381658-87.144573z m109.289548-102.728074a51.261514 51.261514 0 1 0 13.943131 71.150981 51.46656 51.46656 0 0 0-13.943131-71.150981z" fill="#fff" p-id="12478"></path>
+        </svg>
+        <span class="post-time ellipsis shrink-1" title="更新时间">2022-08-09 04:56</span>
+      </div>
+    </div>
+  </div>
+  <div class="content-div pd-l-rem--1 pd-r-rem--1 overflow-hidden min-height-100">
+    <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><blockquote>
+<p>openssl: 在计算机网络上，OpenSSL是一个开放源代码的软件库包，应用程序可以使用这个包来进行安全通信，避免窃听，同时确认另一端连线者的身份。这个包广泛被应用在互联网的网页服务器上。<br>参考资料：<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/OpenSSL">wiki - OpenSSL</a><br><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/85969.html">阿里云 - 生成CA证书</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yangxiaolan/p/6256838.html">博客园 - openssl用法详解</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/395564763">知乎 - Self-Signed SSL证书创建和使用</a></p>
+</blockquote>
+<h3 id="1-1-openssl组成"><a href="#1-1-openssl组成" class="headerlink" title="1.1 openssl组成"></a>1.1 openssl组成</h3><ul>
+<li><strong><code>/usr/bin/openssl</code> - 可执行命令行工具</strong></li>
+<li><strong><code>../libcrypt.so  </code> - 实现数据加密功能的库文件(供第三方使用)</strong></li>
+<li><strong><code>../libssl.so    </code> - 实现tsl/ssl功能的库文件(供第三方使用)</strong></li>
+</ul>
+<blockquote>
+<p>使用<code>openssl --help</code>可以看到，这要分为标准命令、消息摘要命令以及密码相关命令<br>使用<code>openssl dgst</code> 和 <code>openssl enc</code> 可以分别查看具体详情<br>  <img src="/blog/91d0bc8cacae/openssl__help_2022-08-09_00-34-16.png" class=""></p>
+</blockquote>
+<h3 id="1-2-功能"><a href="#1-2-功能" class="headerlink" title="1.2 功能"></a>1.2 功能</h3><ul>
+<li>单向加密(提取文件特征码) - 只加密不解密，根据选择算法的算法输出固定长度特征码<blockquote>
+<p><code>openssl dgst [-md5|-md4|-md2|-sha1|-sha] [file...]</code></p>
+</blockquote>
+</li>
+<li>对称加密 - 加密解密使用同一个密钥(加密速度快)<blockquote>
+<p><code>openssl enc -ciphername [-in filename] [-out filename]</code></p>
+</blockquote>
+</li>
+<li>非对称加密 - 加密解密使用一对密钥(公钥、私钥,公钥是从私钥中提取出来的)，常见算法rsa、dsa<blockquote>
+<p>首先要生成私钥: <code>openssl genrsa [-out filename] [numbits]</code><br>从私钥中提取公钥: <code>openssl rsa [-in filename] [-pubout] [-out filename]</code></p>
+</blockquote>
+</li>
+<li>生成随机数 - num 指定生成字节数(如1，生成1字节=8位)，-hex指定以十六进制显示生产的随机数<blockquote>
+<p><code>openssl rand [-hex] num</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="二、常用功能"><a href="#二、常用功能" class="headerlink" title="二、常用功能"></a>二、常用功能</h2><h3 id="2-1-查看文件MD5或sha256值"><a href="#2-1-查看文件MD5或sha256值" class="headerlink" title="2.1 查看文件MD5或sha256值"></a>2.1 查看文件MD5或sha256值</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token builtin class-name">echo</span> <span class="token string">'Hello world!'</span> <span class="token operator">></span> hello.txt
+dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token function">ls</span>
+hello.txt
+dzdhello@ubuntu-server-22:~/use-openssl$ openssl dgst -md5 hello.txt
+MD5<span class="token punctuation">(</span>hello.txt<span class="token punctuation">)</span><span class="token operator">=</span> 59ca0efa9f5633cb0371bbc0355478d8
+dzdhello@ubuntu-server-22:~/use-openssl$ openssl dgst -sha256 hello.txt
+SHA2-256<span class="token punctuation">(</span>hello.txt<span class="token punctuation">)</span><span class="token operator">=</span> 0ba904eae8773b70c75333db4de2f3ac45a8ad4ddba1b242f0b3cfc199391dd8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-2-使用-des3进行对称加密"><a href="#2-2-使用-des3进行对称加密" class="headerlink" title="2.2 使用-des3进行对称加密"></a>2.2 使用-des3进行对称加密</h3><blockquote>
+<p><code>openssl enc -ciphers</code>命令可以查看支持的对称加密算法<br><code>-k </code> - 指定需要的密码; <code>-kfile infile</code> - 可以从文件中读取密码(推荐)<br><code>-e</code>  - 加密<br><code>-d</code>  - 解密<br>注意：<span class="color-red">解密一定要使用同样的算法以及密码，且加上了-d参数</span></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl enc -k <span class="token number">123456</span>  -des3 -in hello.txt -out hello.txt.encrm hello.txt.enc
+enc: Use -help <span class="token keyword">for</span> summary.
+dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token function">cat</span> hello.txt.enc <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span>
+Y��<span class="token punctuation">&#125;</span>"�L�A�k�Ć�c��
+dzdhello@ubuntu-server-22:~/use-openssl$ openssl enc -d -k <span class="token number">123456</span> -des3 -in hello.txt.enc -out hello.txt.enc.dec
+*** WARNING <span class="token builtin class-name">:</span> deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token function">cat</span> hello.txt.enc.dec
+Hello world<span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-3-生成随机数"><a href="#2-3-生成随机数" class="headerlink" title="2.3 生成随机数"></a>2.3 生成随机数</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl rand -hex <span class="token number">6</span>
+7da9b512b8a9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="2-4-生成rsa密钥对"><a href="#2-4-生成rsa密钥对" class="headerlink" title="2.4 生成rsa密钥对"></a>2.4 生成rsa密钥对</h3><p>1. <strong>生成私钥</strong><br>  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl genrsa -out ./key.pri <span class="token number">2048</span>
+dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token function">cat</span> key.pri
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCtYgW+4OJWXj/V<span class="token punctuation">..</span>.
+-----END PRIVATE KEY-----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<p>2. <strong>提取公钥</strong><br>  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl rsa -in key.pri -pubout -out key.pub
+writing RSA key
+dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token function">cat</span> key.pub
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArWIFvuDiVl4/1VFf+X9q<span class="token punctuation">..</span>.
+-----END PUBLIC KEY-----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<blockquote>
+<p>将公钥转为ssh-key格式: ssh-keygen -i [-f input_keyfile] [-m key_format]<br>  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ ssh-keygen -i -f key.pub -m PKCS8
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtYgW+4OJWXj/VUV/5f2q<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></p>
+</blockquote>
+<p>3. <strong>创建证书签名请求文件（certificate signing request，CSR)</strong><br>  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl req -new -key key.pri -out yourdomain.csr
+You are about to be asked to enter information that will be incorporated<span class="token punctuation">..</span>.
+dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token function">cat</span> yourdomain.csr
+-----BEGIN CERTIFICATE REQUEST-----
+MIICljCCAX4CAQAwUTELMAkGA1UEBhMCY24xCzAJBgNVBAgMAm5<span class="token punctuation">..</span>.
+-----END CERTIFICATE REQUEST-----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h3 id="2-5-配置CA服务器"><a href="#2-5-配置CA服务器" class="headerlink" title="2.5 配置CA服务器"></a>2.5 配置CA服务器</h3><blockquote>
+<p>输入命令<code>openssl ca</code>,根据提示得知：<br>1. 配置文件为<span class="color-red">/usr/lib/ssl/openssl.cnf</span>(那就指定自定义的配置文件)<br>2. 没有找到CA私钥(那就在所需要的位置生成私钥)<br>  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl ca
+Using configuration from /usr/lib/ssl/openssl.cnf
+Could not <span class="token function">open</span> <span class="token function">file</span> or uri <span class="token keyword">for</span> loading CA private key from ./demoCA/private/cakey.pem
+4037DA137C7F0000:error:16000069:STORE routines:ossl_store_get0_loader_int:unregistered scheme:<span class="token punctuation">..</span>/crypto/store/store_register.c:237:scheme<span class="token operator">=</span>file
+4037DA137C7F0000:error:80000002:system library:file_open:No such <span class="token function">file</span> or directory:<span class="token punctuation">..</span>/providers/implementations/storemgmt/file_store.c:267:calling stat<span class="token punctuation">(</span>./demoCA/private/cakey.pem<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+</blockquote>
+<ul>
+<li>设置新的配置，并根据配置创建相应目录/文件: <code>cp /usr/lib/ssl/openssl.cnf ./</code></li>
+<li>修改openssl.cnf -&gt; dir目录: <code>vim openssl.cnf</code> <img src="/blog/91d0bc8cacae/CA_config_2022-08-09_02-58-36.png" class="">
+<blockquote>
+<p>再次查看配置情况,这次指定配置文件: <code>openssl ca -config ./openssl.cnf</code></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl ca -config ./openssl.cnf
+Using configuration from ./openssl.cnf
+Could not <span class="token function">open</span> <span class="token function">file</span> or uri <span class="token keyword">for</span> loading CA private key from /home/dzdhello/use-openssl/demoCA/private/cakey.pem
+40570153937F0000:error:16000069:STORE routines:ossl_store_get0_loader_int:unregistered scheme:<span class="token punctuation">..</span>/crypto/store/store_register.c:237:scheme<span class="token operator">=</span>file
+40570153937F0000:error:80000002:system library:file_open:No such <span class="token function">file</span> or directory:<span class="token punctuation">..</span>/providers/implementations/storemgmt/file_store.c:267:calling stat<span class="token punctuation">(</span>/home/dzdhello/use-openssl/demoCA/private/cakey.pem<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>创建相应目录、文件<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token function">mkdir</span> -p -v /home/dzdhello/use-openssl/demoCA/<span class="token punctuation">&#123;</span>serts,crl,newcerts,private<span class="token punctuation">&#125;</span>
+mkdir: created directory <span class="token string">'/home/dzdhello/use-openssl/demoCA'</span>
+mkdir: created directory <span class="token string">'/home/dzdhello/use-openssl/demoCA/serts'</span>
+mkdir: created directory <span class="token string">'/home/dzdhello/use-openssl/demoCA/crl'</span>
+mkdir: created directory <span class="token string">'/home/dzdhello/use-openssl/demoCA/newcerts'</span>
+mkdir: created directory <span class="token string">'/home/dzdhello/use-openssl/demoCA/private'</span>
+dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token function">touch</span> /home/dzdhello/use-openssl/demoCA/<span class="token punctuation">&#123;</span>serial,index.txt<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>指明证书的开始编号：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ <span class="token builtin class-name">echo</span> 01 <span class="token operator">>></span> demoCA/serial<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>生成CA私钥，路径为<code>/home/dzdhello/use-openssl/demoCA/private/cakey.pem</code><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl genrsa -out /home/dzdhello/use-openssl/demoCA/private/cakey.pem <span class="token number">4096</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>生成证书请求csr文件<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl req -new -key /home/dzdhello/use-openssl/d
+emoCA/private/cakey.pem -out /home/dzdhello/use-openssl/demoCA/private/cakey.csr
+You are about to be asked to enter information that will be incorporated<span class="token punctuation">..</span>.
+dzdhello@ubuntu-server-22:~/use-openssl$ tree demoCA/
+demoCA/
+├── crl
+├── index.txt
+├── newcerts
+├── private
+│   ├── cakey.csr
+│   └── cakey.pem
+├── serial
+└── serts
+<span class="token number">4</span> directories, <span class="token number">4</span> files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>生成CA证书，路径为<code>/home/dzdhello/use-openssl/demoCA/cacert.pem</code><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl x509 -req -days <span class="token number">365</span> -in /home/dzdhello/use-openssl/demoCA/private/cakey.csr -signkey /home/dzdhello/use-openssl/demoCA/private/cakey.pem -out /home/dzdhello/use-openssl/demoCA/cacert.pem
+Certificate request self-signature ok
+<span class="token assign-left variable">subject</span><span class="token operator">=</span>C <span class="token operator">=</span> cn, ST <span class="token operator">=</span> guangdong, L <span class="token operator">=</span> shenzheng, O <span class="token operator">=</span> dzdhello, OU <span class="token operator">=</span> dzdhello.c, CN <span class="token operator">=</span> dzd, emailAddress <span class="token operator">=</span> dzdhello@163.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ul>
+<p><span class="color-red">到此为止，配置完成，注意使用<code>openssl ca</code>命令需要指定配置文件<code>-config</code></span></p>
+<h3 id="2-6-为客户端证书签名"><a href="#2-6-为客户端证书签名" class="headerlink" title="2.6 为客户端证书签名"></a>2.6 为客户端证书签名</h3><blockquote>
+<p>为之前生成的证书签名请求csr文件<code>yourdomain.csr</code>签名<br><span class="color-red">注意：签名的客户端请求文件发起时填入的<code>organizationName</code>字段要和CA服务一致，否则会提示<code>The organizationName field is different between CA certificate (dzdhello) and the request (t1)</code>而导致签名失败</span><br>（我这里就是因为前面生成的证书签名请求文件即csr文件签名失败，才重新生成的<code>yourdomain3.csr</code>）</p>
+</blockquote>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl ca -config /home/dzdhello/use-openssl/openssl.cnf -in yourdomain3.csr -out ./yourdomain.crt
+Using configuration from /home/dzdhello/use-openssl/openssl.cnf
+Check that the request matches the signature
+Signature ok
+Certificate Details:
+        Serial Number: <span class="token number">1</span> <span class="token punctuation">(</span>0x1<span class="token punctuation">)</span>
+        Validity
+            Not Before: Aug  <span class="token number">8</span> <span class="token number">20</span>:26:14 <span class="token number">2022</span> GMT
+            Not After <span class="token builtin class-name">:</span> Aug  <span class="token number">8</span> <span class="token number">20</span>:26:14 <span class="token number">2023</span> GMT
+        Subject:
+            countryName               <span class="token operator">=</span> cn
+            stateOrProvinceName       <span class="token operator">=</span> guangdong
+            organizationName          <span class="token operator">=</span> dzdhello
+            organizationalUnitName    <span class="token operator">=</span> ttt
+            commonName                <span class="token operator">=</span> t
+            emailAddress              <span class="token operator">=</span> t@123.com
+        X509v3 extensions:
+            X509v3 Basic Constraints:
+                CA:FALSE
+            X509v3 Subject Key Identifier:
+                <span class="token number">93</span>:0C:0E:81:39:D2:39:F4:F7:DE:A5:94:8F:29:8C:EB:1D:EF:83:E9
+            X509v3 Authority Key Identifier:
+                DirName:/C<span class="token operator">=</span>cn/ST<span class="token operator">=</span>guangdong/L<span class="token operator">=</span>shenzheng/O<span class="token operator">=</span>dzdhello/OU<span class="token operator">=</span>dzdhello.c/CN<span class="token operator">=</span>dzd/emailAddress<span class="token operator">=</span>dzdhello@163.com
+                serial:70:CD:F8:6B:8E:F9:5C:41:A2:6A:A2:25:F3:32:65:2A:5E:E6:C6:64
+Certificate is to be certified <span class="token keyword">until</span> Aug  <span class="token number">8</span> <span class="token number">20</span>:26:14 <span class="token number">2023</span> GMT <span class="token punctuation">(</span><span class="token number">365</span> days<span class="token punctuation">)</span>
+Sign the certificate? <span class="token punctuation">[</span>y/n<span class="token punctuation">]</span>:y
+<span class="token number">1</span> out of <span class="token number">1</span> certificate requests certified, commit? <span class="token punctuation">[</span>y/n<span class="token punctuation">]</span>y
+Write out database with <span class="token number">1</span> new entries
+Data Base Updated<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-7-转换证书为PKCS12文件"><a href="#2-7-转换证书为PKCS12文件" class="headerlink" title="2.7 转换证书为PKCS12文件"></a>2.7 转换证书为PKCS12文件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dzdhello@ubuntu-server-22:~/use-openssl$ openssl pkcs12 -export -clcerts -in ./yourdomain.crt -inkey ./key.pri -out ./yourdomain.p12
+Warning: -clcerts option ignored with -export
+Enter Export Password:
+Verifying - Enter Export Password:
+dzdhello@ubuntu-server-22:~/use-openssl$ ll yourdomain.p12
+-rw------- <span class="token number">1</span> dzdhello dzdhello <span class="token number">3123</span> Aug  <span class="token number">8</span> <span class="token number">20</span>:43 yourdomain.p12<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="三、配置证书到服务器端"><a href="#三、配置证书到服务器端" class="headerlink" title="三、配置证书到服务器端"></a>三、配置证书到服务器端</h2><blockquote>
+<p>配置客户端私钥(key.pri)以及证书(yourdomain.crt)文件到服务器</p>
+</blockquote>
+<h3 id="3-1-nginx配置-待验证"><a href="#3-1-nginx配置-待验证" class="headerlink" title="3.1 nginx配置(待验证)"></a>3.1 nginx配置(待验证)</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">server <span class="token punctuation">&#123;</span>
+  listen <span class="token number">443</span> ssl<span class="token punctuation">;</span>
+  <span class="token comment"># </span>
+  ssl_certificate  /usr/local/nginx/cert/server.crt<span class="token punctuation">;</span> <span class="token comment"># 证书文件</span>
+  ssl_certificate_key  /usr/local/nginx/cert/server.key<span class="token punctuation">;</span> <span class="token comment"># 私钥</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p class="color-green">终于写完了。。。</p>
+  </div>
+</article>
+
+<div class="display-flex item-center mg-b-12 mg-t-12">
+  <a class="page-link width-percent-50 no-decoration" href="/" title="">
+    <div class="align-end direction-column display-flex pd-r-rem--1">
+      
+    </div>
+  </a>
+  <a class="page-link width-percent-50 no-decoration" href="/blog/ef38584b0785/" title="minikebu简单使用">
+    <div class="align-start direction-column display-flex pd-l-rem--1">
+      
+      <p class="color-black-1">后一篇</p>
+      <div class="ellipsis font-1-25 width-percent-100 align-left">minikube安装以及功能简单使用</div>
+      
+    </div>
+  </a>
+</div>
+
+<!-- gitment -->
+
+      </div>
+      <footer class="max-w-mian-size color-black-1 font--75 bg-gray-type1 width-percent-100">
+  <div class="display-flex item-center max-w-mian-size margin-center height-100-">
+    <p class="mg-0 nowrap">© 2020 dzd (๑• . •๑)</p>
+  </div>
+</footer>
+    </main>
+  </div>
+  
+<script src="/js/init.js"></script>
+
+  
+<script src="/js/imagePreview.js"></script>
+
+  
+<script src="/js/intersection-observer.js"></script>
+
+
+  <!-- loading app.js - service worker -->
+  
+<script src="/app.js"></script>
+
+
+</body>
+</html>
