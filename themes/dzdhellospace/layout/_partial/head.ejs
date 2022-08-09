@@ -8,8 +8,11 @@
   <% } %>
   <!-- <title><%= (page.title || config.title) + config.siteTag %></title> -->
 
+  <!-- loading app.js - service worker -->
+  <%- js('/app.js') %>
+  
   <!-- Web application manifests -->
-  <link rel="manifest" crossorigin="use-credentials" href="manifest.json">
+  <link rel="manifest" crossorigin="use-credentials" href="/manifest.json">
   
   <%- css('css/normalize.css') %>
   <%- css('css/style.css') %>

@@ -6,7 +6,7 @@
   "start_url": "/?standalone=1",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#06c",
+  "theme_color": "#fff",
   "description": "dzd's blog web site.",
   "icons": [
     {
