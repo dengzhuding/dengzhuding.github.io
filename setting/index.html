@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   
-    <title>dzd`s blog</title>
+    <title>setting[dzd]</title>
   
-  <!-- <title>dzd`s blog[dzd]</title> -->
+  <!-- <title>setting[dzd]</title> -->
 
   <!-- loading app.js - service worker -->
   
@@ -62,7 +62,7 @@
     <nav class="grow-1 pd-l-60 relative z-index-99">
       <ul class="menu mg-0 pd-0">
         
-        <li class="active">
+        <li class="">
           <a class="nav-a" href="/" >Home</a>
         </li>
         
@@ -100,158 +100,75 @@
   </div>
 </header>
     <main class="display-flex direction-column pd-t-120">
-      <div class="max-w-mian-size bg-line-type3 relative shrink-0 grow-1 width-percent-100 mg-t-20 ">
-        <section class="posts-div pd-l-rem--1 pd-r-rem--1">
-  
-  <article class="post-item">
-    <div class="post-item-title ellipsis">
-      <a href="/blog/91d0bc8cacae/">openssl常用功能</a>
+      <div class="max-w-mian-size bg-line-type3 relative shrink-0 grow-1 width-percent-100 mg-t-20 pd-t-0">
+        <!-- content -->
+<article class="relative">
+    <div class="content-div pd-l-rem--1 pd-r-rem--1">
+        <h2 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h2><ul>
+<li><strong>ads</strong>   <div class="check-box-div">
+  <script>
+    document.addEventListener('DOMContentLoaded', checkboxLoad)
+    function checkboxLoad(event) {
+      const checkbox = document.querySelector('#change-google-ads');
+      if (!checkbox) {
+        return;
+      }
+      const adsOpenStatus = localStorage.getItem('googole-ads-open');
+      if (adsOpenStatus !== 'true') {
+        return;
+      }
+      checkbox.checked = true;
+      checkboxChange(checkbox);
+    }
+    function checkboxChange(target) {
+      if (!target) {
+        return
+      }
+      // 
+      const checked = target?.checked;
+      localStorage.setItem('googole-ads-open', checked);
+      // 
+      target.nextElementSibling.firstElementChild.style.setProperty('--color-curreent', checked ? 'var(--color-blue)' : 'var(--color-gray)');
+      target.nextElementSibling.firstElementChild.lastElementChild.style.setProperty('right', checked ? 0 : '1.3rem');
+      console.log(event);
+    }
+  </script>
+  <input type="checkbox" id="change-google-ads" style="display: none;" onchange="checkboxChange(this)" />
+  <label for="change-google-ads" style="" class="cursor-pointer display-flex">
+    <div class="display-flex mg-r-5" style="
+        display: inline-block;
+        position: relative;
+        --color-blue: #005aff;
+        --color-gray: #ccc;
+        --color-curreent: var(--color-gray);
+    ">
+      <div style="
+        width: 2.5rem;
+        height: 1rem;
+        border-radius: 10px;
+        background: var(--color-curreent);
+        opacity: 0.4;
+      " class=""></div>
+      <div style="
+        position: absolute;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        background: var(--color-curreent);
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 0 3px 0px var(--color-curreent);
+        right: 1.3rem;
+        transition: right .2s;
+      "></div>
     </div>
-    <div class="post-item-excerpt">
-      简单描述opensssl命名的一些常用功能
-    </div>
-    <div class="post-item-date display-flex font--75 item-end post-item-date">
-      <span class="color-black-2 shrink-0">创建日期：</span>
-      <span class="ellipsis post-time">2022-08-08 11:11</span>
-      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2022-08-11 04:46</span>
-    </div>
-  </article>
-  
-  <article class="post-item">
-    <div class="post-item-title ellipsis">
-      <a href="/blog/ef38584b0785/">minikube安装以及功能简单使用</a>
-    </div>
-    <div class="post-item-excerpt">
-      minikebu简单使用
-    </div>
-    <div class="post-item-date display-flex font--75 item-end post-item-date">
-      <span class="color-black-2 shrink-0">创建日期：</span>
-      <span class="ellipsis post-time">2022-08-05 11:11</span>
-      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2022-08-06 02:15</span>
-    </div>
-  </article>
-  
-  <article class="post-item">
-    <div class="post-item-title ellipsis">
-      <a href="/blog/b498a411a972/">shell脚本基础使用</a>
-    </div>
-    <div class="post-item-excerpt">
-      记录shell基础使用
-    </div>
-    <div class="post-item-date display-flex font--75 item-end post-item-date">
-      <span class="color-black-2 shrink-0">创建日期：</span>
-      <span class="ellipsis post-time">2021-03-13 08:08</span>
-      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-03-13 12:00</span>
-    </div>
-  </article>
-  
-  <article class="post-item">
-    <div class="post-item-title ellipsis">
-      <a href="/blog/0c80bcf2f271/">Centos7.5安装docker及基础配置使用</a>
-    </div>
-    <div class="post-item-excerpt">
-      记录过程
-    </div>
-    <div class="post-item-date display-flex font--75 item-end post-item-date">
-      <span class="color-black-2 shrink-0">创建日期：</span>
-      <span class="ellipsis post-time">2021-03-12 11:11</span>
-      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-03-17 03:00</span>
-    </div>
-  </article>
-  
-  <article class="post-item">
-    <div class="post-item-title ellipsis">
-      <a href="/blog/759b1a3ca4d9/">架设私人git托管服务器</a>
-    </div>
-    <div class="post-item-excerpt">
-      记录git服务搭建以及配置过程，顺便加上了node + mongodb + react 部署过程。由于之前对linux不熟，只能一步步参考网络上教程一步步来，持续更新中。。
-    </div>
-    <div class="post-item-date display-flex font--75 item-end post-item-date">
-      <span class="color-black-2 shrink-0">创建日期：</span>
-      <span class="ellipsis post-time">2021-01-24 01:01</span>
-      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2021-03-13 12:00</span>
-    </div>
-  </article>
-  
-  <article class="post-item">
-    <div class="post-item-title ellipsis">
-      <a href="/blog/255fcee21cdc/">Typescript学习笔记--001</a>
-    </div>
-    <div class="post-item-excerpt">
-      Typescript 笔记记录，从枚举继续
-    </div>
-    <div class="post-item-date display-flex font--75 item-end post-item-date">
-      <span class="color-black-2 shrink-0">创建日期：</span>
-      <span class="ellipsis post-time">2020-10-09 09:09</span>
-      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2020-10-09 09:08</span>
-    </div>
-  </article>
-  
-  <article class="post-item">
-    <div class="post-item-title ellipsis">
-      <a href="/blog/7f15d1e28b83/">url参数之Base64的编码与解码</a>
-    </div>
-    <div class="post-item-excerpt">
-      url参数有敏感信息时，可通过此方式进行简单的保护
-    </div>
-    <div class="post-item-date display-flex font--75 item-end post-item-date">
-      <span class="color-black-2 shrink-0">创建日期：</span>
-      <span class="ellipsis post-time">2020-09-28 02:02</span>
-      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2020-09-28 02:48</span>
-    </div>
-  </article>
-  
-  <article class="post-item">
-    <div class="post-item-title ellipsis">
-      <a href="/blog/1f70b5a81bb4/">节假日计算相关</a>
-    </div>
-    <div class="post-item-excerpt">
-      根据万年历取得节假日、调休数据，记录一些常规用法。
-    </div>
-    <div class="post-item-date display-flex font--75 item-end post-item-date">
-      <span class="color-black-2 shrink-0">创建日期：</span>
-      <span class="ellipsis post-time">2020-09-23 11:11</span>
-      <span class="color-black-2 mg-l-rem-1 shrink-0">最近更新：</span>
-      <span class="ellipsis post-time">2020-09-27 10:00</span>
-    </div>
-  </article>
-  
-</section>
-<div class="paginator-div">
-  
-  <nav>
-    <ul class="display-flex item-center item-wrap">
-      
-      
-        <li>
-          <a class="page-number active" href="/">
-            1
-          </a>
-        </li>
-      
-        <li>
-          <a class="page-number " href="/page/2">
-            2
-          </a>
-        </li>
-      
-      
-      <li><a class="page-next mg-l-rem-1" href="page/2/">下一页</a></li>
-      
-    </ul>
-    <!--
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
-    -->
-  </nav>
+    启用 google ads
+  </label>
+</div></li>
+</ul>
 
-</div>
+    </div>
+</article>
       </div>
       <div class="ads-div"></div>
       <footer class="max-w-mian-size color-black-1 font--75 bg-gray-type1 width-percent-100">
