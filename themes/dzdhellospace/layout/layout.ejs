@@ -8,11 +8,13 @@
       <div class="max-w-mian-size bg-line-type3 relative shrink-0 grow-1 width-percent-100 mg-t-20 <%= is_post() || is_page() ? 'pd-t-0' : ''%>">
         <%- body %>
       </div>
+      <div class="ads-div"></div>
       <%- partial('_partial/footer') %>
     </main>
   </div>
   <%- js('js/init.js') %>
   <%- js('js/imagePreview.js') %>
   <%- js('js/intersection-observer.js') %>
+  <%- js('js/ads_controller.js') %>
 </body>
 </html>

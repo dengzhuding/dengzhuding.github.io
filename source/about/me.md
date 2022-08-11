@@ -16,3 +16,6 @@ updated: 2020-09-25 13:00:00
 * 4\. 代码高亮样式-[prismjs](https://prismjs.com/)，此网站code主题[下载地址](https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript&plugins=line-numbers)
 * 5\. SVG图标素材[Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)
 * 6\. 背景渐变色[Gradient Magic](https://www.gradientmagic.com/)
+
+## 页面设置
+> [Setting](/setting/)
