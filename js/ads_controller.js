@@ -1,4 +1,5 @@
 /**
+ * ads_controller.js
  * 广告控制
  */
 (function () {
