@@ -3,7 +3,7 @@
  */
 (function () {
   const adsOpenStatus = localStorage.getItem('googole-ads-open');
-  if (adsOpenStatus !== 'true') {
+  if (adsOpenStatus !== null && adsOpenStatus !== 'true') {
     return;
   }
   const s = document.createElement('script');
