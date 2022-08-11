@@ -31,12 +31,13 @@ excerpt: 页面设置
           return
         }
         // 
-        const checked = target?.checked;
+        const checked = target.checked;
         localStorage.setItem('googole-ads-open', checked);
         // 
         target.nextElementSibling.firstElementChild.style.setProperty('--color-curreent', checked ? 'var(--color-blue)' : 'var(--color-gray)');
         target.nextElementSibling.firstElementChild.lastElementChild.style.setProperty('right', checked ? 0 : '1.3rem');
-        console.log(event);
+        // console.log(event);
+        // throw('test error');
       }
     </script>
     <input type="checkbox" id="change-google-ads" style="display: none;" onchange="checkboxChange(this)" />
