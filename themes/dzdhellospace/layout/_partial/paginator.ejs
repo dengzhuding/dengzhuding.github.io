@@ -1,5 +1,6 @@
 <% if (page.total > 1) { %>
   <nav>
+    <% if (!page.archive) { %>
     <ul class="display-flex item-center item-wrap">
       <% if (page.current > 1) { %>
       <li><a class="page-prev mg-r-rem-1" href="<%- page.prev_link || '/' %>">上一页</a></li>
@@ -15,12 +16,12 @@
       <li><a class="page-next mg-l-rem-1" href="<%- page.next_link %>">下一页</a></li>
       <% } %>
     </ul>
-    <!--
-    <%- paginator({
+    <% } %>
+    
+    <%- page.archive && paginator({
       prev_text: '上一页',
       next_text: '下一页',
       escape: false
     }) %>
-    -->
   </nav>
 <% } %>

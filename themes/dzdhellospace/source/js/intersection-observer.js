@@ -38,7 +38,7 @@
         activeTocLink = firstTocLink;
         activeTocLink.classList.add('active');
       }
-      console.log(firstVisibleElements.attributes.id)
+      // console.log(firstVisibleElements.attributes.id)
     }
   }
   const callback = (entries, observer) => {
